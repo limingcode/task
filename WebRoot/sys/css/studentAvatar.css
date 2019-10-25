@@ -1,0 +1,182 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-08 08:51:54
+*/
+html{
+    height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px 10px 0;
+    background-color: #eee;
+    height: calc(100% - 10px);
+    min-width: 1024px;
+}
+
+/*-----begin 发布作业 ------*/
+.avatar_box{
+    // width: 100%;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+.student_list{
+    display:list-item;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 5%;
+}
+.student_list li{
+    float: left;
+    // width: 16.6%;
+    margin: 15px 10px 0;
+    text-align: center;
+}
+.student_list .item{
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #888;
+    border-radius: 50%;
+}
+.student_list .item:hover:before{
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-image: url(../images/alter_icon.png);
+    background-repeat: no-repeat;
+    background-size: 48px;
+    background-position: center;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0.7;
+}
+.student_list .avatar{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.student_list input[type='file']{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.student_list .name{
+    display: block;
+}
+
+.uploadProcess{
+    display: block;
+    position: absolute;
+    bottom: -21px;
+    font-size: 12px;
+    transform: translate(-50%);
+    left: 50%;
+}
+
+.crop_box{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    z-index: -200;
+}
+.crop_box.active{
+    opacity: 1;
+    z-index: 0;
+}
+.crop_box .crop_wrap{
+    width: 700px;
+    height: 500px;
+    padding: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -350px;
+    margin-top: -250px;
+    border-radius: 5px;
+}
+.crop_box .crop_wrap .img_box{
+    width: 400px;
+    height: 400px;
+    margin: 20px 0 0 20px;
+    display: inline-block;
+}
+.crop_box .crop_wrap .img_box img{
+    width: 100%;
+}
+.crop_box .crop_wrap .preview_box{
+    float: right;
+    width: 250px;
+    margin-top: 20px;
+}
+.crop_box .crop_wrap .crop_preview{
+    width: 180px;
+    height: 180px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+    display: block;
+    margin: 0 auto 20px;
+}
+.crop_box .crop_wrap .crop_preview img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+.crop_box .crop_wrap .crop_preview.preview_round{
+    border-radius: 50%;
+    overflow: hidden;
+}
+.crop_box .crop_wrap .btn_box{
+    margin: 30px auto;
+    text-align: center;
+}
+.crop_box .crop_wrap .btn_box button{
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* 屏幕适应 */
+@media screen and (max-width: 1720px) {
+    .avatar_box .student_list{
+        padding: 20px 4%;
+    }
+}
+@media screen and (max-width: 1480px) {
+    .avatar_box .student_list{
+        padding: 20px 6%;
+    }
+}
+@media screen and (max-width: 1240px) {
+    .avatar_box .student_list{
+        padding: 20px 3%;
+    }
+}
+@media screen and (max-width: 1166px) {
+    .avatar_box .student_list{
+        padding: 20px 6%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .avatar_box .student_list{
+        padding: 20px 8%;
+    }
+}

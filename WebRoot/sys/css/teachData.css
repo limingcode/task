@@ -1,0 +1,64 @@
+/*
+* @Author: Hlin
+* @Date:   2018-01-08 09:38:04
+* @Last Modified by:   Hlin
+* @Last Modified time: 2018-09-13 11:28:23
+*/
+html{
+    min-height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    min-height: 100%;
+}
+.teach_data{
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.teach_data .wa_table tbody td[state="1"]{
+    background-image: url(../images/tick_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+}
+.teach_data .wa_table tbody td[state="2"]{
+    background-color: #ddd;
+}
+.teach_data .wa_table thead tr:nth-child(1) th:nth-child(n + 2):not(:last-child),
+.teach_data .wa_table thead tr:nth-child(2) th:nth-child(4n):not(:last-child),
+.teach_data .wa_table tbody tr[catgory="rowspan"] td:nth-child(4n + 2):not(:last-child),
+.teach_data .wa_table tbody tr:not([catgory="rowspan"]) td:nth-child(4n + 1):not(:last-child){
+    border-right: 1px solid #aa9cec;
+}
+
+.teach_data .wa_table thead tr:nth-child(2) th,
+.teach_data .wa_table tbody tr.bottom_tr:not(:last-child) td{
+    border-bottom: 1px solid #aa9cec;
+}
+
+.wa_table tr:hover{
+    background-color: transparent;
+}
+.wa_table tr.active td:not(:first-child):not([state="2"]),
+.wa_table tr.active td:not([state="2"]),
+.wa_table tr[catgory="rowspan"]:hover td:not(:first-child):not([state="2"]),
+.wa_table tr:not([catgory="rowspan"]):hover td:not([state="2"]){
+    background-color: rgb(236, 250, 255);
+}
+.wa_table tr.active td[type="ppt"][state="0"], .wa_table tr td[type="ppt"][state="0"]{
+    background-color: rgba(255,0,0,0.5)!important;
+}
+.wa_table tr.active td[type="case"][state="0"], .wa_table tr td[type="case"][state="0"]{
+    background-color: rgba(0,0,255,0.5)!important;
+}
+
+.teach_table_header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 10px;
+    width: calc(100% - 20px);
+}

@@ -1,0 +1,95 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-08 08:51:54
+*/
+html{
+    min-height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    min-height: 100%;
+}
+
+/*-----begin 发布作业 ------*/
+.work_issue{
+    margin-top: 10px;
+}
+.work_issue .work_time{
+    display: inline-block;
+    height: 47px;
+    margin-left: 40px;
+}
+.work_issue .work_time input{
+    margin-top: 8px;
+}
+/*-----end 发布作业 ------*/
+
+/*-----begin 进度查询 ------*/
+
+/*-----end 进度查询 ------*/
+
+/*-----begin 班级筛选结果 ------*/
+.class_result{
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+/*-----end 班级筛选结果 ------*/
+
+/*-----begin 学生筛选结果 ------*/
+.student_result{
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+/*-----end 学生筛选结果 ------*/
+
+/*-----begin 班级进度列表 ------*/
+.s_detail_list{
+    padding-bottom: 10px;
+}
+.s_detail_list .oper_btn input{
+    vertical-align: 0px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+/*-----end 班级进度列表 ------*/
+
+/*-----begin 个人进度详情列表 ------*/
+.sq_detail_list{
+    padding-bottom: 30px;
+}
+.sq_detail_list .answer audio{
+    margin: 0;
+}
+.sq_detail_list audio{
+    width: 100%;
+}
+/*-----end 个人进度详情列表 ------*/
+
+.inside_table{
+    display: none;
+}
+.inside_table table{
+    margin-bottom: -1px;
+    box-shadow: 0 0 15px #ccc inset;
+}
+.show_list{
+    position:relative;
+    cursor: pointer;
+}
+.show_list .show_btn{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/plus_icon.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.sq_detail_list .wa_table tr.inside_table:hover{
+    background-color: unset;
+}

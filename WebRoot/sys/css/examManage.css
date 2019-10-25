@@ -1,0 +1,120 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-07 16:29:55
+*/
+html{
+    min-height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    min-height: 100%;
+}
+/*-----begin 课次列表 ------*/
+.course_list{
+    margin-top: 10px;
+    padding-bottom: 25px;
+}
+.course_list .start_time input{
+    text-align: center;
+    padding: 4px;
+}
+.course_list .start_time input:focus{
+    background-color: #ddd;
+}
+.exam_list,.eaxm_details{
+    padding-bottom: 25px;
+}
+.append_oper{
+    border-bottom: 1px solid #ccc;
+    height: 30px;
+}
+.append_oper .append_btn{
+    display:block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    background-image: url(../images/plus_icon.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+/*-----end 课次列表 ------*/
+
+/*-----begin 选题界面 ------*/
+.choice_ql {
+    padding-bottom: 30px;
+}
+.choice_ql .sky_checkbox .mark{
+    border-radius: 3px;
+}
+.sky_checkbox input:checked + .mark{
+    border: 1px solid #04afe4;
+    background-color: #04afe4;
+}
+/*-----end 选题界面 ------*/
+
+/*-----begin 选择题目 ------*/
+.choice_ql .q_sort input{
+    width: 5em;
+    height: 10px;
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    background-image: url(../images/red_star.png);
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: left center;
+}
+.choice_ql tr th{
+    position:relative;
+}
+
+.choice_ql tr th:nth-child(1){
+    width: 100px;
+}
+.choice_ql tr th:nth-child(2){
+    width: 120px;
+}
+.choice_ql .all_select{
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    float: right;
+    border: 0;
+    background-color: transparent;
+    background-image: url(../images/all_select.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    cursor: pointer;
+}
+.choice_ql .q_sort_btn{
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    float: right;
+    border: 0;
+    background-color: transparent;
+    background-image: url(../images/q_sort_btn.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center;
+    cursor: pointer;
+}
+/*-----end 选择题目 ------*/
+
+/*-----begin 已选列表 ------*/
+/*.choice_result{
+    margin-top: 30px;
+    padding-bottom: 30px;
+}*/
+/*-----end 已选列表 ------*/

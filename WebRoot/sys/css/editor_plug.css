@@ -1,0 +1,716 @@
+/*
+* @Author: Hlin
+* @Date:   2017-05-29 16:06:05
+*/
+
+@font-face {
+    font-family: HelveticaNeueLTStd-Lt;
+    src:url('../fonts/HelveticaNeueLTStd-Lt.otf');
+}
+@font-face {
+    font-family: Helvetica LT;
+    src:url('../fonts/Helvetica LT.ttf');
+}
+body{
+    /*margin: 6px;*/
+}
+
+/* begin 菜单图标*/
+.editor_menu_c{
+    width: 65px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 15px;
+    font-style:normal;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+    margin: 0 6px;
+    margin-top: -5px;
+}
+.editor_menu_c:before{
+    width: 14px;
+    height: 14px;
+    top: 9px;
+    left: 11px;
+    background-size: 20px;
+    background-position: 0 0;
+}
+.editor_menu_e{
+    width: 65px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 15px;
+    font-style:normal;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+    margin: 0 6px;
+    margin-top: -5px;
+    margin-right: 14px;
+}
+.editor_menu_e:before{
+    width: 14px;
+    height: 14px;
+    top: 9px;
+    left: 11px;
+    background-size: 20px;
+    background-position: 0 -12px;
+}
+
+.editor_menu_l{
+    width: 65px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 15px;
+    font-style:normal;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+    margin: 0 6px;
+    margin-top: -5px;
+    margin-right: 14px;
+}
+.editor_menu_l:before{
+    width: 14px;
+    height: 14px;
+    top: 9px;
+    left: 11px;
+    background-size: 20px;
+    background-position: 0 -26px;
+}
+.editor_menu_j{
+    width: 65px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 15px;
+    font-style:normal;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+    margin: 0 6px;
+    margin-top: -5px;
+}
+.editor_menu_j:before{
+    width: 14px;
+    height: 10px;
+    top: 11px;
+    left: 11px;
+    background-size: 20px;
+    background-position: 0 -39px;
+}
+.editor_menu_a{
+    width: 65px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 15px;
+    font-style:normal;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+    margin: 0 6px;
+    margin-top: -5px;
+}
+.editor_menu_a:before{
+    width: 14px;
+    height: 15px;
+    top: 8px;
+    left: 11px;
+    background-size: 20px;
+    background-position: 0 -49px;
+}
+.add_question_a input{
+    width:100%;
+    padding: 6px;
+    background-color: #fff!important;
+    text-align: center;
+}
+.editor_menu_json{
+    width: 35px;
+    height: 15px;
+    display: block;
+}
+.wangeditor-menu-img-picture0{
+    width: 28px;
+    height: 25px;
+    padding-left: 20px;
+    display: block;
+    border-radius: 4px;
+    margin: 0 6px;
+    margin-top: -5px;
+}
+.wangeditor-menu-img-picture0:before{
+    width: 19px;
+    height: 16px;
+    top: 8px;
+    left: 11px;
+    background-size: 20px;
+    background-position: 0 -65px;
+}
+.editor_menu_audio{
+    width: 28px;
+    height: 25px;
+    padding-left: 20px;
+    display: block;
+    border-radius: 4px;
+    margin: 0 6px;
+    margin-top: -5px;
+}
+.editor_menu_audio:before{
+    width: 19px;
+    height: 16px;
+    top: 8px;
+    left: 11px;
+    background-size: 20px;
+    background-position: 0 -84px;
+}
+.editor_menu_analy{
+    width: 54px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 20px;
+    font-style:normal;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+    margin: 0 6px;
+    margin-top: -5px;
+}
+.editor_menu_analy:before{
+    width: 16px;
+    height: 15px;
+    top: 8px;
+    left: 11px;
+    background-size: 20px;
+    background-position: 0 -99px;
+}
+/* end 菜单图标*/
+
+/* begin 音频panel*/
+.audio_panel{
+    width: 100%;
+    overflow-x: hidden;
+}
+.audio_panel .add_audio{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 60px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-image: url(../images/upload_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 13%;
+    margin-top: 10px;
+}
+.audio_panel .add_audio:hover{
+    border: 1px solid #aaa;
+}
+.audio_panel .add_audio input{
+    opacity: 0;
+    cursor: pointer;
+}
+.audio_panel  .audio_item{
+    position: relative;
+}
+.audio_panel  .audio_item .remove_btn{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url(../images/close.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+    border-radius: 50%;
+}
+.audio_panel .audio_item .remove:hover{
+    background-color: #eee;
+}
+.audio_panel .space{
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+}
+.audio_panel .space input{
+    width: 70%;
+    text-align: center;
+    padding: 6px 0;
+    background-color: transparent;
+}
+.audio_panel .audio_progress{
+    display: block;
+    width: 264px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color:#e6e6e6;
+    color: #d4c5f3; /*IE10*/
+    margin-top: -1px;
+    border-top: 0;
+    height: 4px;
+}
+.audio_panel progress::-moz-progress-bar { background: #d4c5f3; }
+.audio_panel progress::-webkit-progress-bar { background: #FFFFFF; }
+.audio_panel progress::-webkit-progress-value  { background: #d4c5f3; }
+/* end 音频panel*/
+
+/* begin 解析panel*/
+.ananly_cnt{
+    width: 100%;
+    outline: 0;
+    height: 200px;
+    padding: 6px;
+}
+.ananly_cnt:focus{
+    border: 1px solid #a684e0!important;
+}
+/* end 解析panel*/
+
+/* begin 选择题*/
+.add_question_c{
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 30px 10px 0;
+    background-color: #fff;
+}
+.add_question_c .close_q{
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 50%;
+    margin-right: -10px;
+    top: 5px;
+    background-image: url(../images/close.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 50%;
+    -moz-transition: -moz-transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    -o-transition: -o-transform 1s;
+}
+.add_question_c .close_q:hover{
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);     /* IE 9 */
+    -moz-transform:rotate(360deg);    /* Firefox */
+    -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+    -o-transform:rotate(360deg);  /* Opera */
+}
+.add_question_c .c_item{
+    position: relative;
+}
+.add_question_c .option{
+    margin: 5px 0;
+    border: 1px solid #aaa;
+    margin-left: 10px;
+    width: 89%;
+    height: 26px;
+    padding-left: 5px;
+    display: inline-block;
+}
+.add_question_c .add_btn{
+    display: block;
+    width: 200px;
+    height: 26px;
+    border: 1px solid #888;
+    background-color: #fff;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.add_question_c .add_btn:active{
+    box-shadow: 0 0 8px #999 inset;
+}
+.add_question_c .remove_btn{
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 0;
+    top: 5px;
+    background-image: url(../images/close.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.add_question_c .remove_btn:hover{
+    background-color: #eee;
+}
+.add_question_c .score{
+    text-align: center;
+}
+.add_question_c .score input{
+    width: 200px;
+    height: 26px;
+    border: 1px solid #888;
+    text-align: center;
+}
+/* end 选择题*/
+
+/* begin 填空题*/
+.add_question_e{
+    display: inline-block;
+    border: 1px solid transparent;
+    border: 1px solid #888;
+    outline: none;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 18.4px;
+    width: calc(0.5em * 7);
+    line-height: 1!important;
+    font-family: "Helvetica LT";
+    vertical-align: 0px;
+}
+.add_question_e + .score{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    line-height: 12px!important;
+    font-size: 12px!important;
+    border-radius: 50%;
+    top: 0px;
+    right: 0;
+    outline: none;
+    border: 1px solid #888;
+    text-align: center!important;
+    margin-left: -13px;
+    vertical-align: 2px;
+}
+.add_question_e  + .score:hover{
+    width: 20px!important;
+    height: 20px!important;
+    line-height: 20px!important;
+}
+.add_question_e + .score:focus{
+    width: 20px!important;
+    height: 20px!important;
+    line-height: 20px!important;
+}
+.menu_e_length{
+    width: 14px;
+    height: 28px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    line-height: 8px;
+}
+.menu_e_length button{
+    width: 14px;
+    height: 13px;
+    margin-top: 1px;
+    margin-left: -1px;
+    line-height: 10px;
+    cursor: pointer;
+    color: rgb(206, 158, 241);
+    border: 1px solid rgb(206, 158, 241);
+    background-image: -moz-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.menu_e_length button.add{
+    border-top-right-radius: 4px;
+
+}
+.menu_e_length button.reduce{
+    margin-top: -1px;
+    border-bottom-right-radius: 4px;
+}
+/* end 填空题*/
+
+/* begin 连线题*/
+.add_question_l{
+    display: inline-block;
+    border: 1px solid #888;
+    border-radius: 15px;
+    border-bottom: 1px solid #888;
+    outline: none;
+    text-align: center;
+    // padding-right: 15px;
+    font-size: 18.4px;
+    width: calc(0.5em * 7);
+    line-height: 1!important;
+    font-family: "Helvetica LT";
+    vertical-align: 0;
+}
+.add_question_l + .score{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    line-height: 12px!important;
+    font-size: 12px!important;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    outline: none;
+    border: 1px solid #888;
+    text-align: center!important;
+    margin-left: -13px;
+    vertical-align: 2px;
+}
+.add_question_l  + .score:hover{
+    width: 20px!important;
+    height: 20px!important;
+    line-height: 20px!important;
+}
+.add_question_l + .score:focus{
+    width: 20px!important;
+    height: 20px!important;
+    line-height: 20px!important;
+}
+.menu_l_length{
+    width: 14px;
+    height: 28px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    line-height: 8px;
+}
+.menu_l_length button{
+    width: 14px;
+    height: 13px;
+    margin-top: 1px;
+    margin-left: -1px;
+    line-height: 10px;
+    cursor: pointer;
+    color: rgb(206, 158, 241);
+    border: 1px solid rgb(206, 158, 241);
+    background-image: -moz-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.menu_l_length button.add{
+    border-top-right-radius: 4px;
+
+}
+.menu_l_length button.reduce{
+    margin-top: -1px;
+    border-bottom-right-radius: 4px;
+}
+/* end 连线题*/
+
+/* begin 判断题*/
+.add_question_j{
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 30px 10px 10px;
+    background-color: #fff;
+    text-align: center;
+}
+.add_question_j .close_q{
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 50%;
+    margin-right: -10px;
+    top: 5px;
+    background-image: url(../images/close.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 50%;
+    -moz-transition: -moz-transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    -o-transition: -o-transform 1s;
+}
+.add_question_j .close_q:hover{
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);     /* IE 9 */
+    -moz-transform:rotate(360deg);    /* Firefox */
+    -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+    -o-transform:rotate(360deg);  /* Opera */
+}
+.add_question_j .j_item{
+    position: relative;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+    margin: 20px 21px 31px;
+}
+.add_question_j .option{
+    border: 0;
+    margin: 5px 0;
+    border-bottom: 1px solid #888;
+    margin-left: 10px;
+    width:95%;
+    height: 26px;
+    padding-left: 5px;
+    display:inline-block;
+}
+.add_question_j .score{
+    text-align: center;
+}
+.add_question_j .score input{
+    width: 200px;
+    height: 26px;
+    border: 1px solid #888;
+    text-align: center;
+}
+/* end 添加选择题选项*/
+
+/* begin editor样式覆盖*/
+.wangEditor-container{
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid transparent;
+    background-color: #fff;
+}
+.wangEditor-menu-container{
+    background-color: #e5ddf7;
+    border-bottom: 1px solid #d4c5f3;
+    border-top: 1px solid #d4c5f3;
+}
+.wangEditor-menu-container .menu-group .menu-item a i{
+    border-radius: 4px;
+    border: 1px solid rgb(206, 158, 241);
+    background-image: -moz-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #722e9f;
+}
+.wangEditor-menu-container .menu-group .menu-item a i:before{
+    content: "";
+    position: absolute;
+    display: block;
+    background-image: url(../images/editor_icon.png);
+    background-repeat: no-repeat;
+}
+.wangEditor-menu-container .menu-item .active, .wangEditor-menu-container .menu-item:hover {
+    background-color: transparent;
+}
+.wangEditor-menu-container .menu-group{
+    border-right: 1px solid #d0c4c4;
+}
+.wangEditor-container .wangEditor-txt{
+    font-size: 18.4px;
+    font-family: "Helvetica LT";
+    padding: 15px 20px;
+}
+
+.wangEditor-container *::-webkit-scrollbar{
+    width:1px !important;
+    background-color: transparent!important;
+    border-radius: 5px!important;
+}
+.wangEditor-container *::-webkit-scrollbar {
+    width: 1px!important;
+    height: 1px!important;
+}
+.wangEditor-container *::-webkit-scrollbar-thumb{
+    background: #888!important;
+    border-radius: 5px!important;
+}
+.wangEditor-container .wangEditor-txt p {
+    margin: 0;
+    clear: both;
+    border: 0;
+    line-height: 27px!important;
+}
+.wangEditor-container .wangEditor-txt p:after{
+    content:'.';
+    clear:both;
+    display:block;
+    height:0;
+    visibility:hidden;
+    line-height:0;
+}
+.wangEditor-container .wangEditor-txt::-webkit-scrollbar{
+    width:8px;
+    // background-color: #ddd;
+    border-radius: 5px;
+}
+.wangEditor-container .wangEditor-txt::-webkit-scrollbar-thumb{
+    width:8px;
+    background: -webkit-linear-gradient(top,#44c9ff,#6ba7ff);
+    background: -moz-linear-gradient(top,#44c9ff,#6ba7ff);
+    background: -o-linear-gradient(top,#44c9ff,#6ba7ff);
+    height: 10px;
+    border-radius: 5px;
+}
+.wangEditor-container .wangEditor-txt p img {
+}
+.wangEditor-container .menu-item{
+    min-width: 35px;
+    width: unset;
+}
+.wangEditor-container .menu-item a{
+
+}
+.wangEditor-drop-panel{
+    border-top: 2px solid #9485D5;
+}
+.wangEditor-drop-panel .tip-triangle{
+    border-bottom-color: #9485D5;
+}
+/* end editor样式覆盖*/
+
+/* begin public样式覆盖*/
+.wangEditor-container .sky_checkbox .mark {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #aaa;
+}
+.wangEditor-container .sky_checkbox{
+    padding-left: 20px!important;
+}
+.wangEditor-container .sky_radio input:checked + .mark {
+    background-color: #fff;
+}
+.wangEditor-container .sky_radio .mark {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #aaa;
+}
+.wangEditor-container .sky_radio{
+    padding-left: 20px!important;
+}
+.wangEditor-container .left_img,
+.wangEditor-container .right_img,
+.wangEditor-container .top_img,
+.wangEditor-container .bottom_img{
+    padding: 3px;
+}
+.wangEditor-container .left_img img,.wangEditor-container .right_img img{
+    display: block;
+    margin: 3px;
+}
+.wangEditor-container .top_img img,.wangEditor-container .bottom_img img{
+    display: unset;
+    margin: 3px;
+}
+.wangEditor-container{
+    background-image: url(../images/bg-mob.png);
+    background-repeat: no-repeat;
+    background-size: 743px 871px;
+    background-position: center 62px;
+}
+.wangEditor-txt{
+    background-color: #eee;
+    margin: 85px auto 100px!important;
+    border: 1px solid #ccc!important;
+}
+/* end public样式覆盖

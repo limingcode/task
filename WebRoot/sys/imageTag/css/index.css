@@ -1,0 +1,266 @@
+/*
+* @Author: Hlin
+* @Date:   2017-05-03 23:26:32
+*/
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    min-width: 1024px;
+}
+/*---- begin 头部 ----*/
+.header{
+    height: 70px;
+    width: 100%;
+    background-color: #81E2D6;
+}
+.header .h_left{
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-image: url(../images/logo.png), -webkit-linear-gradient(left,#62dafe,#01b8ee);
+    background-image: url(../images/logo.png), -moz-linear-gradient(left,#62dafe,#01b8ee);
+    background-image: url(../images/logo.png), -o-linear-gradient(left,#62dafe,#01b8ee);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 84%,100%;
+    text-align: center;
+}
+.header .h_left img{
+    margin-top: 24px;
+    width: 84%;
+}
+.header .h_right{
+    float: right;
+    width: calc(100% - 200px);
+    height: 100%;
+    background-image: url(../images/title_bg1.png), url(../images/title_bg2.png), url(../images/title_bg3.png), url(../images/title_bg4.png), url(../images/title_bg5.png), url(../images/title_bg6.png), url(../images/title_bg7.png),  url(../images/title_bg8.png), url(../images/title_bg9.png), -webkit-linear-gradient(left,#7995ff,#03cdff);
+    background-image: url(../images/title_bg1.png), url(../images/title_bg2.png), url(../images/title_bg3.png), url(../images/title_bg4.png), url(../images/title_bg5.png), url(../images/title_bg6.png), url(../images/title_bg7.png),  url(../images/title_bg8.png), url(../images/title_bg9.png), -moz-linear-gradient(left,#7995ff,#03cdff);
+    background-image: url(../images/title_bg1.png), url(../images/title_bg2.png), url(../images/title_bg3.png), url(../images/title_bg4.png), url(../images/title_bg5.png), url(../images/title_bg6.png), url(../images/title_bg7.png),  url(../images/title_bg8.png), url(../images/title_bg9.png), -o-linear-gradient(left,#7995ff,#03cdff);
+    background-repeat: no-repeat;
+    background-position: 35px 8px,100px 80%,220px top,250px bottom, 32% 10px,35% 10px, 42% 15px, 55% center, 88% bottom, center;
+    background-size: 5px,60px,40px,8px,70px,8px,20px,70px,80px,100%;
+}
+.header .h_right .h_right_l{
+    float: left;
+    width: 280px;
+    height: 100%;
+    background-image: url(../images/title.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-left: 30px;
+}
+.header .h_right2 .h_right_l{
+    background-image: url(../images/title2.png);
+    width: 140px;
+}
+.header .h_right .h_right_r{
+    float: right;
+    height: 100%;
+    position: relative;
+}
+.header .h_right .h_right_r .r_item{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 26px;
+    margin-top: 20px;
+    color: #fff;
+}
+.header .h_right .h_right_r .manager{
+    position: relative;
+    padding-left: 55px;
+    // border-right: 1px solid #9ee9ff;
+    margin-right: 30px;
+}
+.header .h_right .h_right_r .manager:after{
+    position: absolute;
+    content:"";
+    display: block;
+    right: 0;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/downIcon.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.header .h_right .h_right_r .manager_avatar{
+    position: absolute;
+    display: block;
+    left: 0;
+    top: -5px;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/manager_icon.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.header .h_right .h_right_r .manager_avatar:after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: -25px;
+    background-image: url(../images/manager_icon_before.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.header .h_right .h_right_r .inform{
+    position: relative;
+    border-right: 1px solid #9ee9ff;
+    background-image: url(../images/inform_icon.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 19px;
+}
+.header .h_right .h_right_r .inform.active:before{
+    position: absolute;
+    content: "";
+    border: 1px solid #fff;
+    background-color: red;
+    display: block;
+    width: 5px;
+    height: 5px;
+    top: 10px;
+    left: 12px;
+    border-radius: 50%;
+    height: 24px;
+    line-height: 24px;
+}
+.header .h_right .h_right_r .quit{
+    background-image: url(../images/quit_icon.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 19px;
+    margin-left: 20px;
+}
+.header .h_right .r_menu_list{
+    position: absolute;
+    color: #fff;
+    display: block;
+    width: calc(100% - 10px);
+    background-image: -webkit-linear-gradient(bottom,#03cdff,#7995ff);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 60px;
+    display: none;
+    padding: 5px 0
+}
+.header .h_right .r_menu_list li{
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    color: #fff;
+}
+.header .h_right .r_menu_list li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #fff;
+}
+.header .h_right .r_menu_list li:hover{
+    text-decoration: underline;
+}
+.header .h_right .h_right_r:hover .manager:after{
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+}
+.header .h_right .h_right_r:hover .r_menu_list{
+    display: block;
+}
+/*---- end 头部 ----*/
+
+/*---- begin 左边导航栏 ----*/
+.left{
+    float: left;
+    width: 200px;
+    height: calc(100% - 80px);
+    background-color: #fff;
+    margin-top: 30px;
+}
+.left .nav{
+    width: 200px;
+    padding-top: 20px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: 8px 21px;
+}
+.left .nav a{
+    color: #666;
+}
+.left .nav .title{
+    height:30px;
+    line-height: 30px;
+    display:block;
+    padding-left: 75px;
+    font-weight: bold;
+}
+.left .nav.nav1 .title{
+    background-image: url(../images/item1_icon.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 35px center;
+}
+.left .nav.nav2 .title{
+    background-image: url(../images/item2_icon.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 37px center;
+}
+.left .nav.nav3 .title{
+    background-image: url(../images/item3_icon.png);
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: 32px center;
+}
+.left .nav.nav4 .title{
+    background-image: url(../images/item4_icon.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 32px center;
+}
+.left .nav ul{
+    margin-top: 10px;
+}
+.left .nav ul li{
+    height:30px;
+    line-height: 30px;
+    padding-left: 75px;
+}
+.left .nav ul li.active{
+    background-image: url(../images/item_li_active.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.left .nav ul li:hover{
+    background-image: url(../images/item_li_active.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.cut_line{
+    text-align: center;
+    color: #bbb;
+}
+/*---- end 左边导航栏 ----*/
+
+/*---- begin 右边内容 ----*/
+.right{
+    margin-left: 200px;
+    margin-right: 0;
+    height: calc(100% - 70px);
+    width: calc(100% - 200px);
+    overflow: hidden;
+}
+
+/*---- end 右边内容 ----*/

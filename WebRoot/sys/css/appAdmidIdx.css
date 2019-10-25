@@ -1,0 +1,36 @@
+.header .h_right .h_right_l{
+    background-image: url(../images/title.png);
+}
+.left .nav.list_icon1 .title{
+    background: url(../images/list_icon1.png) no-repeat 37px center;
+    background-size: 22px;
+}
+.left .nav.list_icon2 .title{
+    background: url(../images/list_icon2.png) no-repeat 37px center;
+    background-size: 22px;
+}
+.left .nav.list_icon3 .title{
+    background: url(../images/list_icon3.png) no-repeat 37px center;
+    background-size: 22px;
+}
+.left .nav.active .title,.left .nav .title:hover{
+    background-image: url(../images/list_icon1_hover.png) no-repeat 37px center, -moz-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background: url(../images/list_icon1_hover.png) no-repeat 37px center, -webkit-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background-image: url(../images/list_icon1_hover.png) no-repeat 37px center, -ms-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background-size: 22px,auto;
+    color: #fff;
+}
+.left .nav.active.list_icon2 .title,.left .nav.list_icon2 .title:hover{
+    background-image: url(../images/list_icon2_hover.png) no-repeat 37px center, -moz-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background: url(../images/list_icon2_hover.png) no-repeat 37px center, -webkit-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background-image: url(../images/list_icon2_hover.png) no-repeat 37px center, -ms-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background-size: 22px,auto;
+    color: #fff;
+}
+.left .nav.active.list_icon3 .title,.left .nav.list_icon3 .title:hover{
+    background-image: url(../images/list_icon3_hover.png) no-repeat 37px center, -moz-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background: url(../images/list_icon3_hover.png) no-repeat 37px center, -webkit-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background-image: url(../images/list_icon3_hover.png) no-repeat 37px center, -ms-linear-gradient( 0deg, rgb(178,165,240) 0%, rgb(200,171,218) 100%);
+    background-size: 22px,auto;
+    color: #fff;
+}

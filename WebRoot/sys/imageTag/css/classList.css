@@ -1,0 +1,193 @@
+/*
+* @Author: Hlin
+* @Date:   2017-11-15 09:09:16
+* @Last Modified by:   Hlin
+* @Last Modified time: 2018-01-19 16:35:51
+*/
+html{
+    min-height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    // min-height: 100%;
+    background-color: #eee;
+}
+.class_book{
+    margin-top: 10px;
+    padding: 40px 0 15px;
+}
+.result_list{
+}
+.result_list li{
+    display: inline-block;
+    float: left;
+    margin-bottom: 25px;
+}
+.result_list li a{
+    display: block;
+    border: 1px solid #a684e0;
+    box-shadow: 0px 3px 18.9px 2.1px rgba(196, 199, 202, 0.35);
+    width: 200px;
+    height: 274px;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.result_list .book_bg{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.result_list .book_bg img{
+    width: 100%;
+}
+.result_list li .big_title{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    bottom: 0;
+    text-align: left;
+    color: #451168;
+    font-size: 14px;
+    padding-left: 12px;
+}
+.result_list li .small_title{
+    position: absolute;
+    height: 33px;
+    width: 100%;
+    top: 9px;
+    right: -72px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    line-height: 33px;
+    border-top: 1px solid rgb(166, 132, 224);
+    border-bottom: 1px solid rgb(166, 132, 224);
+    color: #451168;
+    background-image: -moz-linear-gradient( 90deg, rgb(240,226,251) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(240,226,251) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(240,226,251) 0%, rgb(255,255,255) 100%);
+}
+.result_list li span.book_btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 63px;
+    padding-left: 15px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 12px;
+}
+.result_list li span.book_btn:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 8px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/class_list_icon.png);
+    background-repeat: no-repeat;
+    background-size: 14px;
+    background-position: center 0;
+}
+.result_list li span.book_btn:after{
+    content: "上传";
+    display: block;
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 16px;
+}
+
+.result_list li[state="0"] .big_title{
+    background-color: #fff;
+}
+.result_list li[state="1"] .big_title{
+    background-color: #f7ecff;
+}
+.result_list li[state="2"] .big_title{
+    background-color: #f0dbff;
+}
+.result_list li[state="0"] span.book_btn{
+    border: 1px solid rgb(218, 208, 234);
+    border-radius: 2px;
+    background-image: -moz-linear-gradient( 90deg, rgb(242,230,252) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(242,230,252) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(242,230,252) 0%, rgb(255,255,255) 100%);
+    width: 40px;
+    padding-left: 10px;
+    height: 20px;
+    line-height: 20px;
+    bottom: 6px;
+    right: 8px;
+    color: #451168;
+}
+.result_list li[state="0"] span.book_btn:before{
+    top: 4px;
+    left: 2px;
+    background-position: center -29px;
+}
+.result_list li[state="0"] span.book_btn:after{
+    content: "上传";
+    left: 0;
+}
+.result_list li[state="1"] span.book_btn{
+    background-color: #f7ecff;
+    color: #a887e1;
+}
+.result_list li[state="1"] span.book_btn:after{
+    content: "已上传";
+}
+.result_list li[state="2"] span.book_btn{
+    background-color: #fff;
+    color: #a684e0;
+}
+.result_list li[state="2"] span.book_btn:before{
+    background-position: center -15px;
+}
+.result_list li[state="2"] span.book_btn:after{
+    content: "同步中";
+}
+
+.result_list li a.active,
+.result_list li a:hover{
+    box-shadow: 0px 0px 10px #a684e0;
+}
+
+/* 屏幕适应 */
+@media screen and (max-width: 1920px) {
+    .result_list li{
+        width: calc(100% / 7);
+    }
+}
+@media screen and (max-width: 1600px) {
+    .result_list li{
+        width: calc(100% / 6);
+    }
+}
+@media screen and (max-width: 1440px) {
+    .result_list li{
+        width: calc(100% / 5);
+    }
+}
+@media screen and (max-width: 1024px) {
+    .result_list li{
+        width: calc(100% / 4);
+    }
+}

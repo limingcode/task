@@ -1,0 +1,190 @@
+/*
+* @Author: Hlin
+* @Date:   2017-12-29 09:52:12
+* @Last Modified by:   Hlin
+* @Last Modified time: 2018-01-05 09:50:20
+*/
+body{
+}
+.wapper{
+    height: calc(100% - 80px);
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.btn_box{
+    padding: 9px 15px;
+}
+.btn_box .upload_btn{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 32px;
+    background-color: #6455d3;
+    color: #fff;
+}
+.btn_box .files_space{
+    font-size: 12px;
+    color: #666;
+    vertical-align: -8px;
+}
+
+.btn_box .upload_btn input[type='file']{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    opacity: 0;
+}
+.btn_box .upload_btn span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+}
+.btn_box .search{
+    float: right;
+}
+.btn_box .search input{
+    outline: none;
+    padding: 2px 2px 2px 30px;
+    padding: 5px;
+    border: 1px solid #999;
+}
+.btn_box .search .search_btn{
+    outline: none;
+    float: right;
+    width: 32px;
+    height: 30px;
+    margin-left: -1px;
+    background-color: transparent;
+    background-image: url(../images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+.files_table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.files_table tbody tr:hover{
+    background-color: rgba(100, 85, 211, 0.13);
+}
+.files_table tbody tr:hover td{
+    border-bottom: 1px solid rgba(69, 17, 193, 0.2);
+}
+.files_table th{
+    font-weight: normal;
+}
+.files_table th:nth-child(2){
+    width: 150px;
+}
+.files_table th:nth-child(3){
+    width: 150px;
+}
+.files_table th:nth-child(4){
+    width: 50px;
+}
+.files_table th,
+.files_table td{
+    position: relative;
+    text-align: left;
+    min-height: 20px;
+    padding: 9px 15px;
+    line-height: 20px;
+    border-bottom: 1px solid #eee;
+}
+.files_table td.file_name{
+    padding-left: 46px;
+}
+.files_table td.file_name:before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    left: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-image: url(../images/type_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.files_table td.file_name[type="zip"]:before{
+    background-position: -235px 0px;
+}
+.files_table td.file_name[type="courseware"]:before{
+    background-position: -235px -599px;
+}
+.files_table td.file_name[type="ppt"]:before{
+    background-position: -235px -379px;
+}
+.files_table td.file_name[type="video"]:before{
+    background-position: -235px -54px;
+}
+.files_table td.file_name[type="audio"]:before{
+    background-position: -235px -81px;
+}
+.files_table td.file_name[type="img"]:before{
+    background-position: -235px -272px;
+}
+.files_table td.file_name .mark{
+    position: absolute;
+    display: none;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    text-align: right;
+}
+.files_table td.file_name .mark i{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 8px 2px 0;
+    cursor: pointer;
+}
+.files_table tr:hover td.file_name .mark{
+    display: block;
+}
+.files_table td.file_name .mark i.revise{
+    background-image: url(../images/revise.png);
+}
+.files_table td.file_name .mark i.delete{
+    background-image: url(../images/delete.png);
+    background-position: center 1px;
+}
+
+.files_table td a.download{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/download.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+}
+
+.uploadProcess{
+    display: block;
+    position: absolute;
+    bottom: -21px;
+    font-size: 12px;
+    transform: translate(-50%);
+    left: 50%;
+}

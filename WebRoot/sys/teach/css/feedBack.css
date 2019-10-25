@@ -1,0 +1,255 @@
+.feedBack{
+    background: url(../images/feedBack/feedBack_Bg.png) no-repeat;
+    background-size: 100% 100%;
+    height:100%;
+}
+.feedBack body{
+    height:100%;
+}
+.feedBack header {
+    width: 100%;
+    background-color: #6455d3;
+}
+.feedBack .headerCont {
+    width: 1200px;
+    height: 75px;
+    margin: 0 auto;
+    position: relative;
+}
+.feedBack .headerCont .logo {
+    height: 100%;
+    line-height: 75px;
+    color: #fff;
+    font-size: 1rem;
+    font-style: italic;
+    cursor: pointer;
+}
+.feedBack .headerCont .user {
+    height: 100%;
+    line-height: 75px;
+}
+.feedBack .headerCont .user .userName {
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 30px;
+    position: relative;
+    cursor: pointer;
+}
+.feedBack .headerCont .user .userName:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url(../images/feedBack/userIcon.png) no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    top: 7px;
+}
+.feedBack .headerCont .user .userName:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: url(../images/feedBack/downIcon.png) no-repeat;
+    background-size: 100% 100%;
+    right: 0;
+    top: 16px;
+    transition: 0.5s;
+}
+.feedBack .logo:after {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 17px;
+    background: url(../images/feedBack/downIcon.png) no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    top: 30px;
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); 	/* IE 9 */
+    -moz-transform:rotate(90deg); 	/* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari 鍜� Chrome */
+    -o-transform:rotate(90deg);
+}
+.feedBack .content{
+    width: 1200px;
+    padding-top: 20px;
+    height:calc(100% - 122px);
+    margin: 25px auto 0 auto;
+    border: 1px solid #b6b5bf;
+    background: #fff;
+}
+
+.feedBack .msg_ul{
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.feedBack .msg_ul li,.feedBack .pageDiv li{
+    overflow: hidden;
+}
+.feedBack .msg_ul i,.feedBack .pageDiv i{
+    float: left;
+    width: 122px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 40px;
+}
+.feedBack .title_s{
+    background: #d5d0fe;
+}
+.feedBack .title_s i{
+    border:1px solid #968fcc;
+    border-left: none;
+}
+.feedBack i:nth-of-type(1){
+    /* border-left: 1px solid #968fcc;*/
+}
+.feedBack .msgCont i{
+    border-right: 1px solid #968fcc;
+    border-bottom: 1px solid #968fcc;
+    font-size: 1rem;
+}
+.feedBack .msgCont i:last-of-type{
+    color: #f39800;
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width: 164px;
+    padding: 0 25px;
+    text-align: left;
+}
+.feedBack .proposal{
+    width: 214px!important;
+}
+.feedBack select{
+    width: 198px;
+    height: 29px;
+    border:1px solid #cccccc;
+    border-radius: 5px;
+}
+.feedBack input{
+    width: 196px;
+    height: 27px;
+    border:1px solid #cccccc;
+    border-radius: 7px;
+}
+.feedBack .topCont{
+    overflow: hidden;
+}
+.feedBack .topCont label{
+    float: left;
+    padding: 10px 57px;
+}
+.feedBack .topCont span{
+    font-size: 1rem;
+    margin-right: 5px;
+    color: #000;
+}
+
+ul,li{margin: 0;padding: 0;list-style: none;}
+.pageMenu li::selection{background:transparent;}
+.clearfix{zoom:1;}
+.clearfix:after{content:"";display: block;clear: both;}
+.hide{display: none;}
+.notContent{padding: 15px 0;text-align: center;}
+.page{text-align: center;margin:40px auto 0 auto;width: 800px;}
+.pageMenu{display: inline-block;width: 90%;}
+.pageMenu li{margin: 3px;float: left;padding: 5px 10px;cursor: pointer;background: #fff;border-radius: 50%;color:#998df9;}
+.pageMenu li.firstPage{}
+.pageMenu li.prevPage{}
+.pageMenu li.pageNum{padding: 0;width: 25px;height: 25px;line-height: 25px}
+.pageMenu li.nextPage{}
+.pageMenu li.lastPage{}
+.pageMenu li.disabled{ background-color: #fff;   cursor: not-allowed;border:none}
+.pageMenu li.active{ border: solid thin #998df9;background-color: #998df9;color: white}
+.pageMenu li.last{background: transparent;border:0;position: relative;top: -8px;}
+.page .keuInput{padding: 0 5px;width: 70px;border: solid thin #ddd;height: 29px;outline: none;text-align: center;font-size: 16px;}
+.page .btnSure{padding: 4px 8px;color:#998df9;border:none;outline: none;text-align: center;font-size: 16px;background: #fff;position: relative;}
+.page .btnSure:hover{cursor: pointer;}
+
+
+
+.headerCont .user .userName .userName_opre{
+    display: none;
+    width: 130%;
+    background-color: rgba(213,201,255,0.8);
+    padding-bottom: 10px;
+    position: absolute;
+    top: 57px;
+    left: -15%;
+}
+.headerCont .user .userName .userName_opre li{
+    width: 100%;
+    padding-left: 36%;
+    margin-top: 10px;
+    line-height: 27px;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 20px center;
+}
+.headerCont .user .userName .userName_opre li a{
+    color: #fff;
+}
+.headerCont .user:hover .userName_opre{
+    display:block;
+}
+.headerCont .user .userName .userName_opre li:hover a{
+    color: #8b7cfb;
+}
+.headerCont .userName_opre li:nth-child(1){
+    background-image: url(../images/lin/opre1.png);
+}
+.headerCont .userName_opre li:nth-child(2){
+    background-image: url(../images/lin/opre2.png);
+}
+.headerCont .userName_opre li:nth-child(3){
+    background-image: url(../images/lin/opre3.png);
+}
+.headerCont .userName_opre li:nth-child(4){
+    background-image: url(../images/lin/opre4.png);
+}
+.headerCont .userName_opre li:nth-child(1):hover{
+    background-image: url(../images/lin/opre11.png);
+}
+.headerCont .userName_opre li:nth-child(2):hover{
+    background-image: url(../images/lin/opre22.png);
+}
+.headerCont .userName_opre li:nth-child(3):hover{
+    background-image: url(../images/lin/opre33.png);
+}
+.headerCont .userName_opre li:nth-child(4):hover{
+    background-image: url(../images/lin/opre44.png);
+}
+
+
+
+@media screen and (max-width: 1024px){
+    .feedBack .headerCont{
+        width: 100%;
+    }
+    .feedBack .content{
+        width: calc(100% - 2px);
+    }
+    .feedBack .topCont label{
+        padding: 10px 48px;
+    }
+    .feedBack .msg_ul i, .feedBack .pageDiv i{
+        width: 9%;
+    }
+
+    .page{
+        padding-left: 100px;
+    }
+    .feedBack .proposal {
+    	width: calc(28% - 10px)!important;;
+	}
+	.feedBack .msgCont i:last-of-type{
+		width: calc(23% - 10px)!important;
+	}
+	
+	.page{
+		margin-top:20px;
+	}
+}

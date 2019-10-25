@@ -1,0 +1,311 @@
+body, button, select, textarea, input, label, option, fieldset, legend{font-family: 寰蒋闆呴粦E\8F6F\96C5\9ED1,Tahoma,Verdana}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+textarea{resize: none}
+.clear{height:1px;overflow:hidden;clear:both;}
+a,img{border:0;}
+a{color: #666;text-decoration: none;}
+li{list-style-type:none;}
+.fl{float:left;}
+.fr{float:right;}
+.nf{clear:both;}
+.red{color:red;font-weight:bold;}
+.green{color:#00b500;font-weight:bold;}
+.ds{display:block;}
+.hid{overflow:hidden;}
+.clearfix{*zoom:1}
+.clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
+.jianbian{background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f4f4f4),color-stop(100%,#eee));background: -webkit-linear-gradient(top,#f4f4f4 0,#eee 100%);background: linear-gradient(to bottom,#f4f4f4 0,#eee 100%);}
+.bottomshadow{border-bottom: solid 1px #B3B3B3;-webkit-box-shadow: 0 1px 1px 0 #DFDFDF;box-shadow: 0 1px 1px 0 #DFDFDF;}
+
+
+::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
+}
+/*瀹氫箟婊氬姩鏉¤建閬� 鍐呴槾褰�+鍦嗚*/
+::-webkit-scrollbar-track
+{
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    border-radius: 10px;
+    background-color: rgba(204, 204, 204, 0);;
+}
+
+/*瀹氫箟婊戝潡 鍐呴槾褰�+鍦嗚*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #a995fe;
+}
+
+/*棰勮椤甸潰鏍峰紡*/
+.pptPreview{
+    width: 100%;
+    height: 100%;
+    background: url(../../images/ppt/pptPreviewBg.png);
+    background-size: 100% 100%;
+    overflow-y: hidden;
+}
+.pptPreview .leftCont{
+    overflow: hidden;
+    position: relative;
+    width: calc(70% - 40px);
+    /*min-height: 560px;*/
+    float: left;
+    background:url(../../images/ppt/pptBorder.png);
+    background-size:100% 100%;
+/*     border: 20px solid transparent; */
+/*     -moz-border-image:url(../../images/ppt/pptBorder.png) 30 30;	Old Firefox */
+/*     -webkit-border-image:url(../../images/ppt/pptBorder.png) 30 30;	Safari and Chrome */
+/*     -o-border-image:url(../../images/ppt/pptBorder.png) 30 30;		Opera */
+/*     border-image:url(../../images/ppt/pptBorder.png) 30 30; */
+/*     border-image-width: 36px; */
+}
+.pptPreview .rightCont{
+    width: 30%;
+    float: left;
+    padding: 0;
+    box-sizing: border-box;
+    background:url(../../images/ppt/rightContBg.png) no-repeat;
+    background-size:100% 100%;
+/*     border: 20px solid transparent; */
+/*     -moz-border-image: url(../../images/ppt/pptBorder.png) 30 30; */
+/*     -webkit-border-image: url(../../images/ppt/pptBorder.png) 30 30; */
+/*     -o-border-image: url(../../images/ppt/pptBorder.png) 30 30; */
+/*     border-image: url(../../images/ppt/pptBorder.png) 30 30; */
+/*     border-image-width: 20px; */
+/*     margin-left:-11px; */
+/*     word-wrap: break-word; */
+/*     overfllow-y:scroll; */
+}
+.pptPreview .listBtnCont{
+    background: url(../../images/ppt/pptListBg.png);
+    background-size: 100% 100%;
+    width: 0.735981rem;
+    height: 2.628505rem;
+    position: absolute;
+    left:-0.735981rem;
+    top:50%;
+    margin-top: -1.308411rem;
+    z-index: 1000;
+    display:none;
+}
+.pptPreview .listBtn{
+    background: url(../../images/ppt/listBtn.png);
+    background-size: 100% 100%;
+    width: 0.273438rem;
+    height: 0.585938rem;
+    position: absolute;
+    top:50%;
+/*     right: -0.273438rem; */
+    margin-top: -0.289062rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+.pptPreview .module{
+	position:absolute;
+}
+.pptPreview .listBtnCont .listBtnConti{
+    background: url(../../images/ppt/iconsPPT_05.png) no-repeat;
+    background-size: 100%;
+    width: 0.375rem;
+    height:0.6855rem;
+    position: absolute;
+    left: 0.175234rem;
+    top:10%;
+    cursor: pointer;
+}
+.pptPreview .listBtnCont i:nth-of-type(2){
+    background: url(../../images/ppt/iconsPPT_06.png) no-repeat;
+    background-size: 100%;
+    width: 0.375rem;
+    height:0.759346rem;
+    position: absolute;
+    left: 0.175234rem;
+    top: 58%;
+    cursor: pointer;
+}
+.pptPreview .thumbnail{
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100px;
+    padding: 10px;
+    height: 280px;
+    right: -118px;
+    background: #a995fe;
+    opacity: 0.8;
+    top: -80px;
+    border-radius: 15px;
+    display: none;
+}
+.pptPreview .thumbnail li{
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.pptPreview .thumbnail li:before,.pptPreview .thumbnail li:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #a995fe;
+    transition:400ms ease all;
+}
+.pptPreview .thumbnail li:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.pptPreview .thumbnail li:hover:before,.pptPreview .thumbnail li:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.pptPreview .penNum{
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    background: #a995fe;
+    right: -68px;
+    top: 90px;
+    border-radius: 0 10px 10px 0;
+    display: none;
+}
+.pptPreview .penNum li{
+    width: 22px;
+    height: 28px;
+    float: left;
+    cursor: pointer;
+}
+.pptPreview .penNum li i{
+    position: absolute;
+    top: 10px;
+}
+.pptPreview .penNum li:nth-of-type(1) i{
+    width:4px;
+    height: 4px;
+    border-radius: 50%;
+    background: red;
+    top:11px;
+    left: 10px;
+}
+.pptPreview .penNum li:nth-of-type(2) i{
+    width:8px;
+    height: 8px;
+    border-radius: 50%;
+    background: red;
+    left: 30px;
+    top: 9px;
+}
+.pptPreview .penNum li:nth-of-type(3) i{
+    width:12px;
+    height: 12px;
+    border-radius: 50%;
+    background: red;
+    left: 50px;
+    top: 7px;
+}
+
+.pptPreview .editor_box{
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: none;
+    border: none;
+    border-radius: 48px;
+}
+
+.thumbnail img{
+	width:100px;
+	margin-top:10px;
+}
+
+@media screen and (min-width: 1024px) {
+    .pptPreview .leftCont{
+        padding: 12px;
+    }
+    .pptPreview .listBtnCont{
+        margin-left: 12px;
+    }
+    .leftIframe{
+    	border-radius:33px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .pptPreview .leftCont{
+        padding: 16px;
+    }
+    .pptPreview .listBtnCont{
+        margin-left: 16px;
+    }
+    .rightCont p{
+    	padding-top:40px!important;
+    	padding-left:40px!important;
+    	font-size:16px;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .pptPreview .leftCont{
+        padding: 18px;
+    }
+    .pptPreview .listBtnCont{
+        margin-left: 18px;
+    }
+    .leftIframe{
+    	border-radius:54px;
+    }
+    .rightCont p{
+    	padding-top:50px!important;
+    	padding-left:50px!important;
+    	font-size:18px;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .pptPreview .leftCont{
+        padding: 20px;
+    }
+    .pptPreview .listBtnCont{
+        margin-left: 20px;
+    }
+    .leftIframe{
+    	border-radius:60px!important;
+    }
+    .rightCont p{
+    	padding-top:60px!important;
+    	padding-left:60px!important;
+    	font-size:20px;
+    }
+}
+@media screen and (min-width: 1920px) {
+    .pptPreview .leftCont{
+        padding: 24px;
+    }
+    .pptPreview .listBtnCont{
+        margin-left: 24px;
+    }
+    .leftIframe{
+    	border-radius:65px;
+    }
+    .rightCont p{
+    	width: 100px;
+    	padding-top:70px!important;
+    	padding-left:70px!important;
+    	font-size:22px;
+    }
+}
+
+.rightCont p{
+	word-wrap : break-word;
+}
+
+
+
+

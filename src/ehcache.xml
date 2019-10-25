@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+	updateCheck="false">
+	<diskStore path="java.io.tmpdir" />
+
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true" />
+
+	<cache name="student" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="600" memoryStoreEvictionPolicy="LFU" />
+
+	<cache name="courseList" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="600" memoryStoreEvictionPolicy="LFU" />
+
+	<cache name="lessonList" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="600" memoryStoreEvictionPolicy="LFU" />
+
+	<cache name="lesson" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="600" memoryStoreEvictionPolicy="LFU" />
+
+	<cache name="resultCardBean" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="3600" memoryStoreEvictionPolicy="LFU" />
+</ehcache>

@@ -1,0 +1,45 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-08 08:51:54
+*/
+html{
+    min-height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    padding-bottom: 10px;
+    background-color: #eee;
+    min-height: 100%;
+}
+
+.authority_box{
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+.authority_box .wa_table tbody tr:nth-child(3n){
+    background-color: #F9F9F9;
+}
+.authority_box .wa_table tbody tr:nth-child(6n){
+    background-color: #F5FAFF;
+}
+.authority_box .wa_table tbody tr.active{
+    background-color: #a684e0;
+}
+.authority_box .wa_table tbody tr.active td{
+    color: #fff;
+}
+.authority_box .wa_table tbody tr.active td .sky_checkbox .mark {
+    border-color: #fff;
+}
+.authority_box .wa_table tbody tr td:first-child{
+    cursor: pointer;
+}
+
+.authority_table_header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 10px;
+    width: calc(100% - 20px);
+}

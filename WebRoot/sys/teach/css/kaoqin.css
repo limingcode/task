@@ -1,0 +1,158 @@
+/*
+* @Author: Hlin
+* @Date:   2017-08-22 16:16:29
+* @Last Modified by:   Hlin
+* @Last Modified time: 2017-08-31 14:10:42
+*/
+.hide{
+    display: none;
+}
+.kaoqin_box{
+    position: relative;
+    z-index: 10000;
+    height: 100%;
+    background-color: rgba(16,26,71,0.7);
+    display: none;
+    width: calc(100% - 0.695312rem);
+    margin-left: 0.695312rem;
+}
+.kaoqin{
+    width: 100%;
+    border-top: 1px solid transparent;
+    position: absolute;
+}
+.kaoqin.kaoqin_keqian{
+    top:50%;
+    transform:translateY(-50%);
+}
+.kaoqin .student_list{
+    width: 100%;
+}
+.kaoqin .student_list ul{
+    margin-left: 0.46875rem;
+    margin-right: 0.46875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    // margin-bottom: 20px;
+}
+.kaoqin .student_list ul li{
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0.10625rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    margin-top: 27px;
+}
+@keyframes xuanzhuang {
+    from { transform:rotateY(0);}
+    to { transform:rotateY(360deg);}
+}
+.kaoqin .student_list ul li .student_name{
+    position: absolute;
+    bottom: -10px;
+    color: #dcd9ff;
+    font-size: 16px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.kaoqin .student_list ul li[sex="1"]{
+    background-image: url(../images/kaoqin/student_img_bg1.png);
+}
+.kaoqin .student_list ul li[sex="2"]{
+    background-image: url(../images/kaoqin/student_img_bg2.png);
+}
+.kaoqin .student_list ul li.active:before{
+    content:"";
+    position: absolute;
+    display:block;
+    width: 126%;
+    height: 126%;
+    left: -13%;
+    top: -13%;
+    background-image: url(../images/kaoqin/student_img_bg3.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    animation: student_bg 0.5s linear infinite alternate;
+}
+@keyframes student_bg {
+    from {
+    background-size: 90%; }
+    to {
+    background-size: 100%; }
+}
+.kaoqin .student_list ul li:after{
+    content: "";
+    position: absolute;
+    display:block;
+    width: 0.234375rem;
+    height: 0.234375rem;
+    bottom: -0.325312rem;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 2;
+}
+.kaoqin .student_list ul li[state="1"]:after{
+    background-image: url(../images/kaoqin/attend_state_click.png);
+    width: 64%;
+    height: 64%;
+    transform: translate(-50%,-53%);
+    background-position: center top;
+    animation: suoxiao 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes suoxiao {
+    0%{
+        width: 64%;
+        height: 64%;
+        transform: translate(-50%,-53%);
+    }
+    30%{
+        width: 74%;
+        height: 74%;
+        transform: translate(-50%,-58%);
+    }
+    95%{
+        width: 0.234375rem;
+        height: 0.234375rem;
+    }
+    99%{background-image: url(../images/kaoqin/attend_state_click.png);}
+    100%{
+        width: 0.234375rem;
+        height: 0.234375rem;
+        bottom: -0.325312rem;
+        transform: translate(-50%,0);
+        background-image: url(../images/kaoqin/attend_state_bg.png);
+    }
+}
+.kaoqin .student_list ul li[state="0"]:after{
+    background-image: url(../images/kaoqin/attend_state_bg.png);
+    background-position: center -0.232375rem
+}
+.kaoqin .student_list ul li .user_icon{
+    display:block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-52%);
+    width: 63%;
+    height: 63%;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+}
+.kaoqin .student_list ul li .user_icon img{
+    display:block;
+    width: 100%;
+    z-index: 3;
+}

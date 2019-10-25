@@ -1,0 +1,2534 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-26 13:38:28
+*/
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    background-color: #fff;
+}
+.ppt{
+    background: url(../../images/ppt/pptBg1.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.ppt body{
+    /*width: 1200px;*/
+    width: 100%;
+    margin: 0 auto;
+    background: #f9f9f9;
+    overflow-x: hidden;
+}
+.ppt .fileTitle{
+    position: absolute;
+    height: 32px;
+    line-height: 32px;
+    width: 100px;
+    text-align: center;
+    background: #a995fe;
+    color: #fff;
+    cursor: context-menu;
+}
+.ppt .lookPpt{
+    position: absolute;
+    height: 32px;
+    line-height: 32px;
+    width: 80px;
+    text-align: center;
+    background: #a995fe;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px;
+    right: 130px;
+    margin-top: 25px;
+}
+.ppt .savePpt{
+    position: absolute;
+    height: 32px;
+    line-height: 32px;
+    width: 80px;
+    text-align: center;
+    background: #a995fe;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px;
+    right: 0;
+    margin-top: 25px;
+}
+.w100{width: 100% !important;}
+.ov_h{
+    overflow: hidden;
+}
+.hide{
+    display:none;
+}
+/* begin 鑿滃崟鏍� */
+.ppt .header{
+    width: 100%;
+    height: 112px;
+    border-bottom: 1px solid #D4D4D4;
+    background-color: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.menu_cnt .tabs_cnt a[name="superLink"]{
+    background-image: url('../../images/ppt/superLink.png');
+    background-size: 80%;
+    margin-top: 15px;
+}
+.menu_box{
+    position: relative;
+}
+.menu_nav{
+    border-bottom: 1px solid #d4d4d4;
+    padding-left: 120px;
+    background: #EFEFEF;
+}
+.menu_nav .nav{
+    display: inline-block;
+    height: 24px;
+    width: 60px;
+    line-height: 24px;
+    border: 1px solid transparent;
+    margin-top: 6px;
+    text-align: center;
+    margin-bottom: -1px;
+    cursor: pointer;
+}
+.menu_nav .nav.active{
+    border: 1px solid #d4d4d4;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+.menu_nav .nav:hover{
+    color: #D24726;
+}
+.menu_cnt{
+    background-color: #fff;
+    /*padding: 4px;*/
+    position: absolute;
+    z-index: 100;
+    width:100%;
+    z-index: 10001;//闃叉鑿滃崟涓嬫媺鏍忚缂栬緫鍖哄煙鐨勭洅瀛愰伄鎸�
+}
+.menu_cnt .tabs{
+    display: none;
+    height:100%;
+}
+.menu_cnt .active{
+    display: block;
+    /*overflow: hidden;*/
+    /*border-bottom: 1px solid #ccc;*/
+}
+.menu_cnt .tabs_1 ul li{
+    /*display:inline-block;*/
+    float: left;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.menu_cnt .tabs ul li{
+    /*display:inline-block;*/
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.menu_cnt ul li.font_set{
+    width: 550px;
+}
+.menu_cnt ul li.par_set{
+    width: 377px;
+    margin-left: 163px;
+    margin-top: -21px;
+}
+
+.menu_cnt ul li.extra_tab{
+    width: auto;
+}
+.menu_cnt ul li.box_style{
+    width: 210px;
+    margin-left: 20px;
+    height: 43px;
+    margin-top: 25px;
+    border-bottom: 1px solid #ccc;
+}
+.menu_cnt .box_style ul li{
+    display: none;
+    align-items: center;
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.menu_cnt .box_style ul.active:hover li{
+    display: flex;
+}
+.menu_cnt .box_style ul li:first-child{
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+.menu_cnt .box_style ul li:last-child{
+    border-bottom: 1px solid #ccc;
+}
+.menu_cnt .box_style ul li a{
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    line-height: 30px;
+    margin: 0 5px;
+    color: #fff;
+}
+.menu_cnt .box_style ul li a.active:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top:-6px;
+    left:-6px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border: 4px solid #FCCDB6;
+}
+.menu_cnt .box_style ul li a:hover:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top:-6px;
+    left:-6px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border: 4px solid #FCE4DC;
+}
+.menu_cnt .box_style ul li a:nth-child(1){
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+.menu_cnt .box_style ul li a:nth-child(2){
+    background-color: #5B9BD5;
+    border: 1px solid #5B9BD5;
+}
+.menu_cnt .box_style ul li a:nth-child(3){
+    background-color: #ED7D31;
+    border: 1px solid #ED7D31;
+}
+.menu_cnt .box_style ul li a:nth-child(4){
+    background-color: #A5A5A5;
+    border: 1px solid #A5A5A5;
+}
+.menu_cnt .box_style ul li a:nth-child(5){
+    background-color: #FFC000;
+    border: 1px solid #FFC000;
+}
+.menu_cnt .box_style ul li a:nth-child(6){
+    background-color: #4472C4;
+    border: 1px solid #4472C4;
+}
+.menu_cnt .box_style ul li a:nth-child(7){
+    background-color: #70AD47;
+    border: 1px solid #70AD47;
+}
+.menu_cnt .box_style ul li:nth-child(1) a{
+    background-color: #fff;
+    color: #000;
+}
+.menu_cnt .box_style ul li:nth-child(1) a:nth-child(1){
+    border-color: #000000;
+}
+.menu_cnt .box_style ul li:nth-child(1) a:nth-child(2){
+    border-color: #5B9BD5;
+}
+.menu_cnt .box_style ul li:nth-child(1) a:nth-child(3){
+    border-color: #ED7D31;
+}
+.menu_cnt .box_style ul li:nth-child(1) a:nth-child(4){
+    border-color: #A5A5A5;
+}
+.menu_cnt .box_style ul li:nth-child(1) a:nth-child(5){
+    border-color: #FFC000;
+}
+.menu_cnt .box_style ul li:nth-child(1) a:nth-child(6){
+    border-color: #4472C4;
+}
+.menu_cnt .box_style ul li:nth-child(1) a:nth-child(7){
+    border-color: #70AD47;
+}
+.menu_cnt .box_style ul li:nth-child(2) a{
+    border: 1px solid #787878;
+}
+.menu_cnt .box_style ul li:nth-child(3) a{
+    border: 1px solid #fff;
+}
+.menu_cnt .box_style ul li:nth-child(4) a{
+    color: #000;
+}
+.menu_cnt .box_style ul li:nth-child(4) a:nth-child(1){
+    border-color: #000000;
+    background-color: #818181;
+}
+.menu_cnt .box_style ul li:nth-child(4) a:nth-child(2){
+    border-color: #5B9BD5;
+    background-color: #95BBE4;
+}
+.menu_cnt .box_style ul li:nth-child(4) a:nth-child(3){
+    border-color: #ED7D31;
+    background-color: #F7AA8A;
+}
+.menu_cnt .box_style ul li:nth-child(4) a:nth-child(4){
+    border-color: #A5A5A5;
+    background-color: #C1C1C1;
+}
+.menu_cnt .box_style ul li:nth-child(4) a:nth-child(5){
+    border-color: #FFC000;
+    background-color: #FFD57D;
+}
+.menu_cnt .box_style ul li:nth-child(4) a:nth-child(6){
+    border-color: #4472C4;
+    background-color: #8DA2D8;
+}
+.menu_cnt .box_style ul li:nth-child(4) a:nth-child(7){
+    border-color: #70AD47;
+    background-color: #A1CC8D;
+}
+.menu_cnt .box_style ul li:nth-child(6) a{
+    box-shadow: 0px 4px 5px #888;
+}
+
+.menu_cnt ul li.font_set .font_style{
+    width: 100px;
+    min-width: 100px;
+    vertical-align: 15px;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 7px 0 0 7px;
+    margin-left: 22px;
+
+}
+.menu_cnt ul li.font_set .fontChoose{
+    float: left;
+    margin-top: 20px;
+}
+.menu_cnt ul li.font_set .font_size{
+    width: 3em;
+    min-width: 3em;
+    vertical-align: 15px;
+    margin-left: -5px;
+    height: 35px;
+    border-radius: 0 7px 7px 0;
+}
+.menu_cnt ul li.par_set .line_height{
+    min-width: 30px;
+    background-image: url('../../images/ppt/lineheight.png');
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    border: 1px solid transparent;
+    color: transparent;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding:0;
+}
+.menu_cnt .letter_spacing{
+    min-width: 30px;
+    background-image: url('../../images/ppt/iconfont/pptIcon_38.png');
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    border: 1px solid transparent;
+    color: transparent;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding:0;
+}
+.menu_cnt ul li.par_set .line_height option{
+    color: #000;
+}
+.menu_cnt .letter_spacing option{
+    color: #000;
+    text-align: center;
+}
+.menu_cnt ul li.par_set .vertical_align{
+    min-width: 30px;
+    background-image: url('../../images/ppt/verticalalign.png');
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    border: 1px solid transparent;
+    color: transparent;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding:0;
+}
+.menu_cnt ul li.par_set .vertical_align option{
+    color: #000;
+    font-size: 12px;
+}
+
+.menu_cnt .tabs_cnt{
+    height: 50px;
+    line-height: 80px;
+}
+.menu_cnt .tabs_cnt a{
+    min-width: 30px;
+    min-height: 30px;
+    // margin-top: 5px;
+    display:inline-block;
+    line-height: 1em;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: center;
+    border: 1px solid transparent;
+    position: relative;
+}
+.menu_cnt .par_set a{
+	min-width: 20px;
+    min-height: 26px;
+    margin:0 6px;
+}
+.ppt .fontStyle a{
+    float: left;
+    margin: 13px 0 0 5px;
+    background-size: 70% !important;
+}
+.menu_cnt .tabs_cnt a[name="underline"]{
+    background-image: url('../../images/ppt/iconfont/pptIcon_20.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="bold"]{
+    background-image: url('../../images/ppt/iconfont/pptIcon_18.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="italic"]{
+    background-image: url('../../images/ppt/iconfont/pptIcon_19.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="strikethrough"]{
+    background-image: url('../../images/ppt/iconfont/pptIcon_25.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="fontcolor"]{
+    position: relative;
+    background-image: url('../../images/ppt/iconfont/pptIcon_27.png');
+    background-size: 100%;
+    margin-top: 10px;
+}
+.menu_cnt .tabs_cnt a[name="fontcolor"] .mark{
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: #8a8a8a;
+    bottom: 2px;
+    left: 5px;
+}
+.menu_cnt .tabs_cnt a[name="fontcolor"] .select{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 100%;
+    background-image: url(../../images/ppt/colorselect.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: -1px;
+    right: -10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.menu_cnt .tabs_cnt a[name="fontcolor"] .select input{
+    width: 2px;
+    // margin-top: -60px;
+    opacity: 0;
+}
+.menu_cnt .tabs_cnt a[name="fontcolor"] .select:hover{
+    border: 1px solid #FCCDB6;
+}
+.menu_cnt .tabs_cnt a[name="aligncenter"]{
+    background-image: url('../../images/ppt/aligncenter.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="alignleft"]{
+    background-image: url('../../images/ppt/alignleft.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="alignright"]{
+    background-image: url('../../images/ppt/alignright.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="fontssize"]{
+    background-image: url('../../images/ppt/iconfont/pptIcon_16.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="fontisize"]{
+    background-image: url('../../images/ppt/iconfont/pptIcon_17.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="symbol"]{
+    background-image: url('../../images/ppt/iconfont/pptIcon_30.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="alignjustify"]{
+    background-image: url('../../images/ppt/alignjustify.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="removeformat"]{
+    background-image: url('../../images/ppt/iconfont/pptIcon_26.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="chooseView"]{
+    background-image: url('../../images/ppt/choose.png');
+    background-size: 100%;
+    min-height: 24px;
+    margin-top: 17px;
+    margin-left: 15px!important;
+}
+.menu_cnt .tabs_cnt a[name="unorderedlist"]{
+    background-image: url('../../images/ppt/unorderedlist.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="orderedlist"]{
+    background-image: url('../../images/ppt/orderedlist.png');
+    background-size: 100%;
+}
+.menu_cnt .tabs_cnt a[name="grid"]{
+    background-image: url('../../images/ppt/grid.png');
+    background-size: 90%;
+    margin-top:13px;
+}
+
+.menu_cnt .tabs_cnt a[name="undo"]{
+    background-image: url('../../images/ppt/iconfont/undo_1.png');
+    background-size: 90%;
+}
+.menu_cnt .tabs_cnt a[name="recovery"]{
+    background-image: url('../../images/ppt/iconfont/undo_2.png');
+    background-size: 90%;
+}
+
+
+.menu_cnt .tabs_cnt a:active{
+    border: 1px solid #FCCDB6;
+}
+.menu_cnt .tabs_name{
+
+}
+/* end 鑿滃崟鏍� */
+
+/* begin ppt鍒楄〃 */
+.left{
+    float: left;
+    width: 1.6rem;                               /*淇敼*/
+    height: calc(100% - 158px);
+    border-right: 1px solid #f9f9f9;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 0.117188rem;                       /*淇敼*/
+}
+.left .page_box{
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    box-sizing: border-box;
+}
+/*.left .page_index{*/
+    /*float: left;*/
+/*}*/
+.left .page{
+    margin-left: 0.117188rem;
+    width: 90%;
+    height: 0.78125rem;
+    border: 1px solid #d4d4d4;
+    background-color: #fff;
+    cursor: pointer;
+}
+.left .page img{
+    width: 100%;
+    height: 100%;
+}
+/*.left .page:hover{*/
+/*border: 1px solid #888;*/
+/*}*/
+/* begin ppt鍒楄〃 */
+
+/* begin 缂栬緫鍣ㄥ尯鍩� */
+.right{
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    margin-left: 1.484375rem;               /*淇敼*/
+    margin-right: 0;
+    top: 100px;
+    height: calc(100% - 130px);
+    padding: 0.117188rem;
+    overflow: hidden;
+    transition: margin-right 1s;
+    box-sizing: border-box;
+}
+.right.active{
+    margin-right: 1.054688rem;
+}
+.right.actives{
+    margin-right: 1.054688rem;
+}
+.module.scale{
+    transform: scale(0.8);
+}
+.ppt .editor_box{
+    /*width: 890px;*/
+    height: 100%;
+    border: 1px solid #d4d4d4;
+    margin: auto;
+    background-color: #fff;
+    position:relative;
+    top:0;
+    left:0;
+}
+/*.editor_box.active{*/
+    /*height: 575px;*/
+/*}*/
+/* end 缂栬緫鍣ㄥ尯鍩� */
+
+
+
+
+.ppt .animateTabs{
+     width: 814px;
+     position: relative;
+ }
+.ppt .plan{
+    width: 810px;
+    position: relative;
+}
+.ppt .plan .moreAnimateCont ul img{
+    padding: 0.039062rem 0.078125rem;
+    border:1px solid #fff;
+    width: 57px;
+    height: 37px;
+}
+.ppt .plan .moreAnimateCont  ul{
+    width: 727px;
+    float: left;
+}
+.ppt .moreIcon{
+    position: absolute;
+    right: -15px;
+    top: 35px;
+}
+.ppt .moreIcon img{
+    width: 10px;
+    height: auto;
+    cursor: pointer;
+}
+/*begin鍔ㄧ敾绐楁牸*/
+.animateCont{
+    /*border-bottom:20px solid #000;*/
+    float: right;
+    width: 1.015625rem;
+    height: calc(100% - 150px);
+    border-left: 1px solid #d4d4d4;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0.117188rem  0.15625rem 0 0.15625rem;
+    margin-right: -1.484375rem;
+    transition: 1s;
+    background-color: #fff;
+    position: relative;
+}
+.chooseViewCont{
+    float: right;
+    width: 1.015625rem;
+    height: calc(100% - 150px);
+    border-left: 1px solid #d4d4d4;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0.117188rem  0.15625rem 0 0.15625rem;
+    transition: 1s;
+    background-color: #fff;
+    margin-right:-1.333333rem;
+    position: relative;
+}
+.setPptStyleCont{
+    float: right;
+    width: 1.128125rem;
+    height: calc(100% - 150px);
+    border-left: 1px solid #d4d4d4;
+    /*overflow-y: scroll;*/
+    /*overflow-x: hidden;*/
+    padding: 0.117188rem  0.1rem 0 0.1rem;
+    transition: 1s;
+    background-color: #f9f9f9;
+    margin-right:-1.333333rem;
+    position: relative;
+}
+.animateCont.animateRight{
+    margin-right: 0;
+    z-index: 1!important;
+}
+.chooseViewCont.chooseViewRight{
+    margin-right: 0;
+    z-index: 1!important;
+}
+.setPptStyleCont.setPptStyleRight{
+    margin-right: 0;
+    z-index: 1!important;
+}
+.pptStyleCont_title i{
+    background: url(../../images/ppt/iconfont/pptStyleDel_1.png) no-repeat;
+    background-size: 100%;
+    width: 0.15625rem;
+    display: block;
+    height: 0.15625rem;
+    float: right;
+    margin-top: 0.015625rem;
+    cursor: pointer;
+    transition: 1s;
+}
+.pptStyleCont_title i:hover{
+    transform: rotate(360deg);
+}
+.animateCont .animate_title,
+.chooseViewCont .viewCont_title{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.140625rem;
+}
+.setPptStyleCont .pptStyleCont_title{
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 0.125rem;
+    color: #c30e0e;
+}
+.setPptStyleCont .pptStyleCont_list{
+    width: 100%;
+    height:calc(100% - 29px);
+    text-align: left;
+    font-size: 0.125rem;
+    color: #c30e0e;
+}
+.pptStyleCont_list form{
+    font-size: 12px;
+    color: #515151;
+}
+.pptStyleCont_list label{
+    display: block;
+    margin-top: 10px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+.animateList li,.viewCont_list li{
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 20px;
+    cursor: pointer;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.animateList li:before{
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 17px;
+    background: url(../../images/ppt/talk.png) no-repeat;
+    right: 25px;
+}
+.viewCont_list li .close_btn{
+    position: absolute;
+    width: 18px;
+    height: 17px;
+    background: url(../../images/ppt/openEye.png) no-repeat;
+    right: 25px;
+    background-size: 100%;
+}
+.animateList li .index,.viewCont_list li .index{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.animateList li .close_btn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width:18px;
+    height:18px;
+    border-radius: 50%;
+    background-image: url(../../images/ppt/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    cursor: pointer;
+}
+.animateList li:hover .close_btn{
+    display:block;
+}
+.index_skin .layui-layer-btn .layui-layer-btn0{
+    width: 60%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-right: 50px;
+}
+/*end鍔ㄧ敾绐楁牸*/
+
+.wrap {
+    /*margin: 0 auto;*/
+    padding-top: 0.195312rem;
+}
+
+.wrap ul {
+    padding: 0;
+    margin: 0;
+}
+
+.wrap li {
+    padding: 10px;
+    margin-bottom: 20px;
+    font: 14px/1.5 "寰蒋闆呴粦";
+    list-style: none;
+    cursor: move;
+}
+.wrap .addPPT{
+    position: fixed;
+    font-style: normal;
+    width: 20px;
+    font-size: 16px;
+    height: 110px;
+    top: 50%;
+    margin-top: -55px;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index:9999999;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #d4d4d4;
+}
+
+.wrap .closePPT{
+    position: absolute;
+    right: 0.15625rem;
+    font-size: 0.15625rem;
+    top: 0.039062rem;
+    cursor: pointer;
+    display: none;
+}
+.wrap li:hover {
+    background-color: #f6f6f6;
+}
+
+.wrap li:hover .closePPT{
+    display: block;
+}
+
+.wrap div[contenteditable] {
+    border: 1px solid #ececec;
+}
+
+.wrap img {
+    display: block;
+    width: 400px;
+}
+
+/*@media all and (max-width: 767px) {*/
+    /*.wrap {*/
+        /*width: 300px;*/
+    /*}*/
+    /*.wrap img {*/
+        /*width: 200px;*/
+    /*}*/
+/*}*/
+.menu_cnt  .moreAnimate{
+    position: absolute;
+    min-width: 74px;
+    cursor: pointer;
+    left: 50%;
+    margin-left: -52px;
+    bottom: -44px;
+    text-align: center;
+    z-index: 100;
+    background: #e2e2e2;
+    padding: 14px;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: 0.8s;
+}
+.menu_cnt .moreAnimateCont{
+    height: 60px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.menu_cnt .animateTabs:hover .moreAnimate{
+    opacity: 1;
+}
+.menu_cnt .moreAnimateCont ul{
+    overflow: hidden;
+    /*height: 60px;*/
+}
+.menu_cnt .moreAnimateCont ul li{
+    height: 45px;
+    margin-top:7px;
+}
+.menu_cnt .moreAnimateCont ul li i{
+    font-style: normal;
+    display: block;
+    font-size: 12px;
+    width: 71px;
+}
+
+.menu_cnt .moreAnimateCont span{
+    display: block;
+    background: #EFEFEF;
+    padding: 5px 15px;
+}
+.animateTabs{
+    padding: 10px 0;
+    height: 60px!important;
+}
+
+.shape{
+    position: relative;
+}
+.shape i{
+    font-style: normal;
+}
+.shape span.icon_cont{
+    position: absolute;
+    width: 200px;
+    /*height: 55px;*/
+    background-color: #fff;
+    left:0;
+    top: 80px;
+    display: none;
+    box-shadow: 0 3px 10px #a7a7a7;
+}
+.icon_cont i{
+    float: left;
+    line-height: 30px!important;
+    padding: 0 6px;
+}
+.icon_cont span.title{
+    background-color: #ececec;
+    text-align: left;
+    float: left;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 4px;
+    box-sizing: border-box;
+}
+.iconFont_cont i:hover{
+    background: #b6b6b6;
+}
+/*iconFont 鏍峰紡*/
+.icon {
+    width: 100%; height: 100%;
+    fill: currentColor;
+    overflow: hidden;
+}
+.icon_1 {
+    width: 1em; height: 1em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+
+.break li .putIn{
+    display: block;
+}
+.break li img{
+    margin: 12px;
+}
+.break .span_animate{
+    width: 70px;
+    display: block;
+    margin-left: 30px;
+}
+.upLoad label,.audio label ,.video label{
+    display: block;
+    width: 100%;
+    height: 80px;
+    margin-top: -45px;
+    line-height: 110px;
+}
+.upLoad input,.audio input ,.video input{
+    display: none;
+}
+
+.sheet{
+    position: relative;
+}
+.sheetCont{
+    overflow: hidden;
+    width: 240px;
+    position: absolute;
+    background-color: #fff;
+    left:0;
+    top: 80px;
+    display: none;
+    box-shadow: 0 3px 10px #a7a7a7;
+}
+.sheetCont i{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    margin: 1px;
+    border:1px solid #000;
+}
+
+.sheetCont i:hover{
+    border:1px solid orange;
+}
+
+.left .border_org{
+    border: 2px solid #ed925b;
+}
+.theme .border_org{
+    border: 1px solid #ed925b!important;
+}
+
+/*璁捐begin*/
+.plan ul li.theme{
+    width: 1000px;
+    position: relative;
+}
+.plan ul li.theme span.content{
+    width: 96%;
+    height: 55px;
+    border: 1px solid #000;
+    margin-left: 2%;
+    margin-top: 5px;
+}
+.plan ul li.theme span.button{
+    float: right;
+    width: 10px;
+    height: 55px;
+    border-left: 1px solid #000;
+}
+.plan ul li.theme span.button i{
+    width: 10px;
+    float: left;
+    height: 17.5px;
+    border-bottom: 1px solid #000;
+    transition: 0.5s;
+}
+.plan ul li.theme span.button i:hover{
+    background-color: rgba(255, 194, 131, 0.5);
+}
+.plan ul li.theme span.theme_block{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    background: #fff;
+    left: 0;
+    border: 1px solid #ccc;
+    box-shadow: 1px 2px 15px #ccc;
+    display: none;
+}
+.plan ul li.theme span.theme_block i{
+    float: left;
+    padding: 9px;
+
+}
+.plan ul li.theme p{
+    padding-top: 2px;
+    width:100%;
+}
+
+.plan ul li.change{
+    width: 400px;
+}
+.plan ul li.change span.content{
+    width: 96%;
+    height: 55px;
+    border: 1px solid #000;
+    margin-left: 2%;
+    margin-top: 5px;
+    padding-top: 3px;
+    cursor: auto;
+}
+.plan ul li.change p{
+    padding-top: 2px;
+    width:100%;
+}
+.plan .content_1 img{
+    padding: 4px;
+    background-color: #fff;
+}
+
+
+
+/*theme鑳屾櫙鑹叉洿鏀�*/
+
+/*璁捐end*/
+
+
+/*begin 鎾斁鍣�*/
+.dis_block{
+    display: block!important;
+}
+/*end 鎾斁鍣�*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* header{ */
+/*     width: 100%; */
+/*     height: 50px; */
+/*     text-align: center; */
+/*     border-bottom: 2px solid #000; */
+/*     line-height: 50px; */
+/*     font-size: 1.5rem; */
+/* } */
+.index .server{
+    overflow: hidden;
+    padding: 100px;
+    font-size: 1.5rem;
+    position: relative;
+}
+.index .server .serverTitle{
+    position: absolute;
+    line-height: 38px;
+}
+.index .server .ipScroll {
+    overflow-y: scroll;
+    height: 151px;
+    width: 500px;
+}
+.index #loadingAmt{
+    margin-left: 30px;
+}
+.index .chooseLogin{
+    padding: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.index .chooseLogin div{
+    padding: 30px 0;
+}
+.index .chooseLogin div i{
+    padding: 10px 30px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.index .chooseLogin div:first-child i{
+    padding: 10px 42px;
+}
+.index .login_lab{
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.index .login_btn1{
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+}
+.classChooseH .user{
+    font-size: 1.2rem;
+    padding: 0 40px;
+    float: right;
+    margin-right: 50px;
+    position: relative;
+    cursor: pointer;
+
+}
+.classChooseH .user i{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 9px
+}
+.classChooseH .user i:nth-of-type(1){
+    background: url(../images/ppt/people_fill.png) no-repeat;
+    background-size:100% 100%;
+    left: 5px;
+}
+.classChooseH .user i:nth-of-type(2){
+    background: url(../images/ppt/bottom.png) no-repeat;
+    background-size:100% 83%;
+    right: 4px;
+    top: 12px;
+    transform: rotateZ(180deg);
+    transition: 0.5s;
+}
+.classChooseH .user:hover i:nth-of-type(2){
+    transform: rotateZ(360deg);
+}
+.classChooseH .user .userMsg{
+    width: 150px;
+    height: 300px;
+    border: 2px solid orange;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    display: none;
+    z-index:100;
+}
+.classChoose .grade{
+    overflow: hidden;
+    padding: 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.classChoose .grade li{
+    float: left;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.classChoose .grade li.active{
+    color: green;
+}
+.classChoose .classTime ul{
+    display: none;
+}
+.classChoose .classTime ul.dis{
+    display: block;
+}
+.classChoose .classTime{
+    overflow: hidden;
+    padding: 30px;
+    font-size: 1.2rem;
+}
+.classChoose .classTime ul li{
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin: 0 15px;
+    color: #1ae01a;
+    cursor: pointer;
+}
+.classChoose .classTime .span_one{
+    height: 40px;
+    line-height: 40px;
+}
+
+
+.functionChoose .rtButton{
+    position: fixed;
+    right: 0;
+    top: 80px;
+    padding: 20px 0 20px 30px;
+    font-size: 1.3rem;
+    border: 1px solid #ccc;
+    border-radius: 30px 0 0 30px;
+    border-right: none;
+    font-weight: 700;
+    color: #26d626;
+    cursor: pointer;
+}
+.functionChoose .ul_one{
+    margin: 200px auto;
+    width: 80%;
+    overflow: hidden;
+    text-align: center;
+}
+.functionChoose .ul_one li{
+    display: inline-block;
+    padding: 60px;
+    border:1px solid #ccc;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: #000;
+    cursor: pointer;
+    margin: 0 32px;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    transition: 0.5s;
+}
+.functionChoose .ul_one li:hover{
+    background-color: #6cc24d;
+    color:#fff;
+    font-weight:700;
+    opacity: 0.7;
+}
+
+.pptPro body{
+    background:url(../images/ppt/pptPro_bg.png) repeat-y;
+    background-size: 100%;
+    width: 1200px;
+    margin: 0 auto;
+}
+.pptPro .content{
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+.pptPro .content .left_1{
+    height: 765px;
+    width: 715px;
+    float: left;
+    background: url(../images/ppt/pptPro_bg2.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top:50%;
+}
+.pptPro .content .right_1{
+    height: 765px;
+    width: 430px;
+    float: right;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+.pptPro .content .left_1 ul{
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    right: 30px;
+    top: 50px;
+}
+.pptPro .content .left_1 ul li{
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    padding: 15px 25px;
+    cursor: pointer;
+}
+.pptPro .content .left_1 ul li img{
+    width:100%;
+    height: 100%;
+}
+.pptPro .content .left_1 .volume{
+    position: absolute;
+    right: 20px;
+    top: 141px;
+    padding: 0 12px;
+    background: #66637b;
+    border-radius: 0 0 30px 30px;
+    border-top: none;
+    z-index: 2;
+}
+.pptPro .pageNum{
+    position: absolute;
+    bottom: 150px;
+    color: #fff;
+    left: 13px;
+    font-size: 0.8rem;
+}
+.pptPro .ui-widget-header{
+    background-color: #998df9;
+}
+.pptPro .content .left_1 .volume #slider-vertical{
+    height: 100px!important;
+    width: 1px;
+    border-color:#998df9 ;
+}
+.pptPro .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    bottom: 60%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 16px #a65cfb;
+    background: #998df9;
+    border: none;
+}
+.pptPro .ui-slider-vertical .ui-slider-handle{
+    margin-left: -.3rem;
+}
+.content .leftBtn{
+    position: absolute;
+    left: -1px;
+    top: 150px;
+    z-index: 1;
+    width: 120px;
+    height: 60px;
+    border: 1px solid #000;
+    background: #fff;
+    border-radius: 0 30px 30px 0;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.content .score{
+    top:260px;
+}
+
+
+/*鑰冨嫟椤甸潰鏍峰紡begin*/
+.attendance{
+    overflow-y: auto;
+}
+.attendancePage{
+    border:1px solid #000;
+    margin: 20px 30px;
+    position: relative;
+}
+.attendancePage ul{
+    overflow: hidden;
+    padding: 80px;
+}
+.attendancePage li{
+    float: left;
+    width: 100px;
+    margin: 64px;
+}
+.attendancePage li span{
+    display: block;
+}
+.attendancePage li span:nth-of-type(1){
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+.attendancePage li span:nth-of-type(2){
+    width: 80px;
+    margin-left: 10px;
+    text-align: center;
+    height: 30px;
+    border: 1px solid #000;
+    line-height: 30px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+.attendancePage a{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -101px;
+}
+/*鑰冨嫟椤甸潰鏍峰紡end*/
+
+
+/*PPT鎾斁鍣ㄦ牱寮廱egin*/
+.bofanqi{
+    overflow: hidden;
+    width: 703px;
+    height: 729px;
+    margin: 18px 0 0 5px;
+    background: #fff;
+    border-radius: 172px;
+    position: relative;
+}
+.bofanqi .listRight{
+    position: absolute;
+    width: 58px;
+    height: 765px;
+    right: 0;
+    background-color: #242042;
+    opacity: 0.7;
+    z-index:1;
+}
+.bofanqi .listRight .listCont{
+    width: 0;
+    height: 390px;
+    background-color: #242042;
+    opacity: 0.7;
+    position: absolute;
+    right:0;
+    bottom: 130px;
+    transition: 1s;
+    border-radius: 25px;
+}
+.bofanqi .listRight .listCont.active{
+    width: 240px;
+}
+.bofanqi .listRight .listCont div{
+    width: 200px;
+    height: 350px;
+    padding: 20px;
+}
+.bofanqi .listRight .listCont div i{
+    padding: 8px 12px;
+    background: #998df9;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    color: #fff;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.bofanqi .listRight span{
+    position: absolute;
+    left: 17px;
+    cursor: pointer;
+}
+.bofanqi .listRight span:nth-of-type(1){
+    bottom: 200px;
+}
+.bofanqi .listRight span:nth-of-type(2){
+    bottom: 280px;
+}
+.bofanqi .listRight span:nth-of-type(3){
+    bottom: 360px;
+}
+.bofanqi .listRight span:nth-of-type(4){
+    bottom: 420px;
+}
+.bofanqi .listRight span:nth-of-type(5){
+    bottom: 500px;
+}
+.ds_n{
+    display: none;
+}
+.editor_box {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    border: 1px solid #d4d4d4;
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.pptPro .editor_box {
+    background:none;
+    border: none;
+}
+.pptPro .left_1 .bottomTitle{
+    position: absolute;
+    text-align: center;
+    height: 68px;
+    left: 50%;
+    top: -29px;
+    line-height: 68px;
+    font-size: 2rem;
+    color: #fff;
+    background: #50504a;
+    border-radius: 45px;
+    padding: 0 30px;
+    z-index: 1;
+}
+.pptPro .left_1 .bottomTitle .drop {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -12px;
+    background: #a0a087;
+    border-radius: 50%;
+    top: 28px;
+    border: 5px solid #50504a;
+}
+.pptPro .left_1 .bottomTitle .rightDrop {
+    right: -12px;
+    left: initial;
+}
+.pptPro .left_1 .bottomTitle i.num {
+    border: 1px solid #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin-top: 13px;
+    border-radius: 40px;
+}
+.pptPro .left_1 .bottomTitle span {
+    float: left;
+    margin-left: 10px;
+}
+/*PPT鎾斁鍣ㄦ牱寮廵nd*/
+.ppt .videoBegin{
+    position: absolute;
+    color: #fff;
+    z-index: 1;
+    width: 40%;
+    left: 50%;
+    margin-left: -20%;
+    text-align: center;
+    top: 38%;
+    font-size: 1rem;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.ppt .audioBegin{
+    color: #4d8227;
+    z-index: 1;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 55px;
+}
+
+
+
+/*璇磋瑙嗛*/
+/*.talkVideo header{*/
+    /*width: 100%;*/
+    /*background-color: #6455d3;*/
+    /*height: 75px;*/
+/*}*/
+/*.talkVideo .headerCont{*/
+     /*width: 1200px;*/
+     /*height: 75px;*/
+     /*margin: 0 auto;*/
+     /*position: relative;*/
+ /*}*/
+/*.talkVideo .headerCont .user{*/
+    /*height: 100%;*/
+    /*line-height: 75px;*/
+/*}*/
+/*.talkVideo .headerCont .user .userName{*/
+    /*color: #fff;*/
+    /*font-size: 1rem;*/
+    /*padding: 10px 30px;*/
+    /*position: relative;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.talkVideo .headerCont .user .userName:before{*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*width: 25px;*/
+    /*height: 25px;*/
+    /*background: url(../images/userIcon.png) no-repeat;*/
+    /*background-size: 100% 100%;*/
+    /*left: 0;*/
+    /*top: 7px;*/
+/*}*/
+/*.talkVideo .headerCont .user .userName:after{*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*width: 20px;*/
+    /*height: 10px;*/
+    /*background: url(../images/downIcon.png) no-repeat;*/
+    /*background-size: 100% 100%;*/
+    /*right: 0;*/
+    /*top: 16px;*/
+    /*transition: 0.5s*/
+/*}*/
+/*.talkVideo .headerCont .user:hover .userName::after{*/
+    /*transform: rotateZ(180deg);*/
+/*}*/
+/*.talkVideo .headerCont .logo{*/
+    /*width: 115px;*/
+    /*height: 100%;*/
+    /*line-height: 75px;*/
+    /*color: #fff;*/
+    /*font-size: 1rem;*/
+    /*font-style: italic;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.talkVideo .headerCont .logo img*/
+/*{*/
+    /*transform: rotate(90deg);*/
+    /*width: 32px;*/
+/*}*/
+/*.talkVideo .headerCont .classTitle{*/
+    /*float: left;*/
+    /*width: 976px;*/
+    /*height: 75px;*/
+    /*line-height: 75px;*/
+    /*color: #fff;*/
+    /*font-size: 2rem;*/
+    /*font-weight: 700;*/
+/*}*/
+/*.talkVideo content{*/
+    /*display: block;*/
+    /*width: 1200px;*/
+    /*margin: 0 auto;*/
+    /*height: 100%;*/
+/*}*/
+/*.talkVideo content .videoCont{*/
+    /*width: 744px;*/
+    /*height: 542px;*/
+    /*margin:88px auto 0 auto ;*/
+    /*color: #fff;*/
+    /*font-weight:700;*/
+    /*position: relative;*/
+/*}*/
+/*.talkVideo .vjs-default-skin .vjs-slider{*/
+    /*background-color: initial;*/
+/*}*/
+/*.talkVideo .vjs-default-skin.vjs-has-started .vjs-control-bar{*/
+    /*height: 70px;*/
+/*}*/
+/*.talkVideo .vjs-default-skin .vjs-control-bar{*/
+    /*height: 70px;*/
+    /*display: block;*/
+    /*background-color: rgba(30, 30, 103, 0.8);*/
+    /*padding-top: 12px;*/
+    /*color: #fff;*/
+    /*font-weight: 700;*/
+    /*font-size: 1.2rem;*/
+/*}*/
+/*.talkVideo .video-js .vjs-tech{*/
+    /*box-shadow: 0 5px 20px #5d5d5d;*/
+/*}*/
+/*.talkVideo .vjs-default-skin .vjs-big-play-button{*/
+    /*left: 50%;*/
+    /*margin-left: -63px;*/
+    /*top: 35%;*/
+    /*background-color: rgba(30, 30, 103, 0.7);*/
+    /*border:none;*/
+    /*width: 104px;*/
+    /*height: 104px;*/
+/*}*/
+/*.talkVideo .video-js{*/
+    /*background: url(../images/videoBg.png) no-repeat;*/
+/*}*/
+/*.talkVideo .vjs-default-skin .vjs-seek-handle:before{*/
+    /*width: 15px;*/
+    /*height: 14px;*/
+    /*background: #00ffff;*/
+    /*border-radius: 50%;*/
+/*}*/
+/*.talkVideo .vjs-default-skin .vjs-big-play-button:before{*/
+    /*line-height: 3.6em;*/
+/*}*/
+/*.talkVideo .vjs-default-skin .vjs-progress-control{*/
+    /*top:0;*/
+    /*height: 5px;*/
+/*}*/
+/*.talkVideo .vjs-default-skin .vjs-play-progress{*/
+    /*background: #06f5aa;*/
+/*}*/
+
+
+/*.talkVideo .videoCont .videoBtn{*/
+    /*position: absolute;*/
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*bottom: 15px;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.talkVideo .speed{*/
+    /*background: url(../images/kuaijin.png) no-repeat;*/
+    /*background-size: 100%;*/
+    /*left: 258px;*/
+/*}*/
+/*.talkVideo .rewindDown{*/
+    /*background: url(../images/kuaitui.png) no-repeat;*/
+    /*background-size: 100%;*/
+    /*right: 150px;*/
+/*}*/
+/*.talkVideo .audioVideo{*/
+    /*background: url(../images/audioVideo.png) no-repeat;*/
+    /*background-size: 100%;*/
+    /*right: 38px!important;*/
+    /*width: 30px!important;*/
+    /*height: 30px!important;*/
+    /*bottom: 25px!important;*/
+/*}*/
+
+
+/*.talkVideo .volume{*/
+    /*position: absolute;*/
+    /*right: 20px;*/
+    /*top: 141px;*/
+    /*padding: 0 12px;*/
+    /*background: #66637b;*/
+    /*border-radius: 0 0 30px 30px;*/
+    /*border-top: none;*/
+    /*z-index: 2;*/
+/*}*/
+.talkVideo header{
+    width: 100%;
+    background-color: #6455d3;
+    height: 75px;
+}
+.talkVideo .headerCont{
+    width: 1200px;
+    height: 75px;
+    margin: 0 auto;
+    position: relative;
+}
+.talkVideo .headerCont .user{
+    height: 100%;
+    line-height: 75px;
+}
+.talkVideo .headerCont .user .userName{
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 30px;
+    position: relative;
+    cursor: pointer;
+}
+.talkVideo .headerCont .user .userName:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url(../images/ppt/userIcon.png) no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    top: 7px;
+}
+.talkVideo .headerCont .user .userName:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: url(../images/ppt/downIcon.png) no-repeat;
+    background-size: 100% 100%;
+    right: 0;
+    top: 16px;
+    transition: 0.5s
+}
+.talkVideo .headerCont .user:hover .userName::after{
+    transform: rotateZ(180deg);
+}
+.talkVideo .headerCont .logo{
+    width: 115px;
+    height: 100%;
+    line-height: 75px;
+    color: #fff;
+    font-size: 1rem;
+    font-style: italic;
+    cursor: pointer;
+}
+.talkVideo .headerCont .logo img
+{
+    transform: rotate(90deg);
+    width: 32px;
+}
+.talkVideo .headerCont .classTitle{
+    float: left;
+    width: 976px;
+    height: 75px;
+    line-height: 75px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.talkVideo content{
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+.talkVideo content .videoCont{
+    width: 744px;
+    height: 542px;
+    margin:88px auto 0 auto ;
+    color: #fff;
+    font-weight:700;
+    position: relative;
+}
+.vjs-default-skin .vjs-slider{
+    background-color: initial;
+}
+.vjs-default-skin.vjs-has-started .vjs-control-bar{
+    height: 70px;
+}
+.vjs-default-skin .vjs-control-bar{
+    height: 70px;
+    display: block;
+    background-color: rgba(30, 30, 103, 0.8);
+    padding-top: 12px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+.video-js .vjs-tech{
+    box-shadow: 0 5px 20px #5d5d5d;
+}
+.vjs-default-skin .vjs-big-play-button{
+    left: 50%;
+    margin-left: -63px;
+    top: 35%;
+    background-color: rgba(30, 30, 103, 0.7);
+    border:none;
+    width: 104px;
+    height: 104px;
+}
+
+.vjs-default-skin .vjs-seek-handle:before{
+    width: 15px;
+    height: 14px;
+    background: #00ffff;
+    border-radius: 50%;
+}
+.vjs-default-skin .vjs-big-play-button:before{
+    line-height: 105px;
+}
+.vjs-default-skin .vjs-progress-control{
+    top:0;
+    height: 5px;
+}
+.vjs-default-skin .vjs-play-progress{
+    background: #06f5aa;
+}
+
+
+.videoCont .videoBtn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    cursor: pointer;
+}
+.speed{
+    background: url(../images/ppt/kuaijin.png) no-repeat;
+    background-size: 100%;
+    left: 35%;
+}
+.rewindDown{
+    background: url(../images/ppt/kuaitui.png) no-repeat;
+    background-size: 100%;
+    right: 20%;
+}
+.audioVideo{
+    background: url(../images/ppt/audioVideo.png) no-repeat;
+    background-size: 100%;
+    right: 38px!important;
+    width: 30px!important;
+    height: 30px!important;
+    bottom: 25px!important;
+}
+.volume{
+    position: absolute;
+    right: 20px;
+    top: 141px;
+    padding: 0 12px;
+    background: #66637b;
+    border-radius: 0 0 30px 30px;
+    border-top: none;
+    z-index: 2;
+}
+
+
+
+
+.audioBg {
+    background: url(../../images/ppt/audioBg.png) no-repeat -1px 4px #fff;
+    background-size: 65px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+}
+.audioBegin .audioBg_span{
+    width: 372px;
+    height: 40px;
+    border: 1px solid #000;
+    display: block;
+    margin-left: 26px;
+    margin-top: 5px;
+    border-radius: 0 25px 25px 0;
+    position: absolute;
+    z-index: 0;
+}
+.editor_box .moduleAudio{
+    border:none;
+    width: 400px;
+    position: absolute;
+}
+.ppt .editor_box{
+    overflow: hidden;
+}
+.audioText{
+    width: 100%;
+    right: 0;
+    border: 1px solid #000;
+    top: 70px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+    overflow: hidden;
+}
+.audioText p{
+    word-break:break-all;
+    text-align: left;
+}
+.audioText .audioText_btn{
+    text-align: center;
+    margin: 10px 145px 0 50px;
+    padding: 5px 10px;
+    border:1px solid #8169cd;
+    background: #8169cd;
+    color: #fff;
+    cursor: pointer;
+}
+.audioBegin .audioStar{
+    background: url(../../images/ppt/auidoStar.png) no-repeat;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 40px;
+}
+.test{
+    width:400px;
+    height:20px;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-200px;
+    margin-top:-10px;
+}
+.contral{
+    width:50px;
+    height:30px;
+    line-height:30px;
+    background:#3498DB;
+    cursor:pointer;
+    color:#fff;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-25px;
+    margin-top:-45px;
+    text-align:center;
+}
+.eyeHid{
+    display: none;
+}
+
+
+.list_l li{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.list_l li:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.list_l li.hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.list_l li:before,.list_l li:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+.list_l li:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.list_l li:hover:before,.list_l li:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+.superLink_a{
+    color: blue;
+}
+/*///////////////*/
+.qq a{
+    background:#fff;
+    color:#000;
+    border:none;
+    position:relative;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.qq a:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.qq a.hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.qq a:before,.qq a:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+.qq a:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.qq a:hover:before,.qq a:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+/*//////////////*/
+
+/*闅愯棌骞荤伅鐗囧垽鏂牱寮�*/
+.pptHidLeftList{
+    /*display: block;*/
+}
+
+.page_box i{
+    position: absolute;
+    width: 18px;
+    height: 17px;
+    background: url(../../images/ppt/closeEye.png) no-repeat;
+    left: 27px;
+    background-size: 100%;
+    display: none;
+}
+
+
+
+/* .roundedOne */
+.checkCont{
+    margin: 10px 0;
+}
+.roundedOne {
+    float: left;
+    width: 28px;
+    height: 28px;
+    position: relative;
+    /*margin: 20px auto;*/
+    background: #fcfff4;
+    background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.roundedOne label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    background: -moz-linear-gradient(top, #222222 0%, #45484d 100%);
+    background: -webkit-linear-gradient(top, #222222 0%, #45484d 100%);
+    background: linear-gradient(to bottom, #222222 0%, #45484d 100%);
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+}
+.roundedOne label:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #00bf00;
+    background: -moz-linear-gradient(top, #00bf00 0%, #009400 100%);
+    background: -webkit-linear-gradient(top, #00bf00 0%, #009400 100%);
+    background: linear-gradient(to bottom, #00bf00 0%, #009400 100%);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.roundedOne label:hover::after {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    opacity: 0.3;
+}
+.roundedOne input[type=checkbox] {
+    visibility: hidden;
+}
+.roundedOne input[type=checkbox]:checked + label:after {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+}
+
+/* end .roundedOne */
+
+
+
+
+.pptStyleCont{
+    position: relative;
+}
+.pptStyleCont li{
+    float: left;
+    margin: 8px;
+    position: relative;
+    padding: 5px;
+}
+
+.pptStyleCont ul{
+    width: 380px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 5px #ccc;
+    position: absolute;
+    left: -110px;
+    top: 18px;
+    z-index:99999999999;
+}
+.pptStyleCont li img{
+    margin: 0;
+}
+.pptStyleCont i {
+    font-style: normal;
+}
+.pptStyleCont span{
+    width: 80px;
+    margin: 10px 45px;
+    float: left;
+    padding: 10px;
+    background: #e2e0e0;
+    box-shadow: 1px 2px 5px #000;
+    border-radius: 8px;
+}
+
+.pptStyleCont li:before,.pptStyleCont li:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+.pptStyleCont li:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.pptStyleCont li:hover:before,.pptStyleCont li:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.wordArt{
+    position: relative;
+}
+.wordArtCont div{
+    width: 380px;
+    height: 360px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 5px #ccc;
+    position: absolute;
+    left: -110px;
+    top: 80px;
+    z-index:10001;
+}
+.wordArtCont div h1{
+    float: left;
+    padding: 23px;
+}
+.wordArtCont div h1:hover{
+    background: #efefef;
+}
+
+
+
+/*娴嬭瘯锛堣寰楀埆鏀捐繖閲岋級*/
+.pptStyleCont_list a[name='pptBgc']{
+    position: relative;
+    background: url(../../images/ppt/iconfont/pptStyleIcon_1.png) no-repeat center;
+    background-size: 100%;
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+    line-height: 1em;
+    border: 1px solid transparent;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.ppt a[name='pptBgc1']{
+    position: relative;
+    background: url(../../images/ppt/iconfont/pptStyleIcon_1.png) no-repeat center;
+    background-size: 100%;
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+    line-height: 1em;
+    border: 1px solid transparent;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.ppt a[name='pptBgc2']{
+    position: relative;
+    background: url(../../images/ppt/iconfont/pptIcon_055.png) no-repeat center;
+    background-size: 100%;
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+    line-height: 1em;
+    border: 1px solid transparent;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.pptStyleCont_list .select{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 100%;
+    background: url(../../images/ppt/colorselect.png) no-repeat;
+    background-size: 100%;
+    top: -1px;
+    right: -10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.ppt .select{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 100%;
+    background: url(../../images/ppt/colorselect.png) no-repeat;
+    background-size: 100%;
+    top: -1px;
+    right: -10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.pptStyleCont_list a[name="pptBgc"] .mark {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #000;
+    bottom: 2px;
+    left: 3px;
+}
+.ppt a[name="pptBgc1"] .mark,.ppt a[name="pptBgc2"] .mark {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #000;
+    bottom: -5px;
+    left: 1px;
+}
+
+.choosePptOpc{
+    position: absolute;
+    right: 11px;
+    width: 10px;
+    height: 30px;
+}
+.choosePptOpc i{
+    cursor: pointer;
+    background: url(../../images/ppt/colorselect.png) no-repeat center;
+    width: 8px;
+    height: 13px;
+    display: block;
+    border:1px solid #ccc;
+}
+.choosePptOpc i:nth-of-type(1){
+    transform: rotate(180deg);
+}
+.choosePptOpc i:nth-of-type(2){
+    height: 14px;
+}
+.choosePptOpc i:hover{
+    border-color: red;
+}
+.choosePptOpc i:hover{
+    border-color: red;
+}
+input[name="pptOpacity"]{
+    float: right;
+    width: 40%;
+}
+/*娴嬭瘯锛堣寰楀埆鏀捐繖閲岋級*/
+
+
+.ppt .list_l{
+    height: 170px;
+    overflow-y: scroll;
+}
+
+.ppt .iconFont_cont i{
+	padding: 10px 6px;
+}
+
+
+.copyText {
+    height: 30px;
+    width: 95px;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px #000;
+    cursor: pointer;
+    margin: 8px;
+    margin-left: 40px;
+}
+
+
+ .audioIcon{
+ 	background: url(../../images/ppt/iconfont/pptIcon_37.png) no-repeat;
+ 	background-size:100%;
+ 	width:100%;
+ 	height:100%;
+ 	position:relative;
+ }
+ .audioCont{
+        width: 300px;
+        height: 40px;
+        border: 1px solid #ccc;
+        position: relative;
+        background: -webkit-linear-gradient(#fff, #ccc);
+        background: -o-linear-gradient(#fff, #ccc);
+        background: -moz-linear-gradient(#fff, #ccc);
+        background: linear-gradient(#fff, #ccc);
+        display:none;
+        position: absolute;
+    	bottom: -50px;
+    	left: -105px;
+    }
+    .star{
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin: 10px 13px;
+        background: url(../../images/ppt/iconfont/pptIcon_32.png);
+        background-size:100%;
+    }
+    .slider{
+        width: 100px;
+        float: left;
+        height: 26px;
+        background: #ccc;
+        margin: 7px 0;
+        cursor: pointer;
+        position: relative;
+    }
+    .sliderY{
+        width: 55px;
+        float: left;
+        height: 10px;
+        background: #ccc;
+        margin: 15px 0;
+        cursor: pointer;
+        position: relative;
+    }
+    .sliderTow{
+        width: 0;
+        position: absolute;
+        height: 26px;
+        background: -webkit-linear-gradient(#777, #ccc) ;
+        background: -o-linear-gradient(#777, #ccc);
+        background: -moz-linear-gradient(#777, #ccc);
+        background: linear-gradient(#777, #ccc);
+        left:0;
+        top:0;
+        cursor: pointer;
+    }
+    .sliderTowY{
+        width: 0;
+        position: absolute;
+        height: 10px;
+        background: -webkit-linear-gradient(#777, #ccc) ;
+        background: -o-linear-gradient(#777, #ccc);
+        background: -moz-linear-gradient(#777, #ccc);
+        background: linear-gradient(#777, #ccc);
+        left:0;
+        top:0;
+        cursor: pointer;
+    }
+    .time{
+        float: left;
+        width: 40px;
+        height: 20px;
+        margin: 10px;
+    }
+    .yinliang{
+        float: left;
+        width: 20px;
+        height: 20px;
+        background: url(../../images/ppt/iconfont/pptIcon_35.png);
+        background-size: 100%;
+        margin: 10px 0;
+    }
+    .more{
+        height:100%;
+        float: right;
+        width: 15px;
+        background: url(../../images/ppt/iconfont/pptIcon_36.png) no-repeat 0 15px;
+        background-size: 100%;
+        cursor: pointer;
+    }
+    .more:hover{
+        background: -webkit-linear-gradient(#ccc, #fff) ;
+        background: -o-linear-gradient(#ccc, #fff);
+        background: -moz-linear-gradient(#ccc, #fff);
+        background: linear-gradient(#ccc, #fff);
+    }
+    .textCont{
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        background: #eaeaea;
+        top: 40px;
+        overflow-y: scroll;
+        display: none;
+        box-shadow: rgb(0, 0, 0) 1px 5px 40px;
+    }

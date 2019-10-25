@@ -1,0 +1,155 @@
+table{
+	empty-cells:show;
+	border-collapse: collapse;
+	margin:0 auto;
+}
+table td{
+	white-space: nowrap;
+    padding: 5px 6px;
+}
+
+.lessonUpload .topCont label {
+    float: left;
+    padding: 40px 57px;
+}
+
+.lessonUpload .topCont span {
+    font-size: 1rem;
+    margin-right: 5px;
+    color: #000;
+}
+
+.titleTd{
+	background: rgba(115,181,255,.5);
+}
+
+.titleTr td{
+	background: rgba(115,181,255,.5);
+}
+
+.lessonUpload select {
+    width: 198px;
+    height: 29px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.lessonUpload .page {
+    text-align: center;
+    margin: 40px auto 0 auto;
+    width: 800px;
+}
+
+.lessonUpload .pageMenu {
+    display: inline-block;
+    width: 90%;
+    margin-top: 22px;
+}
+
+.lessonUpload .clearfix {
+    zoom: 1;
+}
+
+.lessonUpload .pageMenu li.active {
+    border: solid thin #998df9;
+    background-color: #998df9;
+    color: white;
+}
+
+.lessonUpload .pageMenu li.disabled {
+    background-color: #fff;
+    cursor: not-allowed;
+    border: none;
+}
+
+.lessonUpload .pageMenu li.last{
+	margin-top: -1px;
+}
+
+.lessonUpload .pageMenu li {
+    margin: 3px;
+    float: left;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
+    color: #998df9;
+}
+
+.lessonUpload .page .keuInput {
+    padding: 0 5px;
+    width: 85px;
+    border: solid thin #ddd;
+    height: 29px;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.lessonUpload .page .btnSure {
+    padding: 4px 8px;
+    color: #998df9;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+    background: #fff;
+    position: relative;
+}
+
+
+
+*{
+    margin: 0;
+    padding:0;
+}
+li{
+    list-style-type: none;
+    float: left;
+}
+i{
+    font-style: normal;
+    float: left;
+}
+.content{
+    border-top: 1px solid #000;
+    float: left;
+    border-left: 1px solid #000;
+    text-align: center;
+    border-right: 1px solid #000;
+}
+
+.xueqi,.kemu,.nianji,.cengci{
+    width: 100px;
+    float: left;
+}
+.keci{
+    float: left;
+}
+.xueqi span,.kemu span,.nianji span,.cengci span,.keci span{
+    width: 100%;
+    float: left;
+    border-right: 1px solid #000;
+    border-bottom:1px solid #000;
+}
+ul{
+
+}
+.keci i{
+    width: 39px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(115,181,255,.5);
+}
+::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+    border-radius: 10px;
+    background-color: rgba(204, 204, 204, 0);
+}

@@ -1,0 +1,160 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-08 08:51:54
+*/
+html{
+    height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    background-color: #eee;
+    height: calc(100% - 20px);
+}
+
+/*-----begin 发布作业 ------*/
+.upload_box{
+    padding: 10px;
+    text-align: center;
+}
+.upload_box .file_name{
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.upload_box .file_box,
+.upload_box .delete_file_btn{
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    line-height: 20px;
+    margin: 0 5px 10px;
+}
+.upload_box .file_box input[type="file"]{
+    display: none;
+}
+
+.ppt_box{
+    margin-top: 10px;
+    height: calc(100% - 165px);
+    position: relative;
+    overflow: hidden;
+}
+.ppt_box .outline_box{
+    position: absolute;
+    left: 0;
+    top: 2px;
+    height: calc(100% - 2px);
+    overflow: auto;
+    border-right: 1px solid #ccc;
+}
+.not_scrollar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.ppt_box .outline_list{
+    width: 120px;
+    height: 100%;
+}
+.ppt_box .outline_list .outline{
+    position: relative;
+    width: 80px;
+    height: 60px;
+    border: 2px solid #ccc;
+    margin: 10px 25px 10px;
+    cursor: pointer;
+}
+.ppt_box .outline_list .outline.active{
+    border-color: rgb(142,130,210);
+}
+.ppt_box .outline_list .outline:before{
+    content: attr(order);
+    display: block;
+    position: absolute;
+    width: 30px;
+    left: -30px;
+    text-align: center;
+    top: 20px;
+    color: #222;
+}
+.ppt_box .outline img{
+    width: 100%;
+}
+.ppt_box .iframe_box{
+    margin-left: 121px;
+    margin-right: 270px;
+    height: 100%;
+    transition: margin 1s;
+}
+.ppt_box .iframe_box[note-show="0"]{
+    margin-right: 0;
+}
+.ppt_box .iframe_box iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.note{
+    width: 270px;
+    height: calc(100% - 2px);
+    background-color: rgba(255,255,255,0.5);
+    border-left: 1px solid #ccc;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+.note .note_item{
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    padding: 16px;
+    overflow: auto;
+}
+.note .note_item p{
+    margin-top: 10px;
+}
+.note .close_btn{
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    margin-top: -30px;
+    width: 32px;
+    height: 60px;
+    background-color: transparent;
+    border: 0;
+    background-image: url(../images/v2_preview_cnt_arrow.png);
+    background-repeat: no-repeat;
+    background-size: 64px 60px;
+    cursor: pointer;
+}
+.note[state="0"]{
+    margin-right: -270px;
+    transition: margin 1s;
+}
+.note[state="1"]{
+    margin-right: -0;
+    transition: margin 1s;
+}
+.note .close_btn[state="1"]{
+    background-position: 0 center;
+}
+.note .close_btn[state="0"]{
+    background-position: -32px center;
+}
+
+.uploadProcess{
+    display: block;
+    position: absolute;
+    bottom: -21px;
+    font-size: 12px;
+    transform: translate(-50%);
+    left: 50%;
+}
+.not_scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

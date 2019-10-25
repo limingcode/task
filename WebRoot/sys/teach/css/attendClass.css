@@ -1,0 +1,494 @@
+body, button, select, textarea, input, label, option, fieldset, legend{font-family: 微软雅黑E\8F6F\96C5\9ED1,Tahoma,Verdana}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+textarea{resize: none}
+.clear{height:1px;overflow:hidden;clear:both;}
+a,img{border:0;}
+a{color: #666;text-decoration: none;}
+li{list-style-type:none;}
+.fl{float:left;}
+.fr{float:right;}
+.nf{clear:both;}
+.red{color:red;font-weight:bold;}
+.green{color:#00b500;font-weight:bold;}
+.ds{display:block;}
+.hid{overflow:hidden;}
+.clearfix{*zoom:1}
+.clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
+.jianbian{background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f4f4f4),color-stop(100%,#eee));background: -webkit-linear-gradient(top,#f4f4f4 0,#eee 100%);background: linear-gradient(to bottom,#f4f4f4 0,#eee 100%);}
+.bottomshadow{border-bottom: solid 1px #B3B3B3;-webkit-box-shadow: 0 1px 1px 0 #DFDFDF;box-shadow: 0 1px 1px 0 #DFDFDF;}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #a995fe;
+}
+/*全屏样式*/
+/*-webkit-full-screen {*/
+
+    /*!* properties *!*/
+/*}*/
+/*:-moz-full-screen {*/
+    /*!* properties *!*/
+/*}*/
+/*:-ms-fullscreen {*/
+    /*!* properties *!*/
+/*}*/
+/*:full-screen { !*pre-spec *!*/
+    /*!* properties *!*/
+/*}*/
+/*:fullscreen { !* spec *!*/
+    /*!* properties *!*/
+/*}*/
+/*!* deeper elements *!*/
+/*:-webkit-full-screen video {*/
+    /*width: %;*/
+    /*height: %;*/
+/*}*/
+/*!* styling the backdrop*!*/
+/*::backdrop {*/
+    /*!* properties *!*/
+/*}*/
+/*::-ms-backdrop {*/
+    /*!* properties *!*/
+/*}*/
+
+
+/*上课页面样式*/
+.attendClass{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    background:#ccc;
+}
+.attendClass .pepLogo li{
+    position: relative;
+    z-index:9999;
+}
+.attendClass .pepLogo .numOne li span{
+    width:0.445312rem;
+    height: 0.445312rem;
+    display: block;
+    margin-left: 0.132812rem;
+    margin-top: 0.070312rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.attendClass .pepLogo .numTow li:nth-of-type(1) span{
+    width:0.351562rem;
+    height: 0.351562rem;
+    display: block;
+    margin-left: 0.117188rem;
+    margin-top: 0.0625rem;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.attendClass .pepLogo .numTow li:nth-of-type(2) span{
+    width:0.28125rem;
+    height: 0.28125rem;
+    display: block;
+    margin-left: 0.09375rem;
+    margin-top: 0.039062rem;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.attendClass .pepLogo .numOne li span img,
+.attendClass .pepLogo .numTow li span img{
+    width: 100%;
+    height: 100%;
+}
+.attendClass .numOne{
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+.attendClass .numTow{
+    position: relative;
+    float: left;
+    display: none;
+}
+.attendClass .numOne li{
+    background: url(../images/ppt/fullScreen022.png);
+    background-size: 100%;
+    cursor: pointer;
+    width: 0.695312rem;
+    height:0.601562rem;
+    float: left;
+    margin-top: 0.195312rem;
+}
+.attendClass .numOne i{
+    background: url(../images/ppt/goldHut.png);
+    position: absolute;
+    background-size: 100%;
+    width:0.234375rem;
+    height:0.234375rem;
+    left: 0.234375rem;
+    top:0.03125rem;
+    z-index:10000;
+}
+.attendClass .numTow li:nth-of-type(1){
+    background: url(../images/ppt/fullScreen033.png) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    width: 0.585938rem;
+    height:0.507812rem;
+    float: left;
+    margin-top: 0.25rem;
+}
+.attendClass .numTow li:nth-of-type(2){
+    background: url(../images/ppt/fullScreen033.png);
+    background-size: 100%;
+    cursor: pointer;
+    width: 0.46875rem;
+    height:0.40625rem;
+    float: left;
+    margin-top: 0.304688rem;
+}
+
+.attendClass .listContLeft{
+    background: url(../images/ppt/fullScreen01.png) no-repeat;
+    background-size: 100% 100%;
+    width: 0.492188rem;
+    height: 3.195312rem;
+    position: absolute;
+    top:0.734375rem;
+    left:0.109375rem;
+    display: none;
+}
+.attendClass .listContLeft li{
+    width: 0.3125rem;
+    height: 0.515625rem;
+    position: absolute;
+    left: 0.085938rem;
+    cursor: pointer;
+
+}
+.attendClass .listContLeft li:nth-of-type(1){
+    background-image: url(../images/ppt/icons_05.png);
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    top:0.351562rem;
+}
+.attendClass .listContLeft li:nth-of-type(1).active{
+    background-image:url(../images/ppt/icons_01.png);
+}
+.attendClass .listContLeft li:nth-of-type(2){
+    background-image: url(../images/ppt/icons_06.png);
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    top:1.054688rem;
+}
+.attendClass .listContLeft li:nth-of-type(2).active{
+    background-image: url(../images/ppt/icons_02.png);
+}
+.attendClass .listContLeft li:nth-of-type(3){
+    background-image: url(../images/ppt/icons_07.png);
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 1.78125rem;
+}
+.attendClass .listContLeft li:nth-of-type(3).active{
+    background-image:url(../images/ppt/icons_03.png);
+}
+.attendClass .listContLeft li:nth-of-type(4){
+    background-image: url(../images/ppt/icons_08.png);
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    top:2.5rem;
+}
+.attendClass .listContLeft li:nth-of-type(4).active{
+    background-image: url(../images/ppt/icons_04.png);
+}
+.attendClass .penNum{
+    position: absolute;
+    width: 0.234375rem;
+    height: 0.6875rem;
+    background: #ab88fb;
+    right: -0.3125rem;
+    border-radius: 0.039062rem;
+    display: none;
+}
+.attendClass .penNum i{
+    float: left;
+    width: 0.234375rem;
+    height: 0.229166rem;
+    position: relative;
+}
+.attendClass .penNum i:nth-of-type(1):before{
+    content: '';
+    float: left;
+    width: 0.03125rem;
+    height: 0.03125rem;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 0.09375rem;
+    left: 0.09375rem;
+}
+.attendClass .penNum i:nth-of-type(2):before{
+    content: '';
+    float: left;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 0.085938rem;
+    left: 0.078125rem;
+}
+.attendClass .penNum i:nth-of-type(3):before{
+    content: '';
+    float: left;
+    width: 0.09375rem;
+    height: 0.09375rem;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 0.0625rem;
+    left: 0.0625rem;
+}
+
+
+.attendClass .thumbnail{
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 0.78125rem;
+    padding: 0.078125rem;
+    height: 2.929688rem;
+    right: -1.03125rem;
+    background: #a995fe;
+    opacity: 0.8;
+    top: -0.234375rem;
+    border-radius: 0.117188rem;
+    display: none;
+}
+.attendClass .thumbnail i{
+    margin-top: 0.078125rem ;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: 0.78125rem;
+    height: 0.453125rem;
+}
+.attendClass .thumbnail i img{
+    width: 0.78125rem;
+    height: 0.453125rem;
+}
+.attendClass .thumbnail i:before,.attendClass .thumbnail i:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: red;
+    transition:400ms ease all;
+}
+.attendClass .thumbnail i:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.attendClass .thumbnail i:hover:before,.attendClass .thumbnail i:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.attendClass .block{
+    display: block;
+}
+
+
+/*加分弹出层样式*/
+.addBranch{
+    background: rgba(87, 75, 150, 0.5);
+    width: calc(100% - 0.695312rem);
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-size: 100% 100%;
+    position: absolute;
+    z-index:10002;
+    display: none;
+    margin-left: 0.695312rem;
+}
+.addBranch .student_list ul{
+    overflow: hidden;
+}
+.addBranch .student_list li{
+    width: 1.984375rem;
+    height: 2.1875rem;
+    float: left;
+    cursor: pointer;
+    position: relative;
+}
+.addBranch .student_list li .user_icon{
+    background: url(../images/kaoqin/student_img_bg1.png) no-repeat;
+    background-size: 100%;
+    width: 1.273438rem;
+    height: 1.078125rem;
+    float: left;
+    position: absolute;
+    z-index:2;
+    left: 0.390625rem;
+    top: 0.585938rem;
+}
+.addBranch .student_list li .user_icon1{
+    background: url(../images/kaoqin/student_img_bg2.png) no-repeat;
+    background-size: 100%;
+    width: 1.273438rem;
+    height: 1.078125rem;
+    float: left;
+    position: absolute;
+    z-index:2;
+    left: 0.390625rem;
+    top: 0.585938rem;
+}
+.addBranch .student_list li .zhedan{
+    width: 0.78125rem;
+    height: 0.78125rem;
+    float: left;
+    z-index:2;
+    left: 50%;
+    top : 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    position: absolute;
+    border-radius: 50%;
+}
+.addBranch .student_list li .guangHuan{
+    background: url(../images/addBranch/addBranch01.png) no-repeat;
+    background-size: 105%;
+    width: 1.984375rem;
+    height: 2.1875rem;
+    position: absolute;
+    z-index:0;
+    /*display: none;*/
+    left: 50%;
+    top : 50%;
+    transform: translate(-50%,-50%);
+}
+.addBranch .student_list li .guangHuanTow{
+    background: url(../images/addBranch/addBranch02.png) no-repeat;
+    background-size: 105%;
+    width: 1.984375rem;
+    height: 2.1875rem;
+    position: absolute;
+    z-index:0;
+    /*display: none;*/
+    left: 50%;
+    top : 50%;
+    transform: translate(-50%,-50%);
+
+}
+.addBranch .student_list li img{
+    width: 0.78125rem;
+    height: 0.78125rem;
+    border-radius: 50%;
+    margin-left: 0.25rem;
+    margin-top: 0.132812rem;
+}
+.attendClass .closePage{
+    background: url(../images/ppt/closePage.png) no-repeat;
+    background-size: 100%;
+    width: 0.30625rem;
+    height: 0.30625rem;
+    position: absolute;
+    right: 11px;
+    top: 9px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/*泽钦添加*/
+.kaoqin_box.zoomIn.animated{
+  animation-duration: 0.1s!important;
+}
+.add_branch .kaoqin .student_list li:after{
+    content:"";
+    background-image: url(../images/addBranch/addBranch01.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 0%;
+    height: 0%;
+    z-index: -1;
+    left: 50%;
+    top : 50%;
+    transform: translate(-50%,-50%);
+}
+.add_branch .kaoqin .student_list li .before{
+    content: "+1";
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    background-color: red;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    right: 20%;
+    z-index: 99;
+    display: none;
+    display: block;
+    animation: branch 1.5s;
+}
+.add_branch .kaoqin .student_list li.branch_active:after{
+    animation: user_icon1 0.5s,user_icon2 1s linear infinite 0.5s;
+}
+@keyframes user_icon1 {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 155%;
+        height: 155%;
+    }
+}
+@keyframes user_icon2 {
+    0%{
+        width: 155%;
+        height: 155%;
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        width: 155%;
+        height: 155%;
+        transform:translate(-50%,-50%) rotate(-360deg);
+    }
+}
+@keyframes branch {
+    0%{
+        top: 40%;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        top: 0%;
+    }
+}

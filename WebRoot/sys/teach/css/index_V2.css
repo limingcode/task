@@ -1,0 +1,490 @@
+
+
+.lessonsChoose{
+    height: 100%;
+    overflow: hidden;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+.lessonsChoose body{
+    width: 100%;
+    height: 100%;
+    font-family: '宋体';
+    font-size: 14px;
+}
+.lessonsChoose header{
+    width: 100%;
+    background-color: #6455d3;
+}
+.lessonsChoose .headerCont{
+    width: 1200px;
+    height: 65px;
+    margin: 0 auto;
+    position: relative;
+}
+.lessonsChoose .headerCont .user{
+    height: 100%;
+    line-height: 65px;
+}
+.lessonsChoose .headerCont .user .userName{
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 30px;
+    position: relative;
+    cursor: pointer;
+}
+.lessonsChoose .headerCont .user .userName:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url(../images/userIcon.png) no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    top: 7px;
+}
+.lessonsChoose .headerCont .user .userName:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: url(../images/downIcon.png) no-repeat;
+    background-size: 100% 100%;
+    right: 0;
+    top: 16px;
+    transition: 0.5s
+}
+.lessonsChoose .headerCont .user:hover .userName::after{
+    transform: rotateZ(180deg);
+}
+.lessonsChoose .headerCont .logo{
+    height: 100%;
+    line-height: 65px;
+    color: #fff;
+    font-size: 1rem;
+    font-style: italic;
+    cursor: pointer;
+}
+.lessonsChoose .headerCont .classTitle{
+    position: absolute;
+    top: 30px;
+    left: 195px;
+}
+.lessonsChoose .headerCont .classTitle span{
+    width: 106px;
+    height: 106px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: block;
+    float: left;
+    margin-right: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+.lessonsChoose .headerCont .classTitle span i.iconImg{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #8b7cfb;
+    display: block;
+    margin: 10px 0 0 18px;
+}
+.lessonsChoose .headerCont .classTitle span i.iconTxt{
+    line-height: 35px;
+}
+.lessonsChoose .headerCont .classTitle span i.iconImg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto,105%;
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(1) i.iconImg{
+    background-image: url(../images/classLogo_1.png);
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(2) i.iconImg{
+    background-image: url(../images/classLogo_2.png);
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(3) i.iconImg{
+    background-image: url(../images/classLogo_3.png);
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(4) i.iconImg{
+    background-image: url(../images/classLogo_4.png);
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(5) i.iconImg{
+    background-image: url(../images/classLogo_5.png);
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(1) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(1) .iconImg{
+    background-image: url(../images/classLogo_1.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(2) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(2) .iconImg{
+    background-image: url(../images/classLogo_2.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(3) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(3) .iconImg{
+    background-image: url(../images/classLogo_3.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(4) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(4) .iconImg{
+    background-image: url(../images/classLogo_4.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(5) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(5) .iconImg{
+    background-image: url(../images/classLogo_5.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose content{
+    margin: 0 auto;
+    display: block;
+}
+.lessonsChoose content div span{
+    float: left;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    text-align: center;
+    padding: 3px 1px;
+}
+.lessonsChoose content div span.active{
+    border-color: #a995fe;
+}
+.grade span{
+    width: 72px;;
+}
+.levels span{
+    width: 72px;;
+}
+.term span{
+    width: 115px;;
+}
+.classTime span{
+    width: 38px;
+}
+.lessonsChoose content .top div i{
+    line-height: 42px;
+    margin-right: 27px;
+}
+.grade,.levels,.term,.classTime{
+    padding: 0;
+    border-bottom: 1px dashed #d6d0fc;
+}
+.classTime{
+    border-bottom: none;
+}
+.bottomCont:before{
+    content: '';
+    width: 1024px;
+    height: 30px;
+    display: block;
+}
+.bottomCont:after{
+    content: '';
+    width: 1024px;
+    height: 30px;
+    display: block;
+    background: url(../images/lin/indexNewIcon_11.png) no-repeat;
+    background-size: 80% 100%;
+    background-position: 97px -10px;
+    margin: 0 auto;
+}
+.bottomCont{
+    height: 600px;
+    background: url(../images/bottomBg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.bottomCont .bottom{
+    width: 1024px;
+    margin: 0 auto;
+    background: url(../images/bottomBg_2.png) no-repeat;
+    background-size: 100% 100%;
+    height: 600px;
+    position: relative;
+}
+.bottomIcon{
+    width: 540px;
+    position: absolute;
+    right: 33px;
+    top:50%;
+    margin-top: -178px;
+    display: none;
+}
+.bottomIcon img{
+    width: 120px;
+    margin: 12px 0 20px 90px;
+    cursor: pointer;
+}
+
+.bottom .bottomTitle{
+    width: 428px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 25px;
+    overflow-y: scroll;
+    display: none;
+    overflow-x: hidden;
+}
+.bottom .bottomTitle span{
+    float: left;
+    width: 260px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 45px;
+    margin: 10px 0 0 30px;
+    background: #a095fa;
+    font-size: 22px;
+    line-height: 40px;
+    padding-left: 20px;
+    color: #fff;
+    font-weight: 700;
+    font-family: cursive;
+    cursor: pointer;
+    position: relative;
+}
+.bottom .bottomTitle span p{
+	width:225px;
+	float:left;
+}
+.bottom .bottomTitle span img{
+    width: 25px;
+    float: left;
+    margin-right: 5px;
+}
+.bottom .bottomTitle span img:nth-of-type(1){
+
+    right: -45px;
+}
+.bottom .bottomTitle span img:nth-of-type(2){
+    right:-86px;
+ }
+.bottom .bottomTitle span img:nth-of-type(3){
+
+}
+
+.bottom .bottomTitle span:hover{
+    background: #f9f4de;
+    border-color: #786cd6;
+    color: #a095fa;
+}
+.bottom .bottomTitle span:hover .numBall{
+    background: #cdcaf7;
+}
+.bottom .iconCont{
+    width: 105px;
+    height: 30px;
+    float:right;
+    margin-right:-9px;
+    margin-top:18px;
+}
+
+
+
+
+.lessonsChoose .headerCont .classTitle span:hover .iconImg{
+// animation-name: bounce;
+// animation-duration: 0.5s;
+}
+.lessonsChoose .headerCont .user .userName .userName_opre{
+    display: none;
+    width: 130%;
+    background-color: rgba(213,201,255,0.8);
+    padding-bottom: 10px;
+    position: absolute;
+    top: 50px;
+    left: -15%;
+}
+.lessonsChoose .headerCont .user .userName .userName_opre li{
+    width: 100%;
+    padding-left: 36%;
+    margin-top: 10px;
+    line-height: 27px;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 20px center;
+}
+.lessonsChoose .headerCont .user .userName .userName_opre li a{
+    color: #fff;
+}
+.lessonsChoose .headerCont .user:hover .userName_opre{
+    display:block;
+}
+.lessonsChoose .headerCont .user .userName .userName_opre li:hover a{
+    color: #8b7cfb;
+}
+.lessonsChoose .userName_opre li:nth-child(1){
+    background-image: url(../images/lin/opre1.png);
+}
+.lessonsChoose .userName_opre li:nth-child(2){
+    background-image: url(../images/lin/opre2.png);
+}
+.lessonsChoose .userName_opre li:nth-child(3){
+    background-image: url(../images/lin/opre3.png);
+}
+.lessonsChoose .userName_opre li:nth-child(4){
+    background-image: url(../images/lin/opre4.png);
+}
+.lessonsChoose .userName_opre li:nth-child(1):hover{
+    background-image: url(../images/lin/opre11.png);
+}
+.lessonsChoose .userName_opre li:nth-child(2):hover{
+    background-image: url(../images/lin/opre22.png);
+}
+.lessonsChoose .userName_opre li:nth-child(3):hover{
+    background-image: url(../images/lin/opre33.png);
+}
+.lessonsChoose .userName_opre li:nth-child(4):hover{
+    background-image: url(../images/lin/opre44.png);
+}
+
+    .lessonsChoose .headerCont{
+        width: 1024px;
+    }
+    .lessonsChoose .headerCont .logo{
+        font-size: 14px;
+    }
+    .lessonsChoose .headerCont .user .userName{
+        font-size: 14px;
+    }
+    .lessonsChoose .headerCont .classTitle{
+        left: 230px;
+    }
+    .lessonsChoose .headerCont .classTitle span{
+        width: 90px;
+        height: 90px;
+        margin-right: 30px;
+    }
+    .lessonsChoose .headerCont .classTitle span i.iconImg{
+        width: 60px;
+        height: 60px;
+        margin: 10px 0 0 15px;
+    }
+    .lessonsChoose content{
+        width: 1024px;
+    }
+    .lessonsChoose content .top{
+        padding: 70px 0 0 95px;
+    }
+    .lessonsChoose content .top:only-child{
+        width: 100%;
+    }
+    .lessonsChoose content .top div i{
+        width: 50px;
+        line-height: 46px;
+        margin-right: 0;
+    }
+    .lessonsChoose content .top .grade,.lessonsChoose content .top .levels,.lessonsChoose content .top .term{
+        width: 850px;
+    }
+    .lessonsChoose content .top div{
+        width: 800px;
+        font-size: 14px;
+        color: #6f6e6e;
+        font-weight: 700;
+    }
+    .grade span,.levels span{
+        width: 60px;
+    }
+    .term span{
+        width: 83px;
+    }
+    .bottomCont{
+        padding-top: 0;
+        position: relative;
+    }
+    .bottomCont .bottom{
+        background-size: 2040px 100%;
+        position: relative;
+    }
+
+
+    .bottomCont .bottom{
+        background-image: url(../images/lin/bottomBg_2.png);
+        background-size: 1024px 100%;
+        position: relative;
+    }
+
+
+
+::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+    border-radius: 10px;
+    background-color: rgba(204, 204, 204, 0);
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.peopleOne{
+    background: url(../images/lin/indexNewIcon_9.png);
+    background-size: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    width: 60px;
+    height: 80px;
+    display: none;
+}
+.peopleTow{
+    background: url(../images/lin/indexNewIcon_10.png);
+    background-size: 100%;
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    width: 60px;
+    height: 80px;
+    display: none;
+}
+
+@media screen and (max-height:700px ) {
+    .bottomIcon{
+        width: 464px;
+        right: -30px;
+        top: 50%;
+        margin-top: -126px;
+    }
+    .bottomIcon img{
+        width: 100px;
+        margin:0 80px 0 0;
+    }
+}
+
+.bottomTitle span.active{
+    background: #f9f4de;
+    border-color:#786cd6;
+    color: #a095fa;
+}
+.numBall{
+	float: left;
+    width: 20px;
+    height: 20px;
+    background: #786cd6;
+    border-radius: 50%;
+    line-height: 20px;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 5px 0px -10px;
+}
+.numBall.active{
+	background: #cdcaf7;
+}
+.iconCont img{
+	width:30%;
+	cursor: pointer;
+}
+
+
+
+

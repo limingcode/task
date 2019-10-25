@@ -1,0 +1,24 @@
+#MyEclipse Hibernate Properties
+#Wed May 03 16:27:13 CST 2017
+sessionFactoryName=com.skyedu.model.HibernateSessionFactory
+genBasicCompId=true
+profile=
+daoSFId=
+version=4.1
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=identity
+libInstallFolder=WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=true
+reSettingsFile=/task/hibernate.reveng.xml
+configFile=/task/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true

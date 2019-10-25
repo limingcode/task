@@ -1,0 +1,19 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-08 08:51:54
+*/
+html{
+    min-height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    min-height: 100%;
+}
+
+/*-----begin 发布作业 ------*/
+.templet_box{
+    margin-top: 10px;
+}

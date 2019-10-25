@@ -1,0 +1,252 @@
+/*
+* @Author: Hlin
+*/
+
+.rRightDown,
+.rLeftDown,
+.rLeftUp,
+.rRightUp,
+.rRight,
+.rLeft,
+.rUp,
+.rDown{
+    position:absolute;
+    background:#fff;
+    border:1px solid #ccc;
+    width:6px;
+    height:6px;
+    z-index:5;
+    font-size:0;
+    display:none;
+}
+.rLeftDown,
+.rRightUp{
+    cursor:ne-resize;
+}
+.rRightDown,
+.rLeftUp{
+    cursor:nw-resize;
+}
+.rRight,
+.rLeft{
+    cursor:e-resize;
+}
+.rUp,
+.rDown{
+    cursor:n-resize;}
+.rRightDown{
+    bottom:-4px; right:-4px;
+}
+.rLeftDown{ bottom:-4px; left:-4px;
+}
+.rRightUp{
+    top:-4px; right:-4px;
+}
+.rLeftUp{
+    top:-4px; left:-4px;
+}
+.rRight{
+    right:-4px; top:50%;
+}
+.rLeft{
+    left:-4px; top:50%;
+}
+.rUp{
+    top:-4px; left:50%;
+}
+.rDown{
+    bottom:-4px; left:50%;
+}
+
+.editor_box .module{
+    position: absolute;
+    border: 2px dotted #d4d4d4;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    word-wrap:break-word;
+    white-space:normal;
+    cursor: move;
+}
+.editor_box .module_1{
+    position: absolute;
+    border: 2px dotted #d4d4d4;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    word-wrap:break-word;
+    white-space:normal;
+    cursor: move;
+}
+/*.editor_box .module *{
+    font-size: 13px;
+}*/
+
+.editor_box *::selection {
+    background:#C5C5C5;
+}
+.editor_box *::-moz-selection {
+    background:#C5C5C5;
+}
+.editor_box *::-webkit-selection{
+    background:#C5C5C5;
+}
+.editor_box .module *:focus{
+    outline: none;
+}
+.editor_box .module_1 *:focus{
+    outline: none;
+}
+.editor_box .module:hover{
+    border: 2px dotted #d4d4d4;
+}
+.editor_box .module_1:hover{
+    border: 2px dotted #d4d4d4;
+}
+.module.focus{
+    border: 2px solid #d4d4d4!important;
+}
+.module_1.focus{
+    border: 2px solid #d4d4d4!important;
+}
+.editor_box .module:hover .rRightDown,
+.editor_box .module:hover .rLeftDown,
+.editor_box .module:hover .rLeftUp,
+.editor_box .module:hover .rRightUp,
+.editor_box .module:hover .rRight,
+.editor_box .module:hover .rLeft,
+.editor_box .module:hover .rUp,
+.editor_box .module:hover .rDown{
+    display: block;
+}
+.editor_box .module_1:hover .rRightDown,
+.editor_box .module_1:hover .rLeftDown,
+.editor_box .module_1:hover .rLeftUp,
+.editor_box .module_1:hover .rRightUp,
+.editor_box .module_1:hover .rRight,
+.editor_box .module_1:hover .rLeft,
+.editor_box .module_1:hover .rUp,
+.editor_box .module_1:hover .rDown{
+    display: block;
+}
+
+.lf{
+    float: left;
+}
+.rt{
+    float: right;}
+
+.ppt .closeSuo{
+    position: fixed;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: url(../../images/ppt/left_2.png) ,#fff;
+    margin-left: 226px;
+    margin-top: -26px;
+    text-align: center;
+    line-height: 30px;
+    font-style: normal;
+    background-size: 100%;
+    transform: rotate(180deg);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.ppt .openSuo{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: url(../../images/ppt/left_2.png) ,#fff;
+    margin-left: 266px;
+    margin-top: -26px;
+    text-align: center;
+    line-height: 30px;
+    font-style: normal;
+    background-size: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 2;
+    display: none;
+}
+
+.ppt .closeSuo:hover{
+    border-radius: 50%;
+}
+.ppt .openSuo:hover{
+    border-radius: 50%;
+}
+.ppt .closeSuo_cont{
+    position: fixed;
+    width: 129px;
+    height: 30px;
+    margin-left: 111px;
+    margin-top: -26px;
+    text-align: center;
+    line-height: 30px;
+    font-style: normal;
+    background-size: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 0;
+    overflow: hidden;
+}
+.ppt .openSuo_cont{
+    position: fixed;
+    width: 129px;
+    height: 30px;
+    margin-left: 284px;
+    margin-top: -26px;
+    text-align: center;
+    line-height: 30px;
+    font-style: normal;
+    background-size: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 1;
+    overflow: hidden;
+    display: none;
+}
+.ppt .closeSuo_cont i{
+    font-style: normal;
+    position: absolute;
+    width: 129px;
+    height: 30px;
+    background: #a995fe;
+    right: -115px;
+    color: #fff;
+}
+.ppt .openSuo_cont i{
+    font-style: normal;
+    position: absolute;
+    width: 129px;
+    height: 30px;
+    background: #a995fe;
+    left: -115px;
+    color: #fff;
+}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #a995fe;
+}

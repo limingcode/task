@@ -1,0 +1,120 @@
+/*
+* @Author: Hlin
+* @Date:   2018-01-12 09:00:07
+* @Last Modified by:   Hlin
+* @Last Modified time: 2018-01-18 12:04:16
+*/
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-image: url(../images/entryway_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 1024px;
+    position: relative;
+}
+
+.entry_box{
+    width: 1024px;
+    height: 170px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -512px;
+}
+.entry_box:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -175px;
+    left: 50%;
+    margin-left: -242px;
+    width: 484px;
+    height: 44px;
+    background-image: url(../images/enterwar_logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+.enter_list{
+    width: 100%;
+    height: 169px;
+    text-align: center;
+}
+.enter_list li.item{
+    display: inline-block;
+    margin: 0 40px;
+}
+.enter_list li.item a{
+    display: block;
+    position: relative;
+    width: 169px;
+    height: 169px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255,0.3);
+}
+.enter_list li.item a:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 143px;
+    height: 143px;
+    background-image: url(../images/enterway_icon.png);
+    background-size: 143px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+.enter_list li.item a:hover:before{
+  animation-name: pulse;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+.enter_list li.item1 a:before{
+    background-position: center top;
+}
+.enter_list li.item2 a:before{
+    background-position: center -143px;
+}
+.enter_list li.item3 a:before{
+    background-position: center -286px;
+    box-shadow: 0 0 16px 0px rgba(181, 1, 81, 0.19);
+}
+.enter_list li.item4 a:before{
+    background-position: center -429px;
+    box-shadow: 0 0 16px 0px rgba(181, 1, 81, 0.19);
+}
+
+.enter_list li.item a:after{
+    content: attr(title);
+    display: block;
+    position: absolute;
+    width: auto;
+    height: 40px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: -61px;
+    line-height: 40px;
+    font-size: 24px;
+    color: #000;
+    white-space: nowrap;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}

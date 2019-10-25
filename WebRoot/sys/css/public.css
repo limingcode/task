@@ -1,0 +1,613 @@
+/*
+* @Author: Hlin
+* @Date:   2017-05-03 22:53:35
+*/
+.hide{
+    display:none;
+}
+.force_hide{
+    display:none!important;
+}
+*::-webkit-scrollbar{
+    width:8px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+*::-webkit-scrollbar-thumb{
+    background-image: -moz-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    border-radius: 5px;
+}
+/*空心btn*/
+.hol_btn{
+    padding: 6px 28px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #a684e0;
+    background-color: #fff;
+    border-radius: 4px;
+    color: #a684e0;
+    font-size: 13px;
+    // display: none!important;
+}
+.hol_btn:active{
+    box-shadow: 0 0 6px #a684e0 inset;
+}
+/*实心btn*/
+.sol_btn{
+    padding: 6px 54px;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+
+    border-radius: 4px;
+    background-image: -moz-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+}
+.sol_btn:active{
+    background-image: -moz-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+}
+
+
+/* begin 单选框*/
+.sky_radio{
+    position: relative;
+    padding-left: 20px;
+    height: 15px;
+    line-height: 15px;
+    cursor: pointer;
+}
+.sky_radio input{
+    position: absolute;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    opacity: 0;
+}
+.sky_radio .mark{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #a684e0;
+}
+.sky_radio input:checked + .mark{
+    border: 1px solid #a684e0;
+}
+.sky_radio input:checked + .mark:after{
+    content: "";
+    display:block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 9px;
+    height: 9px;
+    background-color: #a684e0;
+    border-radius: 50%;
+}
+/* end 单选框*/
+
+/* begin 复选框*/
+.sky_checkbox{
+    position: relative;
+    padding-left: 20px;
+    height: 15px;
+    line-height: 15px;
+    cursor: pointer;
+}
+.sky_checkbox input{
+    position: absolute;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    opacity: 0;
+}
+.sky_checkbox .mark{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #a684e0;
+}
+.sky_checkbox input:checked + .mark{
+    border: 1px solid #a684e0;
+    background-color: #a684e0;
+}
+.sky_checkbox input:checked + .mark:after{
+    content: "";
+    display:block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 70%;
+    height: 28%;
+    border: 2px solid #fff;
+    border-bottom: none;
+    border-left: none;
+    transform:rotate(135deg);
+    -ms-transform:rotate(135deg);     /* IE 9 */
+    -moz-transform:rotate(135deg);    /* Firefox */
+    -webkit-transform:rotate(135deg); /* Safari 和 Chrome */
+    -o-transform:rotate(135deg);  /* Opera */
+}
+/* end 复选框*/
+
+
+/* begin 数量输入，有加减按钮,按钮事件在js中*/
+.sky_number{
+    position: relative;
+    width: 68px;
+    border: 1px solid #888;
+    height: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.sky_number input{
+    float: left;
+    width: 38px;
+    height: 20px;
+    padding: 0;
+    outline: none;
+    box-shadow: 1px 1px 2px #ddd inset;
+    border: 0;
+    text-align: center;
+    line-height: 20px;
+}
+.sky_number span{
+    border: 1px solid #888;
+    display: inline-block;
+    width: 14px;
+    margin-top: -1px;
+    height: 20px;
+    margin-left: -1px;
+    cursor: pointer;
+    line-height: 20px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.sky_number span:active{
+    background-color: #2775ec;
+    color: #fff;
+
+}
+.sky_number span.reduce{
+    float: left;
+}
+.sky_number span.plus{
+    float: right;
+    margin-right: -1px;
+}
+/* end 数量输入，有加减按钮,按钮事件在js中*/
+
+/* begin 边框动画按钮*/
+.sky_animation_btn{
+    position: relative;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    outline: none;
+}
+.sky_animation_btn:active{
+    box-shadow: 0 0 5px #ccc inset;
+}
+.sky_animation_btn::before,.sky_animation_btn::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #888;
+    transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -webkit-transition: width 0.5s;
+    -o-transition: width 0.5s;
+}
+.sky_animation_btn::before{
+    top: -1px;
+    left: -1px;
+}
+.sky_animation_btn::after{
+    bottom: -1px;
+    right: -1px;
+}
+.sky_animation_btn:hover::before,.sky_animation_btn:hover::after{
+    width: calc(100% + 2px);
+}
+.sky_animation_btn .mark{
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+}
+.sky_animation_btn .mark::before,.sky_animation_btn .mark::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 0;
+    background-color: #888;
+    transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+    -o-transition: height 0.5s;
+}
+.sky_animation_btn .mark::before{
+    bottom: 0px;
+    left: 0px;
+}
+.sky_animation_btn .mark::after{
+    top: 0px;
+    right: 0px;
+}
+.sky_animation_btn:hover .mark::before,.sky_animation_btn:hover .mark::after{
+    height: calc(100%);
+}
+/* end 边框动画按钮*/
+
+/* begin 通用盒子*/
+.wa_box{
+    width: 100%;
+    // border-top: 2px solid #63dafe;
+    background-color: #fff;
+    box-shadow: 3px 3px 5px #ccc;
+    border-radius: 2px;
+
+    background-image: -moz-linear-gradient( 180deg, rgb(236,171,255) 0%, rgb(142,130,210) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(236,171,255) 0%, rgb(142,130,210) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(236,171,255) 0%, rgb(142,130,210) 100%);
+    background-position: center top;
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    padding-top: 2px;
+
+}
+.wa_box .box_bottom_btn{
+    height: 60px;
+    text-align: center;
+}
+.wa_box .box_bottom_btn button{
+    margin: 15px 30px 0;
+}
+.wa_box .wa_table a.sol_btn,
+.wa_box .wa_table button.sol_btn,
+.wa_box .oper_btn a.sol_btn,
+.wa_box .oper_btn button.sol_btn{
+    border: 1px solid rgb(206, 158, 241);
+    border-radius: 4px;
+    background-image: -moz-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    color: #722e9f;
+    padding: 6px 28px;
+
+}
+.wa_box .wa_table a.sol_btn:active,
+.wa_box .wa_table button.sol_btn:active,
+.wa_box .oper_btn a.sol_btn:active,
+.wa_box .oper_btn button.sol_btn:active{
+    background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(244,241,249) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(244,241,249) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(244,241,249) 100%);
+}
+/* end 通用盒子*/
+
+
+/* begin wa筛选列表*/
+.filter_list {
+    padding-bottom: 8px;
+}
+.filter_list .filter_item{
+    position: relative;
+    border-bottom: 1px solid #dfdbf1;
+    width: calc(100% - 95px);
+    /* margin: 10px auto; */
+    margin: 3px auto; /* 20181.23修改 10px -> 5px */
+    padding-left: 35px;
+}
+.filter_list .filter_type{
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #451168;
+    left: 0;
+    top: 12px;
+}
+.filter_list .filter_item ul{
+    display: inline-block;
+    margin-left: 10px;
+}
+.filter_list .filter_item ul li{
+    display: inline-block;
+    margin-left: 18px;
+    padding: 12px 0 15px 0px;
+}
+.filter_list .filter_item ul li .sky_radio{
+    padding-left: 25px;
+    position: relative;
+    display: inline-block;
+}
+.filter_item ul li .sky_radio.no_icon{
+    padding-left: 24px;
+}
+.filter_btn{
+    height: 50px;
+    text-align: center;
+}
+.filter_btn button,.filter_btn a{
+	display:inline-block;
+    margin: 7px 30px 0;
+}
+.no_filter_type_icon .filter_type{
+    left: 0px;
+}
+.no_filter_type_icon .filter_item{
+    padding-left: 40px;
+}
+.filter_item.allow_all_select .filter_type{
+    cursor: pointer;
+}
+.filter_item.allow_all_select .filter_type:after{
+    content: "";
+    display: block;
+    position: absolute;
+    right: -18px;
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    background-image: url(../images/all_select.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+/* end wa筛选列表*/
+
+/* begin wa表格*/
+.wa_table_oper{
+    height: 46px;
+    line-height: 46px;
+}
+.wa_table_oper .table_name{
+    display: inline-block;
+}
+.wa_table_oper .table_name span{
+    padding: 8px 20px;
+    background-repeat: no-repeat;
+    background-size: 100% 25px;
+    background-position: center;
+    color: #aa8cbe;
+    font-size: 14px;
+    position: relative;
+}
+.wa_table_oper .table_name span a{
+    color: #aa8cbe;
+}
+.wa_table_oper .table_name span:not(:last-child):before{
+    content: "";
+    width: 1px;
+    background-color: #aa8cbe;
+    height: 16px;
+    position: absolute;
+    top: 10px;
+    right: -2px;
+}
+.wa_table_oper .table_name span.current{
+    color: #b957d5;
+    font-weight: bold;
+}
+.wa_table_oper .oper_btn{
+    display: inline-block;
+    float: right;
+    margin-right: 30px;
+}
+
+.wa_table{
+    width: 100%;
+    text-align: center;
+    table-layout: auto;
+}
+.wa_table caption{
+    height: 46px;
+    line-height: 46px;
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 1px dotted #ccc;
+}
+.wa_table th{
+    border-top: 1px solid #d4c5f3;
+    border-bottom: 1px solid #d4c5f3;
+    height: 34px;
+    background-color: #d1f4ff;
+    background-image: -moz-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(244,241,249) 0%, rgb(255,255,255) 100%);
+    color: #722e9f;
+}
+.wa_table th:not(:last-child){
+    border-right: 1px solid #d4c5f3;
+}
+.wa_table tr{
+
+}
+.wa_table tr:hover{
+    background-color: rgb(249, 248, 255);
+}
+
+}
+.wa_table tr:hover td input{
+    background-color: transparent;
+}
+.wa_table tr td{
+    border-right: 1px solid #dfdbf1;
+    border-bottom: 1px solid #dfdbf1;
+    height: 30px;
+}
+.wa_table tr td:last-child{
+    border-right: 0;
+}
+.wa_table tr td a{
+    color: #554bde;
+    margin: 0 15px;
+}
+.wa_table tr td a.delete_btn{
+    color: red;
+}
+/* end wa表格*/
+
+/* begin 分页条*/
+.pagination{
+    height: 40px;
+    margin-top: 20px;
+}
+.pagination ul{
+    float: right;
+    margin-right: 70px;
+}
+.pagination li{
+    display: inline-block;
+    height: 20px;
+    padding: 0 7px;
+    border: 1px solid #ccc;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 3px;
+}
+.pagination li.current_page{
+    border: 0;
+    padding: 1px 8px;
+    color: #fff;
+    background-image: -moz-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+}
+.pagination li.first_page{
+    background-image: url(../images/page_first_btn.png);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+}
+.pagination li.prev_page{
+    background-image: url(../images/page_prev_btn.png);
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: center;
+}
+.pagination li.ellipsis{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.pagination li.next_page{
+    background-image: url(../images/page_next_btn.png);
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: center;
+}
+.pagination li.last_page{
+    background-image: url(../images/page_last_btn.png);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+}
+.pagination li.all_page{
+    border: 0;
+}
+.pagination li.turn_page{
+    border: 0;
+}
+.pagination li.turn_page input{
+    width: 3em;
+    margin: 0 5px;
+    text-align: center;
+    padding: 2px;
+}
+.pagination li.go_btn{
+    border: 0;
+    color: #fff;
+    border-radius: 2px;
+    background-image: -moz-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    padding: 2px 10px;
+}
+.pagination li.go_btn:active{
+    background-image: -moz-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+}
+/* end 分页条*/
+
+/* begin 日期选择input */
+input.date_select{
+    width: 180px;
+    cursor: pointer;
+    border: 0;
+    border-bottom: 1px solid #888;
+    background-image: url(../images/data_select_icon.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 16px;
+    background-color: transparent;
+}
+/*/!* end 日期选择input *!/*/
+
+/*搜索框*/
+input.search{
+    background-image: url(../images/search.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: right 4px;
+    padding-right: 27px;
+    width: 250px;
+}
+
+/*鼠标覆盖显示隐藏内容*/
+.hover_show{
+    position: relative;
+}
+.hover_show .detail_icon{
+    position: absolute;
+    right: 0;
+    top: 2px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/detail.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+    cursor: pointer;
+}
+.hover_show .mark{
+    display: none;
+    position: absolute;
+    top: 90%;
+    left: 7%;
+    width: calc(86% - 20px);
+    padding: 10px;
+    box-shadow: 2px 2px 8px #ccc;
+    border: 1px solid #ddd;
+    border-top: 2px solid #59d8fe;
+    background-color: #fff;
+    z-index: 100;
+}
+.hover_show .detail_icon:hover + .mark{
+    display: block;
+}

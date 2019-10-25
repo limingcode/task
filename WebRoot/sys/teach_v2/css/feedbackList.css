@@ -1,0 +1,27 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-08 08:51:54
+*/
+html{
+    min-height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    min-height: 100%;
+}
+
+/*-----begin 发布作业 ------*/
+.feedback_box{
+    margin-top: 10px;
+}
+.feedback_box tbody tr td:last-child{
+    padding: 0 10px;
+    text-align: left;
+}
+
+.filter_item .name_filter input{
+    width: 178px;
+}

@@ -1,0 +1,95 @@
+/*
+* @Author: Hlin
+* @Date:   2018-01-04 10:59:15
+* @Last Modified by:   Hlin
+* @Last Modified time: 2018-01-04 11:52:11
+*/
+body{
+    width: 100%;
+    min-width: 1024px;
+    height: 100%;
+    background-color: #9283fa;
+    background-image: url(../images/index_bg.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+.index_box{
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.enter_list{
+    width: 74%;
+    text-align: center;
+    // display: flex;
+    // justify-content: space-around;
+    margin: 0 auto;
+}
+.enter_list li{
+    float: left;
+    width: calc(100% / 4);
+    text-align: center;
+}
+.enter_list li a{
+    display: inline-block;
+    height: 30px;
+    padding-top: 170px;
+    width: 160px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 160px;
+    font-size: 20px;
+    text-align: center;
+}
+.enter_list li.item1 a{
+    background-image: url(../images/index_icon1.png);
+}
+.enter_list li.item2 a{
+    background-image: url(../images/index_icon1.png);
+}
+.enter_list li.item3 a{
+    background-image: url(../images/index_icon2.png);
+}
+.enter_list li.item4 a{
+    background-image: url(../images/index_icon3.png);
+}
+.enter_list li a:hover{
+    animation: rubberBand 0.5s;
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, .95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}

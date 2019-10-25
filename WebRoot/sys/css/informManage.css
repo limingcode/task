@@ -1,0 +1,37 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-08 11:23:28
+*/
+html{
+    min-height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    min-height: 100%;
+}
+/*------- begin 消息发布 ---------*/
+.infor_issue{
+    margin-top: 10px;
+}
+.infor_issue .infor_editor{
+    border: 0;
+}
+.infor_issue .infor_editor .infor_title{
+    margin-top: 14px;
+    width: calc(100% - 32px);
+    margin-left: 20px;
+}
+.infor_issue .infor_editor .infor_cnt{
+    margin-top: 14px;
+    width: calc(100% - 32px);
+    margin-left: 20px;
+    height: 150px;
+}
+.infor_issue .date_select{
+    visibility: hidden;
+    margin-top: -3px;
+}
+/*------- end 消息发布 ---------*/

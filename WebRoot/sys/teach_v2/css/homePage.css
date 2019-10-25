@@ -1,0 +1,261 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-08 08:51:54
+*/
+html{
+    height: 100%;
+}
+body{
+    position:relative;
+    padding: 10px 10px 0;
+    background-color: #eee;
+    height: calc(100% - 10px);
+    min-width: 1024px;
+}
+
+/*-----begin 发布作业 ------*/
+.course_box{
+    width: 100%;
+    margin-top: 10px;
+    height: calc(100% - 225px);
+}
+.course_box .right,
+.course_box .left{
+    width: calc((100% - 10px) / 2);
+    background-color: #fff;
+    height: 100%;
+    position: relative;
+}
+.course_box .left{
+    float: left;
+    border-right: 1px solid #ceb0da;
+}
+.course_box .left:before,
+.course_box .left:after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 48px;
+    position: absolute;
+    right: -35px;
+    background-image: url(../images/teach_manage_icon.png);
+    background-repeat: no-repeat;
+    background-position: -381px -4px;
+    z-index: 2;
+}
+.course_box .left:before{
+    top: 18%;
+}
+.course_box .left:after{
+    bottom: 18%;
+}
+.course_box .left ul.course_list{
+    width: calc(100% - 90px);
+    height: calc(100% - 82px);
+    margin: 42px 60px 42px 30px;
+    border-top: 1px solid #eee;
+    overflow-y: auto;
+}
+.course_box .left ul.course_list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.course_box .left ul.course_list li.course_item{
+    position: relative;
+    border-bottom: 1px solid #eee;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 40px;
+}
+.course_box .left ul.course_list li.course_item:hover{
+    background-color: rgb(249, 248, 255);
+}
+.course_box .left ul.course_list li.course_item.active{
+    background-color: rgb(240, 238, 255);
+}
+.course_box .left ul.course_list li.course_item .order{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 20px;
+    border-radius: 50%;
+    background-color: #e6e1fb;
+    text-align: center;
+    line-height: 20px;
+}
+.course_box .left ul.course_list li.course_item:hover .order{
+    background-image: url(../images/pen.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    color: transparent;
+    cursor: pointer;
+}
+.course_box .left ul.course_list li.course_item .cnt{
+    display: inline-block;
+    width: calc(100% - 266px);
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+}
+.course_box .left ul.course_list li.course_item .cnt .hol_btn {
+    padding: 6px 14px;
+}
+// .course_box .left ul.course_list li.course_item:before{
+//     content: attr(index);
+//     display: block;
+//     position: absolute;
+//     width: 20px;
+//     height: 20px;
+//     left: 10px;
+//     top: 20px;
+//     border-radius: 50%;
+//     background-color: #e6e1fb;
+//     text-align: center;
+//     line-height: 20px;
+// }
+.course_box .left ul.course_list .icon_list{
+    height: 38px;
+    float: right;
+    margin-top: 11px;
+}
+.course_box .left ul.course_list .icon_list i{
+    display: inline-block;
+    width: 39px;
+    height: 39px;
+    background-image: url(../images/teach_manage_icon.png);
+    background-repeat: no-repeat;
+    margin: 0 9px;
+}
+.course_box .left ul.course_list .icon_list i.icon1[state="1"]{
+    background-position: 0 0;
+}
+.course_box .left ul.course_list .icon_list i.icon2[state="1"]{
+    background-position: -55px 0;
+}
+.course_box .left ul.course_list .icon_list i.icon3[state="1"]{
+    background-position: -111px 0;
+}
+.course_box .left ul.course_list .icon_list i.icon4[state="1"]{
+    background-position: -167px 0;
+}
+.course_box .left ul.course_list .icon_list i.icon1[state="0"]{
+    background-position: 0 -45px;
+}
+.course_box .left ul.course_list .icon_list i.icon2[state="0"]{
+    background-position: -55px -45px;
+}
+.course_box .left ul.course_list .icon_list i.icon3[state="0"]{
+    background-position: -111px -45px;
+}
+.course_box .left ul.course_list .icon_list i.icon4[state="0"]{
+    background-position: -167px -45px;
+}
+
+.course_box .right{
+    float: right;
+    border-left: 1px solid #ceb0da;
+}
+.course_box .right .enter_list{
+    width: calc(100% - 160px);
+    height: calc(100% - 160px);
+    padding: 60px 80px 100px;
+}
+.course_box .right .enter_list li.enter_item{
+    float: left;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    position: relative;
+}
+.course_box .right .enter_list li.enter_item a{
+    display: inline-block;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-image: url(../images/teach_manage_icon.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.course_box .right .enter_list li.item1 a{
+    bottom: 40px;
+    right: 40px;
+}
+.course_box .right .enter_list li.item2 a{
+    bottom: 40px;
+    left: 40px;
+}
+.course_box .right .enter_list li.item3 a{
+    top: 40px;
+    right: 40px;
+}
+.course_box .right .enter_list li.item4 a{
+    top: 40px;
+    left: 40px;
+}
+.course_box .right .enter_list li.item1[state="0"] a{
+    background-position: 0 -110px;
+}
+.course_box .right .enter_list li.item2[state="0"] a{
+    background-position: -199px -110px;
+}
+.course_box .right .enter_list li.item3[state="0"] a{
+    background-position: 0 -306px;
+}
+.course_box .right .enter_list li.item4[state="0"] a{
+    background-position: -199px -306px;
+}
+.course_box .right .enter_list li.item1[state="1"] a{
+    background-position: -401px -110px;
+}
+.course_box .right .enter_list li.item2[state="1"] a{
+    background-position: -600px -110px;
+}
+.course_box .right .enter_list li.item3[state="1"] a{
+    background-position: -401px -306px;
+}
+.course_box .right .enter_list li.item4[state="1"] a{
+    background-position: -600px -306px;
+}
+.course_box .right .enter_list li.enter_item a:after{
+    content: attr(cnt);
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 18px;
+    color: #3f3a42;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1720px) {
+    .course_box .right .enter_list{
+        transform: scale(1,1);
+    }
+}
+@media screen and (max-width: 1480px) {
+    .course_box .right .enter_list{
+        transform: scale(0.9.5,0.9.5);
+    }
+}
+@media screen and (max-width: 1240px) {
+    .course_box .right .enter_list{
+        transform: scale(0.9,0.9);
+    }
+}
+@media screen and (max-width: 1166px) {
+    .course_box .right .enter_list{
+        transform: scale(0.8,0.8);
+    }
+}
+@media screen and (max-width: 824px) {
+    .course_box .right .enter_list{
+        transform: scale(0.75,0.75);
+    }
+}

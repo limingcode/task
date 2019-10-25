@@ -1,0 +1,343 @@
+
+
+.lessonsChoose{
+    height: 100%;
+    overflow: hidden;
+}
+.lessonsChoose body{
+    width: 100%;
+    height: 100%;
+}
+.lessonsChoose header{
+    width: 100%;
+    background-color: #6455d3;
+}
+.lessonsChoose .headerCont{
+    width: 100%;
+    height: 65px;
+    margin: 0 auto;
+    position: relative;
+}
+.lessonsChoose .headerCont .user{
+    height: 100%;
+    line-height: 65px;
+}
+.lessonsChoose .headerCont .user .userName{
+    color: #fff;
+    font-size: 0.146484rem;
+    padding: 10px 30px;
+    position: relative;
+    cursor: pointer;
+}
+.lessonsChoose .headerCont .user .userName:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url(../images/userIcon.png) no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    top: 7px;
+}
+.lessonsChoose .headerCont .user .userName:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: url(../images/downIcon.png) no-repeat;
+    background-size: 100% 100%;
+    right: 0;
+    top: 16px;
+    transition: 0.5s
+}
+.lessonsChoose .headerCont .user:hover .userName::after{
+    transform: rotateZ(180deg);
+}
+.lessonsChoose .headerCont .logo{
+    height: 100%;
+    line-height: 65px;
+    color: #fff;
+    font-size: 0.146484rem;
+    font-style: italic;
+    cursor: pointer;
+}
+.lessonsChoose .headerCont .classTitle{
+    position: absolute;
+    top: 30px;
+    left: 1.904297rem;
+}
+.lessonsChoose .headerCont .classTitle span{
+    width: 0.878906rem;
+    height: 0.878906rem;
+    border-radius: 50%;
+    background-color: #fff;
+    display: block;
+    float: left;
+    margin-right: 0.273438rem;
+    text-align: center;
+    cursor: pointer;
+}
+.lessonsChoose .headerCont .classTitle span i.iconImg{
+    width: 0.585938rem;
+    height: 0.585938rem;
+    border-radius: 50%;
+    background-color: #8b7cfb;
+    display: block;
+    margin: 0.097656rem 0 0 0.146484rem;
+}
+.lessonsChoose .headerCont .classTitle span i.iconTxt{
+    line-height: 35px;
+}
+.lessonsChoose .headerCont .classTitle span i.iconImg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto,105%;
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(1) i.iconImg{
+    background-image: url(../images/classLogo_1.png);
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(2) i.iconImg{
+    background-image: url(../images/classLogo_2.png);
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(3) i.iconImg{
+    background-image: url(../images/classLogo_3.png);
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(4) i.iconImg{
+    background-image: url(../images/classLogo_4.png);
+}
+.lessonsChoose .headerCont .classTitle span:nth-of-type(5) i.iconImg{
+    background-image: url(../images/classLogo_5.png);
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(1) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(1) .iconImg{
+    background-image: url(../images/classLogo_1.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(2) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(2) .iconImg{
+    background-image: url(../images/classLogo_2.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(3) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(3) .iconImg{
+    background-image: url(../images/classLogo_3.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(4) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(4) .iconImg{
+    background-image: url(../images/classLogo_4.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose .headerCont .classTitle span:hover:nth-of-type(5) .iconImg,
+.lessonsChoose .headerCont .classTitle span.active:nth-of-type(5) .iconImg{
+    background-image: url(../images/classLogo_5.png),url(../images/classLogoBg.png)!important;
+}
+.lessonsChoose content{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+.lessonsChoose content div span{
+    float: left;
+    padding: 0.019531rem 0;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    margin: 0.048828rem 0;
+    cursor: pointer;
+    text-align: center;
+}
+.lessonsChoose content div span.active{
+    border-color: #a995fe;
+}
+.grade span{
+    width: 0.644531rem;
+}
+.levels span{
+    width: 0.644531rem;
+}
+.term span{
+    width: 1.123047rem;
+}
+.classTime span{
+    width: 0.371094rem;
+}
+.lessonsChoose content .top{
+    padding: 0.683594rem 0 0 0.46875rem;
+}
+.lessonsChoose content .top div{
+    width: 95%;
+    font-size: 0.117188rem;
+    font-weight: 700;
+    color: #6f6e6e;
+}
+.lessonsChoose content .top div i{
+    width: 5%;
+    line-height: 35px;
+    margin-right: 0;
+}
+.grade,.levels,.term,.classTime{
+    padding: 0px 0;
+    border-bottom: 2px dashed #d6d0fc;
+}
+.classTime{
+    border-bottom: none;
+}
+.bottomCont{
+    height: 600px;
+    background: url(../images/bottomBg.png) no-repeat;
+    background-size: 100% 100%;
+    padding-top: 0;
+}
+.bottomIcon{
+    width:6.035156rem;
+    position: absolute;
+    left: 50%;
+    top: 32%;
+}
+.bottomIcon span{
+    display: inline-block;
+    margin-right: 22px;
+    position: relative;
+}
+.bottomIcon span[state="0"]:after{
+    content: "文件同步中...";
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 260px;
+    text-align: center;
+    display: block;
+    width: 1.708984rem;
+    height: 250px;
+    top: -38%;
+    left: -29%;
+    position: absolute;
+    background-image: url(../images/bottomIcon_0.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.bottomIcon span img{
+    cursor: pointer;
+    width: 1.318359rem;
+}
+.bottom .bottomTitle{
+    position: absolute;
+    text-align: center;
+    height: 0.439453rem;
+    left: 50%;
+    margin-left: -165px;
+    top: 76px;
+    line-height: 0.439453rem;
+    font-size: 0.292969rem;
+    color: #fff;
+    background: #50504a;
+    border-radius: 45px;
+    padding: 0 0.292969rem;
+}
+
+.bottom .bottomTitle i.num{
+    border: 1px solid #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin-top: 2px;
+    border-radius: 40px;
+}
+.bottom .bottomTitle span {
+    float: left;
+    margin-left: 10px;
+}
+.bottom .bottomTitle .drop{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: -12px;
+    background: #a0a087;
+    border-radius: 50%;
+    top: 10px;
+    border: 5px solid #50504a;
+}
+.bottom .bottomTitle .rightDrop{
+    right: -12px;
+    left: initial;
+}
+
+/*// 泽钦添加(只覆盖不修改上面的样式)*/
+.bottomIcon span {
+    display:inline-block;
+}
+.bottomIcon span:not([state="0"]):hover img{
+    animation-name: pulse;
+    animation-duration: 0.3s;
+}
+.lessonsChoose .headerCont .classTitle span:hover .iconImg{
+// animation-name: bounce;
+// animation-duration: 0.5s;
+}
+.lessonsChoose .headerCont .user .userName .userName_opre{
+    display: none;
+    width: 130%;
+    background-color: rgba(213,201,255,0.8);
+    padding-bottom: 10px;
+    position: absolute;
+    top: 52px;
+    left: -15%;
+}
+.lessonsChoose .headerCont .user .userName .userName_opre li{
+    width: 100%;
+    padding-left: 36%;
+    margin-top: 10px;
+    line-height: 27px;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 20px center;
+}
+.lessonsChoose .headerCont .user .userName .userName_opre li a{
+    color: #fff;
+}
+.lessonsChoose .headerCont .user:hover .userName_opre{
+    display:block;
+}
+.lessonsChoose .headerCont .user .userName .userName_opre li:hover a{
+    color: #8b7cfb;
+}
+.lessonsChoose .userName_opre li:nth-child(1){
+    background-image: url(../images/lin/opre1.png);
+}
+.lessonsChoose .userName_opre li:nth-child(2){
+    background-image: url(../images/lin/opre2.png);
+}
+.lessonsChoose .userName_opre li:nth-child(3){
+    background-image: url(../images/lin/opre3.png);
+}
+.lessonsChoose .userName_opre li:nth-child(4){
+    background-image: url(../images/lin/opre4.png);
+}
+.lessonsChoose .userName_opre li:nth-child(1):hover{
+    background-image: url(../images/lin/opre11.png);
+}
+.lessonsChoose .userName_opre li:nth-child(2):hover{
+    background-image: url(../images/lin/opre22.png);
+}
+.lessonsChoose .userName_opre li:nth-child(3):hover{
+    background-image: url(../images/lin/opre33.png);
+}
+.lessonsChoose .userName_opre li:nth-child(4):hover{
+    background-image: url(../images/lin/opre44.png);
+}
+.bottomCont .bottom{
+    width: 10rem;
+    margin: 0 auto;
+    position: relative;
+    background-image: url(../images/lin/bottomBg_2all.png);
+    background-size: 200% 100%;
+    background-position: 100%;
+}
+.bottomCont .bottom.no_select{
+    background-position: 0;
+}
+.bottomCont .bottom.no_select .bottomTitle,
+.bottomCont .bottom.no_select .bottomIcon
+{
+    display:none;
+}
+.bottomIcon span:nth-of-type(4){
+    margin-right: 0;
+}

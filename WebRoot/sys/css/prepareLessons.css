@@ -1,0 +1,76 @@
+.prepareLessons{
+    width: 100%;
+    height: 100%;
+    background: #9283fa;
+    background-size: 100% 100%;
+}
+.prepareLessons body{
+    min-width: 1200px;
+    height:100%;
+}
+.prepareLessons .mr150{
+    margin-right: 150px;
+}
+.prepareLessons .prepareLessonsBg{
+    width: 100%;
+    min-width: 1200px;
+    position: absolute;
+    z-index: -1;
+    bottom:0;
+}
+.prepareLessons .content{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.prepareLessons .content ul{
+    overflow: hidden;
+    padding: 200px 150px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.prepareLessons .content ul li{
+    width: 200px;
+    float: left;
+    cursor: pointer;
+}
+.prepareLessons .content ul li i{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    padding: 15px;
+    color: #350e60;
+}
+.prepareLessons .content ul li img{
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 1024px){
+	.prepareLessons body{
+		min-width:100%;
+	}
+    .prepareLessons .headerCont{
+        width: 100%;
+    }
+    .prepareLessons .content{
+        width: 100%;
+    }
+    .prepareLessons .content ul li{
+    	width:160px;
+    }
+    .prepareLessons .mr150 {
+    	margin-right: 112px;
+	}
+	.prepareLessons .prepareLessonsBg{
+		min-width:100%;
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+/*
+* @Author: Hlin
+* @Date:   2018-01-11 16:14:51
+* @Last Modified by:   Hlin
+* @Last Modified time: 2018-01-11 17:10:27
+*/
+body .layer-sky-skin[type="dialog"]{
+    border-radius: 4px;
+    min-width: 300px;
+}
+
+body .layer-sky-skin[type="dialog"] .layui-layer-title{
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fff;
+    border-radius: 4px 4px 0 0;
+}
+body .layer-sky-skin[type="dialog"] .layui-layer-title:after{
+    content:"";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-image: -moz-linear-gradient( 180deg, rgb(236,171,255) 0%, rgb(142,130,210) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(236,171,255) 0%, rgb(142,130,210) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(236,171,255) 0%, rgb(142,130,210) 100%);
+}
+
+body .layer-sky-skin[type="dialog"] .layui-layer-content{
+    padding: 30px 20px;
+}
+body .layer-sky-skin[type="dialog"] .layui-layer-btn{
+
+}
+body .layer-sky-skin[type="dialog"] .layui-layer-btn a{
+    border-radius: 4px;
+    background-color: rgb(170,158,219);
+    background-image: -moz-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(170,158,219) 0%, rgb(209,176,216) 100%);
+    border: 0;
+    padding: 0 27px;
+    color: #fff;
+}

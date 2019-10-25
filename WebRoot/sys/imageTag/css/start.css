@@ -1,0 +1,488 @@
+/*
+* @Author: Hlin
+* @Date:   2017-06-26 13:38:28
+*/
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+/* begin ppt閸掓銆� */
+.left{
+    float: left;
+    width: 262px;
+    /*height: calc(100% - 158px);*/
+    height: 100%;
+    border-right: 1px solid #f9f9f9;
+    overflow-y: scroll;
+    /*overflow-x: hidden;*/
+    /*padding-right: 20px;*/
+    background: #ffffff;
+}
+.left .page_box{
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.left .page{
+    width: 169px;
+    height: 102px;
+    border: 3px solid #fff;
+    background-color: #fff;
+    cursor: pointer;
+    float: left;
+    position:relative;
+}
+.left .page:after{
+    content: attr(pageNum);
+    position: absolute;
+    bottom: 3px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border-radius: 50%;
+    border: #000 1px solid;
+}
+
+
+.ganTanHao::before{
+	content:'';
+	background:url(../images/ganTanHao.png);
+	background-size: 100% 100%;
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+
+
+.left .page_index{
+    float: left;
+    width: 42px;
+    height: 31px;
+}
+.left .page img{
+    width: 100%;
+    height: 100%;
+}
+
+.right{
+    float: left;
+    align-items: center;
+    top: 100px;
+    width: calc(100% - 454px);
+    height: calc(100% - 50px);
+    padding: 15px;
+    /*overflow: hidden;*/
+    transition:margin-right 1s;
+    box-sizing: border-box;
+}
+
+.right.actives{
+    margin-right: 1.054688rem;
+}
+
+/* end 缂傛牞绶崳銊ュ隘閸╋拷 */
+
+.wrap ul {
+    padding: 0;
+    margin: 31px 0 50px 0;
+}
+
+.wrap li {
+    padding: 10px;
+    margin-bottom: 20px;
+    font: 14px/1.5 "瀵邦喛钂嬮梿鍛寸拨";
+    list-style: none;
+    cursor: move;
+}
+.wrap .addImg{
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    width: 262px;
+    height: 31px;
+    position: fixed;
+    background-color: #28bbff;
+    cursor: pointer;
+    z-index:999999;
+}
+.wrap .addPPT{
+    position: fixed;
+    font-style: normal;
+    width: 20px;
+    font-size: 16px;
+    height: 110px;
+    top: 50%;
+    margin-top: -55px;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index:9999999;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #d4d4d4;
+}
+
+.wrap .closePPT{
+    position: absolute;
+    right: 5px;
+    font-size: 20px;
+    top: 0;
+    cursor: pointer;
+    display: none;
+}
+.wrap li:hover {
+    background-color: #f6f6f6;
+}
+
+.wrap li:hover .closePPT{
+    display: block;
+}
+
+.wrap div[contenteditable] {
+    border: 1px solid #ececec;
+}
+
+.wrap img {
+    display: block;
+    width: 400px;
+}
+.ds_n{
+    display: none;
+}
+.editor_box {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d4d4d4;
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+    /*overflow: scroll;*/
+}
+
+.list_l li{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.list_l li:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.list_l li.hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.list_l li:before,.list_l li:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+.list_l li:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.list_l li:hover:before,.list_l li:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+.thumbImg{
+    margin: 0 auto;
+}
+.bigImgCont{
+/* 	height:100%; */
+    max-width: 100%;
+    float: left;
+    position: relative;
+    overflow: scroll;
+}
+.rectangle{
+    float: left;
+    width: 38px;
+    height: 35px;
+    margin: 30px 0;
+    background: red;
+    cursor: pointer;
+    transition: all .5s;
+}
+.rectangle:hover{
+    background: red;
+}
+.circular{
+    float: left;
+    width: 38px;
+    height: 35px;
+    margin: 30px 0;
+    background: #707070;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all .5s;
+    margin-left: 45px;
+}
+.circular:hover{
+    background: red;
+}
+.shapeChoose{
+    width: 150px;
+    float: right;
+    background: #ffffff;
+    height: 100%;
+    position: relative;
+    padding-left: 40px;
+}
+.shapeChoose h1{
+    font-size: 18px;
+    margin-top: 12px;
+    margin-left: 25px
+}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+html{color:#000;overflow-y:scroll;overflow:-moz-scrollbars-vertical}
+.div{position:absolute; border:1px dashed blue; width:0; height:0;left:0; top:0; overflow:hidden;}
+.retc{position:absolute; border:1px solid #CCCCCC; background:#EFEFEF}
+.submit{
+    width: 105px;
+    height: 31px;
+    background: -webkit-linear-gradient(left, #5dd9ff , #04afe2); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #5dd9ff, #04afe2); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #5dd9ff, #04afe2); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #5dd9ff , #04afe2); /* 閺嶅洤鍣惃鍕嚔濞夛拷 */
+    color: #fff;
+    float: left;
+    text-align: center;
+    line-height: 31px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+
+/*闁瀚ㄩ崶鍓у閸斻劎鏁� start*/
+#div1 {width:100px; height:100px; position:absolute; left:60%; top:50%; margin: -200px;}
+#div1 img {position: absolute; left: 0; top: 0;}
+/*闁瀚ㄩ崶鍓у閸斻劎鏁� end*/
+
+
+
+
+
+
+.box {
+    background: #f00;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    opacity: 0.5;
+    cursor: move;
+}
+.preview strong{
+    color: #fff;
+    font-size: 26px;
+}
+.preview a{
+    color: red;
+    font-size: 26px;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+*::-webkit-scrollbar {
+    width: 8px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb {
+    background-image: -moz-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(183,169,237) 0%, rgb(232,192,240) 100%);
+    border-radius: 5px;
+}
+
+
+
+/* btn-7 */
+.btn-7 {
+    color: #A6ACEC;
+    border-color: #A6ACEC;
+    overflow: hidden;
+    position: relative;
+}
+.btn-7:before, .btn-7:after {
+    content: "";
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: #A6ACEC;
+    top: 0;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+.btn-7:before {
+    left: 0;
+}
+.btn-7:after {
+    right: 0;
+}
+.btn-7:hover {
+    color: #27323A;
+}
+.btn-7:hover:before, .btn-7:hover:after {
+    width: 50%;
+}
+
+
+.page.border_org{
+    border:3px solid #2c9eff;
+}
+
+
+
+/*瀵洖顕辩粻顓炪仈閸斻劎鏁�*/
+.arrow {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    margin-left: -11px;
+    border: 3px solid transparent;
+    border-top: 3px solid #000;
+    border-left: 3px solid #000;
+    z-index: 99;
+    opacity: .8;
+    -webkit-transform: rotate(45deg);
+    -webkit-animation: arrow 1.5s infinite ease-in-out;
+}
+@-webkit-keyframes arrow {
+    0% {
+        opacity:0;
+        -webkit-transform:translate(0, 0px) rotate(45deg)
+    }
+    50% {
+        opacity:1;
+        -webkit-transform:translate(0, -5px) rotate(45deg)
+    }
+    100% {
+        opacity:0;
+        -webkit-transform:translate(0, -10px) rotate(45deg)
+    }
+}
+
+html{
+    background: #efefef;
+}
+body{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: #eeeeee;
+}
+/*header star*/
+.header{
+    background: url(../images/read_1.png) no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 50px;
+}
+/*herder end*/
+
+
+
+.selectCont{
+    /*background: url('yourimage') no-repeat;*/
+    width: 42px;
+    height: 31px;
+    overflow: hidden;
+    position: relative;
+}
+.selectCont select{
+    width: 42px;
+    height: 19px;
+    padding:0 4px;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px;
+    color: #22bdec;
+    border:1px solid #22bdec;
+}
+.selectCont select.active{
+    background: #22bdec;
+    color: #fff;
+}
+.selectCont.after::after{
+    content: '';
+    width: 100%;
+    height: 9px;
+    position: absolute;
+    bottom:0;
+    background: url(../images/read-2.png) no-repeat;
+    background-size: 100%;
+}
+.selectCont select option{
+    text-align: center;
+}
+
+
+
+.rightClick li{
+	list-style: none;
+}
+.rightClick{
+	width: 50px;
+    height: 20px;
+    background: white;
+    text-align: center;
+    line-height: 20px;
+    box-shadow: 0px 2px 15px #0404048f;
+    cursor: pointer;
+    z-index: 9999999999999;
+}
+
+
+
+
+/*濞撳懏顨熸稉瀣濡楀棝绮拋銈嗙壉瀵拷*/
+select {
+    /*Chrome閸滃瓗irefox闁插矂娼伴惃鍕珶濡楀棙妲告稉宥勭閺嶉娈戦敍灞惧娴犮儱顦查崘娆庣啊娑擄拷娑擄拷*/
+    border: solid 1px #000;
+
+    /*瀵板牆鍙ч柨顕嗙窗鐏忓棝绮拋銈囨畱select闁瀚ㄥ鍡樼壉瀵繑绔婚梽锟�*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    /*閸︺劑锟藉瀚ㄥ鍡欐畱閺堬拷閸欏厖鏅舵稉顓㈡？閺勫墽銇氱亸蹇曨唲婢舵潙娴橀悧锟�*/
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+
+}
+/*濞撳懘娅巌e閻ㄥ嫰绮拋銈夛拷澶嬪濡楀棙鐗卞蹇旂闂勩倧绱濋梾鎰娑撳濯虹粻顓炪仈*/
+select::-ms-expand { display: none; }
