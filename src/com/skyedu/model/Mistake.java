@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @Table(name = "WA_Mistakes")
 public class Mistake {
 
+
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -5,14 +5,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
+import com.skyedu.model.book.Permission;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -82,6 +77,10 @@ public class ImBook implements Serializable {
 	private int type;
 	private int width;
 	private int height;
+	@ManyToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name = "id")
+
+	private Permission permission;
 	public ImBook() {
 		super();
 	}

@@ -56,60 +56,24 @@
                 <th>操作时间</th>
                 <th>最后操作人</th>
                 <th>操作</th>
+
             </tr>
 
 
             </thead>
             <tbody id="tbodyId">
-            <%--            <tr>--%>
-            <%--               <td colspan="7">数据加载中...</td>--%>
-            <%--            </tr>--%>
+
 
             </tbody>
 
         </table>
-        <%--        <c:forEach items="${messageList }" var="message">--%>
-        <%--            <tr>--%>
-        <%--                <td>${message.teacherName}</td>--%>
-        <%--                <td><fmt:formatDate value="${message.createDate }" pattern="yyyy年MM月dd日 HH:mm"/> </td>--%>
-        <%--                <td><fmt:formatDate value="${message.openTime }" pattern="yyyy年MM月dd日 HH:mm"/></td>--%>
-        <%--                <td class="hover_show">${message.title }<span class="detail_icon"></span>--%>
-        <%--                    <span class="mark">${message.message }</span>--%>
-        <%--                </td>--%>
-        <%--                <td>${message.courseList }</td>--%>
-        <%--            </tr>--%>
-        <%--        </c:forEach>--%>
+
     </div>
     <!--数据显示内容区域-->
     <div id="pageId" class="box-footer clearfix">
 
     </div>
 
-
-    <%--    <table class="wa_table infor_list">--%>
-    <%--        <thead>--%>
-    <%--        <tr>--%>
-    <%--            <th style="min-width: 5em;">地区&nbsp;&nbsp;&nbsp;<select>--%>
-    <%--                <option >全部</option>--%>
-    <%--                <option>深圳</option>--%>
-    <%--                <option>杭州</option>--%>
-    <%--                <option>外教</option>--%>
-    <%--            </select></th>--%>
-    <%--            <th style="min-width: 13em;">学期&nbsp;&nbsp;&nbsp;--%>
-    <%--                <select>--%>
-    <%--                    <option>2019秋季</option>--%>
-    <%--                </select>--%>
-    <%--            </th>--%>
-    <%--            <th style="min-width: 13em;">班级名称&nbsp;&nbsp;<input type="text"></th>--%>
-
-    <%--            <th style="min-width: 10em;">老师名称&nbsp;&nbsp;<input type="text"></th>--%>
-
-    <%--        </tr>--%>
-
-
-    <%--        </thead>--%>
-
-    <%--      &lt;%&ndash;  <tbody>--%>
 
 
     </tbody>

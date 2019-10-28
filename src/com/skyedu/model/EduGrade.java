@@ -18,7 +18,11 @@ public class EduGrade implements java.io.Serializable {
 
 	private Integer id;
 	private String code;//年级编号
+
 	private String name;//年级名称
+
+
+
 
 	// Constructors
 

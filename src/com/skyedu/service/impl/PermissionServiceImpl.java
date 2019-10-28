@@ -20,7 +20,9 @@ public class PermissionServiceImpl implements PermissionService {
     private PermissonDao permissonDao;
     @Override
     public List<Map<String, Object>> getclassPermissionList(Map<String, Object> condition) {
+        List<Map<String, Object>> classPermissionList = permissonDao
+                .getMessageList(condition);
+        return classPermissionList;
 
-        return permissonDao.getMessageList(condition);
     }
 }

@@ -10,7 +10,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "WA_Message_S")
 public class MessageS {
-
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

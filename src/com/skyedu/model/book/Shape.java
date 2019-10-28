@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * @author huangRunDong
  * @createTime 18:30 2019/8/19
+ *
  */
 public class Shape {
     public Shape(List<ImPointsModel> points) {

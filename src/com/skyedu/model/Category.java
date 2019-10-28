@@ -24,32 +24,29 @@ public class Category {
 	@Column(name = "subject")
 	private String subject;
 
+
 	public int getiD() {
 		return iD;
 	}
-
 	public void setiD(int iD) {
 		this.iD = iD;
 	}
-
 	public Date getCreateDate() {
 		return createDate;
 	}
-
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-
 	public String getCategoryName() {
 		return categoryName;
 	}
-
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
 
 	public String getSubject() {
 		return subject;
+
 	}
 
 	public void setSubject(String subject) {

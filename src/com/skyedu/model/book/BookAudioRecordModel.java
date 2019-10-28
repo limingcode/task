@@ -14,7 +14,6 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Table(name = "Tk_Book_AudioRecord_t")
 public class BookAudioRecordModel implements Serializable {
-
     private int bookAudioRecordId;
     private int studentId;
     private String audioUrl;
@@ -116,4 +115,5 @@ public class BookAudioRecordModel implements Serializable {
     public void setTag(int tag) {
         this.tag = tag;
     }
+
 }

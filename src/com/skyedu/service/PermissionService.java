@@ -13,6 +13,8 @@ import java.util.Map;
 
 public interface PermissionService {
 
+    //查询所有的设置过权限的班级
     List<Map<String, Object>> getclassPermissionList(Map<String, Object> condition);
+
 
 }

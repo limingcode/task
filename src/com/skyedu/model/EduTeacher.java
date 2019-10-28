@@ -142,6 +142,7 @@ public class EduTeacher implements java.io.Serializable {
 		this.eduSchool = eduSchool;
 	}
 
+
 	@Column(name = "native", length = 40)
 	public String getNative_() {
 		return this.native_;

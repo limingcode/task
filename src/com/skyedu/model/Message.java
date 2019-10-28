@@ -25,6 +25,7 @@ public class Message {
 	private String message;
 	@Column(name = "course")
 	private Integer course;
+
 	@Column(name = "title")
 	private String title;
 	@Column(name = "openTime")

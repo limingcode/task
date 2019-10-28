@@ -113,13 +113,16 @@
 			var totalPage = ${condition.totalPage };
 			if (pageNo>totalPage) {
 				pageNo = totalPage;
+
 			}
 			window.location.href="<%=path%>/message/messageList.jhtml?startDate="+startDate+"&endDate="+endDate+"&pageNo="+pageNo;
 		}
+
 		
 		function forword(){
 			var pageNo = $("#pageNo").val();
 			goPage(pageNo);
+
 		}
   </script>
   </body>

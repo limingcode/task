@@ -57,6 +57,7 @@ import net.coobird.thumbnailator.Thumbnails;
 @RequestMapping("/question")
 public class QuestionController {
 
+
 	@Autowired
 	private HierarchyService hierarchyService;
 	@Autowired
@@ -127,6 +128,7 @@ public class QuestionController {
 		modelMap.addAttribute("condition", condition);
 		modelMap.addAttribute("questionList", questionList);
 		return "admin/question/editor/questionAlter";
+
 	}
 
 	@RequestMapping("/questionList")

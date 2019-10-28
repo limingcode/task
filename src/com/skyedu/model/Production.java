@@ -21,6 +21,7 @@ import org.hibernate.annotations.FetchMode;
 @Table(name = "WA_Production")
 public class Production {
 
+
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

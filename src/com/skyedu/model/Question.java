@@ -24,7 +24,6 @@ import org.hibernate.annotations.FetchMode;
 @Entity
 @Table(name = "WA_Question")
 public class Question {
-
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,6 +46,7 @@ public class Question {
 	private Integer standardTime;
 	@Column(name = "score")
 	private double score;
+
 	@Column(name = "analyzation", nullable = true)
 	private String analyzation;
 	@Column(name = "brief", nullable = true)
@@ -62,9 +62,11 @@ public class Question {
 	@Transient
 	private Integer isListen;
 
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "hierarchy")
 	private Hierarchy hierarchy;
+
 	// 父题
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "pId", nullable = true)
@@ -72,6 +74,7 @@ public class Question {
 	// 子题列表
 	@OneToMany(targetEntity = Question.class, cascade = { CascadeType.ALL }, mappedBy = "parentQuestion")
 	@Fetch(FetchMode.SUBSELECT)
+
 	@OrderBy("iD")
 	private List<Question> childQuestion = new ArrayList<Question>();
 	// 答案列表

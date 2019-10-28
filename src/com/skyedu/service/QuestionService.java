@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.skyedu.model.Hierarchy;
 import com.skyedu.model.Question;
 
-public interface QuestionService {
+public interface QuestionService{
 
 	Question getQuestion(int id);
 
@@ -25,7 +25,6 @@ public interface QuestionService {
 	void saveQuestionHtml(int questionId, String qItemCnt);
 
 	void updateQuestionHtml(int questionId, String qItemCnt);
-
 	Map<String, Object> getQuestionHtml(int questionId);
 	
 	void deleteResults(int questionId);
