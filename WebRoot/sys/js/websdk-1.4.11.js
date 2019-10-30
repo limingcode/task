@@ -10039,7 +10039,9 @@
                 return new connection(options);
             }
 
-            var options = options || {};
+            var options = options || {
+
+            };
 
             this.isHttpDNS = options.isHttpDNS || false;
             this.isMultiLoginSessions = options.isMultiLoginSessions || false;

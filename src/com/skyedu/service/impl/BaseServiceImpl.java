@@ -17,13 +17,11 @@ public class BaseServiceImpl implements BaseService {
 	
 	@Override
 	public List<Map<String, Object>> gradeList() {
-		// TODO Auto-generated method stub
 		return baseDAO.gradeList();
 	}
 
 	@Override
 	public List<Map<String, Object>> subjectList() {
-		// TODO Auto-generated method stub
 		return baseDAO.subjectList();
 	}
 

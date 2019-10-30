@@ -79,15 +79,14 @@ public class Question {
 	private List<Question> childQuestion = new ArrayList<Question>();
 	// 答案列表
 	@OneToMany(targetEntity = Result.class, cascade = { CascadeType.ALL }, mappedBy = "question")
+
 	@Fetch(FetchMode.SUBSELECT)
 	@OrderBy("iD")
 	private List<Result> resultList = new ArrayList<Result>();
 
-
 	public Date getCreateDate() {
 		return createDate;
 	}
-
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}

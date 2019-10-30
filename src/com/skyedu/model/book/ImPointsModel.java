@@ -11,6 +11,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 /**
  * @author huangRunDong
  * @createTime 17:13 2019/8/16
+ *
  */
 @Table(name = "IM_Points")
 @Entity
@@ -35,6 +36,7 @@ public class ImPointsModel implements Serializable {
         this.lessonId = lessonId;
         this.graphicalId=graphicalId;
     }
+
     public ImPointsModel(double widthRadius,double heightRadius,double x, double y, int pageId, int bookId, int lessonId,int graphicalId) {
         this.widthRadius=widthRadius;
         this.heightRadius=heightRadius;

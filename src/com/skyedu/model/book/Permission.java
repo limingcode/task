@@ -41,16 +41,24 @@ public class Permission implements Serializable {
     /**
      *
      * 學期表:EduPeriod  開始-結束=時段
-     *  班級表--course
+     * 班級表--EduCourse
      * 老師表:EduTeacher
      * 校区表：EduDepa
      * 年級表：EduGrade
      * 層次表：EduCate
-     * 權限和書籍表im_permisson im_book
+     * 權限和書籍表im_permisson im_book-年级，科目，层次，城市
+     * xxx(用户) --（角色）班级/学生--（数据权限）操作书籍的权限
+     *
+     *
+     *
+     *
      */
     //权限对应的书籍
-    @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<ImBook> imBook;
+//    @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Set<ImBook> imBook;
+
+
+
 
 
 

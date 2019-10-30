@@ -77,10 +77,10 @@ public class ImBook implements Serializable {
 	private int type;
 	private int width;
 	private int height;
-	@ManyToOne(cascade = {CascadeType.ALL})
-	@JoinColumn(name = "id")
-
-	private Permission permission;
+//	@ManyToOne(cascade = {CascadeType.ALL})
+//	@JoinColumn(name = "id")
+//
+//	private Permission permission;
 	public ImBook() {
 		super();
 	}

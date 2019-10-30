@@ -92,6 +92,7 @@ public class Result {
 
 	public void setQuestion(Question question) {
 		this.question = question;
+
 	}
 
 	public int getiD() {

@@ -69,6 +69,7 @@ public class IndexController extends BaseController {
 					redirectUrl += "?";
 				return "redirect:" + redirectUrl + "oaId=" + employee.getOaId();
 			}
+
 			return "redirect:/wx/user/index.jhtml?wx_openid=" + employee.getWxOpenid();
 		}
 		try {

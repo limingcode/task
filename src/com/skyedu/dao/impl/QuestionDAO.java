@@ -57,6 +57,7 @@ public class QuestionDAO extends HbmDAOUtil {
 	 * 题目列表
 	 * 
 	 * @param condition
+	 *
 	 * @return
 	 */
 	public List<Question> quesList(Map<String, Object> condition) {
@@ -103,9 +104,12 @@ public class QuestionDAO extends HbmDAOUtil {
 			fcon = fcon + " and wq.brief like '%" + title + "%'";
 		}
 		if (!StringUtils.isEmpty(grade)) {
+
 			fcon = fcon + " and wh.grade='" + grade + "'";
 		}
 		if (!StringUtils.isEmpty(subject)) {
+
+
 			fcon = fcon + " and wh.subject='" + subject + "'";
 		}
 		if (!StringUtils.isEmpty(cate)) {

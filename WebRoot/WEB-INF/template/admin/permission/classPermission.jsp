@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css"
           href="<%=path%>/sys/css/questionManage.css">
 </head>
-
+<!--后端maps集合-->
 <body>
 <!-- begin 筛选列表 -->
 <div class="wa_box filter_list">
@@ -50,9 +50,10 @@
         </span>
         <ul>
             <c:forEach items="${gradeList }" var="grade" varStatus="index">
+
                 <li><label class="sky_radio"><input type="radio"
                                                     name="grade" value=${grade.code }
-                                                            <c:if test="${condition.grade==null&& index.index==0}">checked="checked"</c:if>
+                                                 <c:if test="${condition.grade==null&& index.index==0}">checked="checked"</c:if>
                                                     <c:if test="${fn:trim(grade.code) eq condition.grade }">checked="checked"</c:if> /><span
                         class="mark"></span>${grade.name }</label></li>
             </c:forEach>
@@ -68,8 +69,7 @@
         <ul>
             <c:forEach items="${subjectList }" var="subject" varStatus="index">
                 <li><label class="sky_radio"><input type="radio"
-                                                    name="subject" value=${subject.code }
-                                                            <c:if test="${condition.subject==null&& index.index==0}">checked="checked"</c:if>
+                                                    name="subject" value=${subject.code } <c:if test="${condition.subject==null&& index.index==0}">checked="checked"</c:if>
                                                     <c:if test="${fn:trim(subject.code) eq condition.subject }">checked="checked"</c:if> /><span
                         class="mark"></span>${subject.name }</label></li>
             </c:forEach>
@@ -144,7 +144,7 @@
                 <td>${question.gradeName }${question.subjectName }${question.cateName }</td>
                 <td>${question.score }</td>
                 <td>
-                    &lt;%&ndash; <a href="<%=path%>/question/preview.jhtml?questionId=${question.id }">预览</a> &ndash;%&gt;
+                    <a href="<%=path%>/question/preview.jhtml?questionId=${question.id }">预览</a>
                     <a
                             href="<%=path%>/question/editorQuestion.jhtml?questionId=${question.id }">修改/查看</a>
                     <a href="javascript:;" class="delete_btn"
@@ -220,7 +220,9 @@
         var subject = $("input[name='subject']:checked").val();
         var cate = $("input[name='cate']:checked").val();
         window.location.href = "<%=path%>/permission/classPermission.jhtml?grade=" + grade + "&subject=" + subject + "&cate=" + cate + "&title=" + title;
+
     }
+    
 
     function isNull(str) {
         if (str == "") return true;
@@ -283,7 +285,6 @@
 
     $(function () {
         $(":radio").change(function () {
-            //...statement
             search();
         })
     })

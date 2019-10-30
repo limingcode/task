@@ -1,6 +1,7 @@
 package com.skyedu.service.impl;
 
 import com.skyedu.dao.impl.PermissonDao;
+import com.skyedu.model.EduStudent;
 import com.skyedu.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,4 +26,19 @@ public class PermissionServiceImpl implements PermissionService {
         return classPermissionList;
 
     }
+    /**
+     * 查询设置过权限的学生
+     * @param condition
+     * @return
+     */
+    @Override
+    public List<Map<String, Object>> getEveryList(Map<String, Object> condition) {
+        List<Map<String, Object>> everyList = permissonDao.getEveryList(condition);
+        return everyList;
+
+    }
+
+
+
+
 }

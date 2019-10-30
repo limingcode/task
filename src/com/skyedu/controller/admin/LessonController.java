@@ -54,6 +54,7 @@ public class LessonController {
 	 * @param response
 	 * @param modelMap
 	 * @return
+	 *
 	 */
 	@RequestMapping("/lessonList")
 	public String getLessonList(HttpServletRequest request,
@@ -141,7 +142,7 @@ public class LessonController {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 			calendar.add(Calendar.DATE, 7);
 			String openTime = sdf.format(calendar.getTime());
-			
+
 			lesson.put("openTime", openTime);
 			//保存新建课次
 			lessonService.commitLesson(lesson);

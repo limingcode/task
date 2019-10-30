@@ -42,11 +42,11 @@
 			<span class="filter_type filter_type3">年级</span>
 			<ul>
 				<c:forEach items="${gradeList }" var="grade" varStatus="index">
-					<li><label class="sky_radio"><input type="radio"
-							name="grade" value=${grade.code }
-							<c:if test="${condition.grade==null&& index.index==0}">checked="checked"</c:if>
-							<c:if test="${fn:trim(grade.code) eq condition.grade }">checked="checked"</c:if> /><span
-							class="mark"></span>${grade.name }</label></li>
+					<li>
+						<label class="sky_radio">
+						<input type="radio" name="grade" value=${grade.code } <c:if test="${condition.grade==null&& index.index==0}">checked="checked"</c:if>  <c:if test="${fn:trim(grade.code) eq condition.grade }">checked="checked"</c:if> />
+						<span  class="mark"></span>${grade.name }</label>
+					</li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -76,6 +76,7 @@
 		</div>
 		<div class="filter_item">
 			<span class="filter_type filter_type9">题名</span>
+
 			<ul>
 				<li><input type="text" id="title" onblur="search()"
 					value="${condition.title }" />

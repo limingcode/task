@@ -32,7 +32,7 @@ public class UseAppStatController {
 	@RequestMapping("/exportExcel")
 	public String exportExcel(int type, Model model) {
 		model.addAttribute("list", useAppStatService.exportExcel(type));
-		return "statis/useAppSata/export"; 
+		return "statis/useAppSata/export";
 	}
 	
 	@ResponseBody

@@ -209,28 +209,23 @@ public class LessonServiceImpl implements LessonService {
 		return work1;
 	}
 
+
+	@Override
 	public List<Map<String, Object>> getLessonResultCards(int lessonId,
-			int studentId) {
-		// TODO Auto-generated method stub
+														  int studentId) {
 				List<Map<String, Object>> resultCardList = resultCardDAO
 						.getResultCards(lessonId, studentId);
 				for (Iterator<Map<String, Object>> iterator = resultCardList.iterator(); iterator
 						.hasNext();) {
 					// 计数，标准题个数
 					int count = 0;
-
 					Map<String, Object> resultCard = iterator.next();
 					int resultCardId = (Integer) resultCard.get("id");
 					resultCard.put("iD", resultCardId);
 					int workId = (Integer) resultCard.get("work");
-
 					Map<String, Object> work = workDAO.getWork(workId);
 					work.put("iD", workId);
 					resultCard.put("work", work);
-					/*
-					 * List<ResultCardInfo> resultCardInfoList = resultCard
-					 * .getResultCardInfoList();
-					 */
 					List<Map<String, Object>> resultCardInfoList = resultCardDAO
 							.getResultCardInfos(resultCardId);
 					resultCard.put("resultCardInfoList", resultCardInfoList);
@@ -241,14 +236,11 @@ public class LessonServiceImpl implements LessonService {
 						resultCardInfo.put("iD", resultCardInfo.get("id"));
 						int workInfoId = (Integer) resultCardInfo.get("workInfo");
 						Map<String, Object> workInfo = workDAO.getWorkInfo(workInfoId);
-
 						workInfo.put("iD", workInfoId);
 						resultCardInfo.put("workInfo", workInfo);
-
 						int questionId = (Integer) workInfo.get("question");
 						Map<String, Object> question = questionDAO
 								.getQuesMap(questionId);
-						
 						question.put("iD", questionId);
 						workInfo.put("question", question);
 						// question.put("answer", resultCardInfo.get("answer"));
@@ -258,7 +250,6 @@ public class LessonServiceImpl implements LessonService {
 						if ((Integer) question.get("questionType") != 0) {
 							count++;
 						}
-						
 						if ((Integer) question.get("questionType") == 5) {
 							question.put("isListen", 3);
 						}else if ((Integer) question.get("isVoice") == 1) {
@@ -266,7 +257,6 @@ public class LessonServiceImpl implements LessonService {
 						}else{
 							question.put("isListen", 1);
 						}
-
 						// 添加子题的resultCardInfo
 						List<Map<String, Object>> childResultCardInfoList = new ArrayList<Map<String, Object>>();
 						List<Map<String, Object>> childList = questionDAO
@@ -289,7 +279,6 @@ public class LessonServiceImpl implements LessonService {
 								childResultCardInfo.put("score",resultCardInfoBean.getScore());
 								childResultCardInfo.put("state",resultCardInfoBean.getState());
 								childResultCardInfo.put("useTime",resultCardInfoBean.getUseTime());
-
 								WorkInfo workInfoBean = resultCardInfoBean.getWorkInfo();
 								Map<String, Object> childWork = new HashMap<String, Object>();
 								childWork.put("appSortNo", workInfoBean.getAppSortNo());
@@ -331,6 +320,7 @@ public class LessonServiceImpl implements LessonService {
 				return resultCardList;
 	}
 
+	@Override
 	public Map<String, Object> preview(int questionId) {
 		// 计数，标准题个数
 		int count = 1;

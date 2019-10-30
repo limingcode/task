@@ -140,17 +140,18 @@ public class QuestionController {
 		String cate = request.getParameter("cate");
 		String subject = request.getParameter("subject");
 		String pageNoo = request.getParameter("pageNo");
+
 		int pageNo = 1;
 		if (pageNoo != null && Integer.valueOf(pageNoo) > 0) {
 			pageNo = Integer.valueOf(pageNoo);
+
 		}
 		condition.put("grade", grade);
 		condition.put("cate", cate);
 		condition.put("subject", subject);
 		condition.put("pageNo", pageNo);
 		condition.put("title", title);
-		List<Map<String, Object>> quesList = questionService
-				.quesList(condition);
+		List<Map<String, Object>> quesList = questionService.quesList(condition);
 		List<Map<String, Object>> gradeList = baseService.gradeList();
 		List<Map<String, Object>> subjectList = baseService.subjectList();
 		List<Map<String, Object>> cateList = baseService.cateList();
@@ -160,6 +161,7 @@ public class QuestionController {
 		modelMap.addAttribute("quesList", quesList);
 		modelMap.addAttribute("condition", condition);
 		return "admin/question/list/questionList";
+
 	}
 
 	@RequestMapping("/selectQuestion")

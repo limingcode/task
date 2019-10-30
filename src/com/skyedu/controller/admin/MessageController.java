@@ -46,6 +46,7 @@ public class MessageController {
 	 * @param request
 	 * @param response
 	 * @return
+	 *
 	 */
 	@RequestMapping("/publishMessage")
 	@ResponseBody
@@ -126,7 +127,6 @@ public class MessageController {
 	 */
 	@RequestMapping("/messageList")
 	public String messageList(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap){
-		
 		Map<String, Object> condition = new HashMap<String, Object>();
 		String startDate = request.getParameter("startDate");
 		String endDate = request.getParameter("endDate");
@@ -134,11 +134,9 @@ public class MessageController {
 		condition.put("startDate", startDate);
 		condition.put("endDate", endDate);
 		condition.put("pageNo", pageNo);
-		
 		List<Map<String, Object>> messageList = messageService.getMessageList(condition);
 		modelMap.put("messageList", messageList);
 		modelMap.put("condition", condition);
-
 		return "admin/message/messageList";
 	}
 
@@ -157,7 +155,6 @@ public class MessageController {
 		List<Map<String, Object>> subjectList = baseService.subjectList();
 		List<Map<String, Object>> periodList = baseService.periodList();
 		List<Map<String, Object>> deptList = baseService.depaList();
-
 		modelMap.addAttribute("deptList", deptList);
 		modelMap.addAttribute("periodList", periodList);
 		modelMap.addAttribute("cateList", cateList);
