@@ -44,7 +44,9 @@
 				<c:forEach items="${gradeList }" var="grade" varStatus="index">
 					<li>
 						<label class="sky_radio">
-						<input type="radio" name="grade" value=${grade.code } <c:if test="${condition.grade==null&& index.index==0}">checked="checked"</c:if>  <c:if test="${fn:trim(grade.code) eq condition.grade }">checked="checked"</c:if> />
+						<input type="radio" name="grade" value=${grade.code }
+								<c:if test="${condition.grade==null&& index.index==0}">checked="checked"</c:if>
+							   <c:if test="${fn:trim(grade.code) eq condition.grade }">checked="checked"</c:if>/>
 						<span  class="mark"></span>${grade.name }</label>
 					</li>
 				</c:forEach>
@@ -66,7 +68,8 @@
 			<span class="filter_type filter_type5">层次</span>
 			<ul>
 				<c:forEach items="${cateList }" var="cate" varStatus="index">
-					<li><label class="sky_radio"><input type="radio"
+					<li><label class="sky_radio">
+						<input type="radio"
 							name="cate" value=${cate.code }
 							<c:if test="${condition.cate==null&& index.index==0}">checked="checked"</c:if>
 							<c:if test="${cate.code eq condition.cate}">checked="checked"</c:if> /><span
@@ -136,8 +139,6 @@
 						<td>${question.gradeName }${question.subjectName }${question.cateName }</td>
 						<td>${question.score }</td>
 						<td>
-						<%-- <a
-							href="<%=path%>/question/preview.jhtml?questionId=${question.id }">预览</a> --%>
 							<a
 							href="<%=path%>/question/editorQuestion.jhtml?questionId=${question.id }">修改/查看</a>
 							<a href="javascript:;" class="delete_btn"

@@ -1,6 +1,5 @@
 package com.skyedu.dao.impl;
 
-import com.skyedu.model.EduStudent;
 import com.util.CommonUtil;
 import com.util.HbmDAOUtil;
 import org.hibernate.Query;
@@ -16,14 +15,12 @@ import java.util.Map;
  * @author: LiMing
  * @date: 2019/10/25  14:20
  * 权限控制实现dao
- *
  */
 @Repository
-public class PermissonDao  extends HbmDAOUtil {
+public class PermissonDao extends HbmDAOUtil {
 
 
     /**
-     *
      * @param condition
      * @return
      */
@@ -60,12 +57,12 @@ public class PermissonDao  extends HbmDAOUtil {
                 .setFirstResult((pageNo - 1) * CommonUtil.QUESTIONSIZE)
                 .setMaxResults(CommonUtil.QUESTIONSIZE)
                 .setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
-        String sql1 = "select count(1)count from WA_Question wq left join WA_Hierarchy wh on wq.hierarchy = wh.id where wq.pId is null "+ fcon;
+        String sql1 = "select count(1)count from WA_Question wq left join WA_Hierarchy wh on wq.hierarchy = wh.id where wq.pId is null " + fcon;
         Query q1 = factory.getCurrentSession().createSQLQuery(sql1).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 
 
         //查询分页信息
-        int size = (Integer) ((Map<String,Object>)q1.uniqueResult()).get("count");
+        int size = (Integer) ((Map<String, Object>) q1.uniqueResult()).get("count");
         int totalPage = size / CommonUtil.QUESTIONSIZE + 1;
         if (size % CommonUtil.QUESTIONSIZE == 0) {
             totalPage = totalPage - 1;
@@ -81,50 +78,67 @@ public class PermissonDao  extends HbmDAOUtil {
 
     /**
      * 查询设置过阅读权限的学生进行分页显示 ，模糊查询
+     *
      * @param condition
      * @return
      */
 
-    public  List<Map<String, Object>> getEveryList(Map<String, Object> condition){
+    public List<Map<String, Object>> getEveryList(Map<String, Object> condition) {
+        /**
+         * Query q = this.getSession().createSQLQuery(sql);
+         *   q.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
+         *   return q.list()
+         */
+        String id = (String) condition.get("id");//学生姓名
         String name = (String) condition.get("name");//学生姓名
 
         String code = (String) condition.get("code");//学生编号
 
         int pageNo = (Integer) condition.get("pageNo");//分页码
         //对应学生阅读层次的数据
-        String fsql = "SELECT a.id,a.name,a.code,b.levelCateId,b.operationTime,b.operationPeople FROM Edu_Student a,IM_Permission b WHERE a.permissonCode = b.levelCateId";
+        String fsql = "select es.id,es.name,es.code,ib.bookName + ',' as bookName,rb.operationTime,rb.operationPeople from Tk_rule_base_t rb left join Tk_rule_mapping_t tm on rb.typeId = tm.typeId left join IM_Book ib on tm.bookId = ib.id left join Edu_Student es ON rb.typeId = es.id where  rb.type = 1 and rb.typeId = es.id";
         String fcon = "";
         //模糊查询
         if (!StringUtils.isEmpty(name)) {
             fcon = fcon + " and a.name like '%" + name + "%'";
         }
         if (!StringUtils.isEmpty(code)) {
-
             fcon = fcon + " and a.code='" + code + "'";
         }
-        String sql = fsql + fcon + " order by b.operationTime desc";
+
+        String sql = fsql + fcon + " order by rb.operationTime desc";
         Query q = factory.getCurrentSession().createSQLQuery(sql)
                 .setFirstResult((pageNo - 1) * CommonUtil.QUESTIONSIZE)
                 .setMaxResults(CommonUtil.QUESTIONSIZE)
                 .setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
         //查询设置过阅读权限的学生人数  然后进行分页
-        String sql1 = "select count(1) count from Edu_Student wq left join IM_Permission wh on wq.id = wh.id where wq.permissonCode is not null "+ fcon;
+        String sql1 = "select count(1) count from Tk_rule_mapping_t a  WHERE a.bookId  is not  null" + fcon;
         Query q1 = factory.getCurrentSession().createSQLQuery(
                 sql1).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
-        int size = (Integer) ((Map<String,Object>)q1.uniqueResult()).get("count");
+        int size = (Integer) ((Map<String, Object>) q1.uniqueResult()).get("count");
         int totalPage = size / CommonUtil.QUESTIONSIZE + 1;
         if (size % CommonUtil.QUESTIONSIZE == 0) {
             totalPage = totalPage - 1;
         }
 
+
         if (pageNo > totalPage) {
             pageNo = totalPage;
             condition.put("pageNo", pageNo);
         }
+
         condition.put("totalPage", totalPage);
         //将查询的对线转化成map集合
         //将map转化成list集合
         return q.list();
+
+
+    }
+
+    public int delStudent(int id) {
+        String sql = "DELETE  FROM Tk_rule_mapping_t WHERE typeId= " + id;
+        return factory.getCurrentSession().createQuery(sql).executeUpdate();
+
 
     }
 }

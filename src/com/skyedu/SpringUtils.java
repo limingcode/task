@@ -16,6 +16,7 @@ import org.springframework.web.servlet.LocaleResolver;
  */
 @Component("springUtils")
 @Lazy(false)
+
 public final class SpringUtils implements DisposableBean,
 		ApplicationContextAware {
 	

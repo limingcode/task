@@ -1,7 +1,5 @@
 package com.skyedu.service;
 
-import com.skyedu.model.EduStudent;
-
 import java.util.List;
 import java.util.Map;
 
@@ -24,4 +22,5 @@ public interface PermissionService {
     List<Map<String, Object>> getEveryList(Map<String, Object> condition);
 
 
+    int delStudent(int  id);
 }

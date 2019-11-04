@@ -1,7 +1,6 @@
 package com.skyedu.service.impl;
 
 import com.skyedu.dao.impl.PermissonDao;
-import com.skyedu.model.EduStudent;
 import com.skyedu.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +37,11 @@ public class PermissionServiceImpl implements PermissionService {
 
     }
 
-
+    @Override
+    public int delStudent(int id) {
+        int row=permissonDao.delStudent(id);
+        return row;
+    }
 
 
 }

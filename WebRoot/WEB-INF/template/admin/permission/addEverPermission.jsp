@@ -16,7 +16,7 @@
     <meta charset="utf-8">
     <base href="<%=basePath%>">
 
-    <title>个人操作列表</title>
+    <title>个人操作列表新增</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -33,17 +33,19 @@
           href="<%=path%>/sys/css/public.css">
     <link rel="stylesheet" type="text/css"
           href="<%=path%>/sys/css/questionManage.css">
+
 </head>
 
 <body>
 <!-- begin 筛选列表 -->
 <div class="wa_box filter_list">
     <div class="wa_box filter_list">
+
         <div class="filter_item">
             <span class="filter_type filter_type9">学生名称</span>
-            euditPermission
+
             <ul>
-                <li><input type="text" id="name" onblur="search()">
+                <li><input type="text" id="name">
 
                 </li>
             </ul>
@@ -54,44 +56,29 @@
         <span class="filter_type filter_type9">学生编号</span>
 
         <ul>
-            <li><input type="text" id="code" onblur="search()">
+            <li><input type="text" id="code">
 
             </li>
         </ul>
     </div>
-</div>
+    <button class="sol_btn" onclick="var query1 = function () {
+            alert('将进行学生的新增查询操作');
+             //根据学生编号
+        var name = $('#name').val();//学生编号
+        var code = $('#code').val();//学生名称
+            if (typeof(name)=='undefined' || isNull(name)) {
+            alert('请输入学生姓名');
+            return;
+            }
+            if (typeof(code)=='undefined'||isNull(code)) {
+            alert('请输入学生编码');
+            return;
+            }
 
-
-<div class="filter_btn">
-    <!--个人特殊条件的查询-->
-
-    <button class="sol_btn" onclick="var searchh = function () {
-            //根据学生编号
-            alert('searchh');
-            var name = $('#name').val();//学生编号
-            var code = $('#code').val();//学生名称
-            window.location.href = '<%=path%>/permission/everPermission.jhtml';
-            };
-            searchh()">个人权限查询
-    </button>
-    <!--个人的新增权限-->
-    <button class="sol_btn" onclick="var incre = function () {
-            alert('incr');
-
-            window.location.href='<%=path%>/permission/addEverPermission.jhtml';
-
-
+            window.location.href='<%=path%>/permission/addEverPermission.jhtml?name='+name+'&code='+code;
             };
 
-            incre()">个人权限新增
-    </button>
-    <!--书籍的编辑-->
-    <button class="sol_btn" onclick="var eudit = function () {
-            alert('eudit');
-            window.location.href='<%=path%>/permission/euditPermission.jhtml';
-            };
-
-            eudit()">个人权限编辑
+    query1()">查询
     </button>
 </div>
 </div>
@@ -100,62 +87,73 @@
 <!-- begin 题库列表 -->
 <div class="wa_box q_list">
     <div class="wa_table_oper">
-        <div class="table_name">
+        <div class="table_name" id="2">
             <span class="current">个人权限操作列表</span>
+            <span class="current">ps:请勾选以下需要进行权限设置的学生或者从上面针对查询进行设置</span>
+
+            <button class="sol_btn" onclick=" var setUp = function () {
+
+                    window.location.href = '<%=path%>/permission/setEverPermission.jhtml';
+
+                    };
+                    //设置条件
+
+                    setUp()">开始设置
+            </button>
+
+
         </div>
 
     </div>
+
     <table class="wa_table">
         <thead>
         <tr>
-            <th style="min-width: 4em;">批量删除</th>
+            <th style="min-width: 2em;"><input type="checkbox" name="all" id="all" onclick="var alll = function () {
+
+
+                    var all_checked=false;
+
+                    $(':checkbox').click(function() {
+                        var table = $(this).parents('table');
+                         if($(this).attr('id') === 'all') {
+                              table.find(':checkbox').prop('checked', !all_checked);
+                        all_checked = !all_checked;
+
+                         }else {
+                             table.find(':checkbox[id!=all]').each(function (i) {
+                                if(!$(this).is(':checked')) {
+                                    table.find('#all').prop('checked', false);
+                all_checked = false;
+                return false;
+                                }
+                                $('#all').prop('checked', true);
+                all_checked = true;
+                             });
+                         }
+
+                    });
+
+            };
+            alll()">全选设置
+
+            </th>
+
             <th style="min-width: 4em;">学生名称</th>
             <th style="min-width: 4em;">学生编号</th>
             <th style="min-width: 12em;">阅读权限</th>
-            <th style="min-width: 4em;">操作时间</th>
-            <th style="min-width: 4em;">最后操作人</th>
-            <th style="min-width: 12em;">操作</th>
+
+
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${permissionList }" var="permission">
-            <tr>
-                <td>${permission.id }</td>
+            <tr aria-checked="mixed" style="background-color: #00b500">
+                <td><input type="checkbox"></td>
                 <td>${permission.name }</td>
                 <td>${permission.code }</td>
                 <td>${permission.bookName }</td>
-                <td><fmt:formatDate value="${permission.operationTime}"
-                                    type="both"/></td>
-                <td>${permission.operationPeople }</td>
-                <td>
-                    <a
-                            href="<%=path%>/permission/editorPermission.jhtml?everId=${permission.id }">修改</a>
 
-                    <a href="javascript:;" class="delete_btn"
-                       onclick="var delQQ = function (everId) {
-                               if (confirm('是否确定删除此学生么?')){
- $.ajax({
-                url: '<%=path%>/permission/delPermissiondel',
-                    type: 'post',
-                    data: {
-                    everId: everId
-                    },
-                    dataType: 'JSON',
-                    success: function (result) {
-
-                    var code = result.code;
-                    var message = result.message;
-                    alert(message);
-                    if (code == 100) {
-                    $('.wa_table tr[id =' + everId + ']').remove();
-                    }
-                    }
-                    })
-
-                               }
-                               };
-                               delQQ(${permission.id})">删除</a>
-                </td>
             </tr>
         </c:forEach>
 
@@ -218,19 +216,8 @@
 <script type="text/javascript"
         src="<%=path%>/sys/js/space_underline.js"></script>
 <script type="text/javascript" src="<%=path%>/sys/js/public.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script type="text/javascript">
-
-    function search() {
-        //根据学生编号
-        var name = $("#name").val();//学生编号
-        var code = $("#code").val();//学生名称
-        window.location.href = "<%=path%>/permission/everPermission.jhtml";
-    }
-
-
-    /**
-     * 编辑书籍的
-     */
 
 
     function isNull(str) {
@@ -243,13 +230,12 @@
     function goPage(pageNo) {
         var name = "${permission.name}";
         var code = "${permission.code}";
-        var levelCateId = "${permission.bookName}";
-        var title = "${permission.operationTime}";
-        var totalPage = ${permission.operationPeople };
         if (pageNo > totalPage) {
             pageNo = totalPage;
         }
-        window.location.href = "<%=path%>/permission/everPermission.jhtml";
+        window.location.href="<%=path%>/permission/setEverPermission.jhtml?name="+name+"&code="+code+"&pageNo="+pageNo;
+
+
     }
 
     function forword() {
@@ -257,49 +243,13 @@
         goPage(pageNo);
     }
 
-    function input() {
-        var grade = $("input[name='grade']:checked").val();
-        var subject = $("input[name='subject']:checked").val();
-        var cate = $("input[name='cate']:checked").val();
-        window.location.href = "<%=path%>/question/inputQuestion.jhtml?grade=" + grade + "&subject=" + subject + "&cate=" + cate;
-    }
-
-    function del(questionId) {
-
-        if (confirm("是否确定删除此学生么?")) {
-            $.ajax({
-                url: "<%=path%>/permission/delPermissiondel.jhtml",
-                type: "post",
-                data: {
-                    everId: everId
-                },
-                dataType: 'JSON',
-                success: function (result) {
-                    var code = result.code;
-                    var message = result.message;
-                    alert(message);
-                    if (code == 100) {
-                        $(".wa_table tr[id ='" + everId + "']").remove();
-                    }
-                }
-            })
-        }
-    }
 
     $("#title").bind('keydown', function (event) {
         if (event.keyCode == "13") {
+
             this.blur();
         }
-    })
-
-    $(function () {
-        $(":radio").change(function () {
-            search();
-            add();
-        })
     });
-
-    //个人权限新增
 
 
 </script>

@@ -58,6 +58,7 @@ public class BaseDAO extends HbmDAOUtil {
 				.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
 	}
 
+
 	/** 年级 */
 	public List<EduDepa> gradeBeans() {
 		return this.list(EduGrade.class.getName());
