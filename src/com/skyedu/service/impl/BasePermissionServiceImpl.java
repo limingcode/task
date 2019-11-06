@@ -1,6 +1,8 @@
 package com.skyedu.service.impl;
 
 import com.skyedu.dao.impl.BasePermissionDao;
+import com.skyedu.model.EduCity;
+import com.skyedu.model.EduPeriod;
 import com.skyedu.service.BasePermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,4 +50,10 @@ public class BasePermissionServiceImpl implements BasePermissionService {
     public List<Map<String, Object>> subjectList() {
         return basePermissionDao.subjectList();
     }
+
+
+
+
+
+
 }

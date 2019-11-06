@@ -41,7 +41,6 @@
     <div class="wa_box filter_list">
         <div class="filter_item">
             <span class="filter_type filter_type9">学生名称</span>
-            euditPermission
             <ul>
                 <li><input type="text" id="name" onblur="search()">
 

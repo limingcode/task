@@ -109,32 +109,25 @@
     <table class="wa_table">
         <thead>
         <tr>
-            <th style="min-width: 2em;"><input type="checkbox" name="all" id="all" onclick="var alll = function () {
+            <th style="min-width: 2em;">
+                <input type="checkbox" name="all" id="all" onclick="var alll = function () {
+            //完成全选/全不选功能
+		$('#all').click(function(){
+                //attr获取checked是undefined;
+                //我们这些dom原生的属性；attr获取自定义属性的值；
+                //prop修改和读取dom原生属性的值
+                $('.check_item').prop('checked',$(this).prop("checked"));
+                });
+
+                //check_item
+                $(document).on('click','.check_item',function(){
+                //判断当前选择中的元素是否5个
+                var flag = $('.check_item:checked').length==$('.check_item"'.length;
+                $('#check_all').prop("checked",flag);
+                });
 
 
-                    var all_checked=false;
-
-                    $(':checkbox').click(function() {
-                        var table = $(this).parents('table');
-                         if($(this).attr('id') === 'all') {
-                              table.find(':checkbox').prop('checked', !all_checked);
-                        all_checked = !all_checked;
-
-                         }else {
-                             table.find(':checkbox[id!=all]').each(function (i) {
-                                if(!$(this).is(':checked')) {
-                                    table.find('#all').prop('checked', false);
-                all_checked = false;
-                return false;
-                                }
-                                $('#all').prop('checked', true);
-                all_checked = true;
-                             });
-                         }
-
-                    });
-
-            };
+                };
             alll()">全选设置
 
             </th>

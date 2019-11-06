@@ -11,6 +11,7 @@ import javax.persistence.Table;
 /**
  * 层次表
  */
+
 @Entity
 @Table(name = "Edu_Cate")
 public class EduCate implements java.io.Serializable {
@@ -26,6 +27,7 @@ public class EduCate implements java.io.Serializable {
 	// Constructors
 
 	/** default constructor */
+
 	public EduCate() {
 	}
 

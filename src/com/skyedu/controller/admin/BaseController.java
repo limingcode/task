@@ -9,6 +9,7 @@ import com.skyedu.Message;
  * @author xj.chen
  * @date 2014-8-22
  */
+
 public class BaseController {
 
 	/** 错误页面 */
@@ -17,7 +18,6 @@ public class BaseController {
 	protected static final Message SUCCESS = Message.success("admin.message.success", null);
 	/** 失败消息码 */
 	protected static final Message ERROR = Message.error("admin.message.error", null);
-	
 	/**
 	 * 页面提示
 	 * @param redirectAttributes

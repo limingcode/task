@@ -24,9 +24,6 @@
     <meta http-equiv="expires" content="0">
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
-    <!--
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        -->
 
     <link rel="stylesheet" type="text/css"
           href="<%=path%>/sys/css/reset.pchlin.css">
@@ -38,7 +35,9 @@
 
 <body>
 <!-- begin 筛选列表 -->
+
 <div class="wa_box filter_list">
+
     <div class="wa_box filter_list">
 
         <div class="filter_item">
@@ -65,6 +64,7 @@
 
     <div class="filter_btn">
         <button class="sol_btn" onclick="search()">查询</button>
+
         <button class="sol_btn" onclick="setUp()">开始设置</button>
     </div>
 

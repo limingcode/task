@@ -9,204 +9,220 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 %>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <base href="<%=basePath%>">
-
     <title>班级权限列表</title>
-
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
-    <!--
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        -->
-
     <link rel="stylesheet" type="text/css"
           href="<%=path%>/sys/css/reset.pchlin.css">
     <link rel="stylesheet" type="text/css"
           href="<%=path%>/sys/css/public.css">
     <link rel="stylesheet" type="text/css"
           href="<%=path%>/sys/css/questionManage.css">
+    <!--引入bootstrap插件-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function getIiniTtermName() {
+            alert("aaa");
+            $('#termName').empty();
+            var term = $('#termName');
+            term.append('<option value="">亲选择地区</option>');
+            console.log("aa" + term);
+            $.ajax({
+                url: '<%=path%>/grades/getIiniTtermName',
+
+                type: 'get',
+                dataType: 'json',
+                success: function (opts) {
+                    if (opts && opts.length > 0) {
+                        var html = [];
+                        for (var i = 0; i < opts.length; i++) {
+                            html.push('<option value="' + opts[i].id + '">' + opts[i].desc + '</option>');
+                        }
+                        term.append(html.join(''));
+                    }
+                }
+            });
+        }
+
+    </script>
 </head>
 <!--后端maps集合-->
 <body>
 <!-- begin 筛选列表 -->
 <div class="wa_box filter_list">
-    <div class="filter_item">
-        <span class="filter_type ">
-            地区&nbsp;&nbsp;&nbsp;
-        <select>
-            <option>全部</option>
-            <option>深圳</option>
-            <option>杭州</option>
-            <option>外教</option>
+    <div class="wa_box q_list">
+            <span>地区 &nbsp;&nbsp;&nbsp;
+                <select id="termName" onclick="getIiniTtermName()"></select>
+            </span>
+        <span>学期&nbsp;&nbsp; &nbsp;
+            <select id="grade" onclick="var getInitGrade = function () {
+                alert('aaaaaaaaa');
+
+            };
+                    getInitGrade()">
         </select>
         </span>
-        <ul>
-            <c:forEach items="${gradeList }" var="grade" varStatus="index">
-
-                <li><label class="sky_radio"><input type="radio"
-                                                    name="grade" value=${grade.code }
-                                                 <c:if test="${condition.grade==null&& index.index==0}">checked="checked"</c:if>
-                                                    <c:if test="${fn:trim(grade.code) eq condition.grade }">checked="checked"</c:if> /><span
-                        class="mark"></span>${grade.name }</label></li>
-            </c:forEach>
-
-        </ul>
-    </div>
-    <div class="filter_item">
-        <span class="filter_type filter_type4">学期&nbsp;&nbsp; &nbsp;
-            <select>
-            <option>2019秋季</option>
-        </select>
+        <span>班级名称:&nbsp;&nbsp;&nbsp;
+        <input type="text" id="dname">
         </span>
-        <ul>
-            <c:forEach items="${subjectList }" var="subject" varStatus="index">
-                <li><label class="sky_radio"><input type="radio"
-                                                    name="subject" value=${subject.code } <c:if test="${condition.subject==null&& index.index==0}">checked="checked"</c:if>
-                                                    <c:if test="${fn:trim(subject.code) eq condition.subject }">checked="checked"</c:if> /><span
-                        class="mark"></span>${subject.name }</label></li>
-            </c:forEach>
-        </ul>
-    </div>
-    <div class="filter_item">
-        <span class="filter_type filter_type5">班级名称:&nbsp;&nbsp;&nbsp;<input type="text">
+        <span>老师名称:&nbsp;&nbsp;&nbsp
+        <input type="text" id="jname">
         </span>
-        <ul>
-            <c:forEach items="${cateList }" var="cate" varStatus="index">
-                <li><label class="sky_radio"><input type="radio"
-                                                    name="cate" value=${cate.code }
-                                                            <c:if test="${condition.cate==null&& index.index==0}">checked="checked"</c:if>
-                                                    <c:if test="${cate.code eq condition.cate}">checked="checked"</c:if> /><span
-                        class="mark"></span>${cate.name }</label></li>
-            </c:forEach>
-        </ul>
     </div>
-    <div class="filter_item">
-        <span class="filter_type filter_type9">老师名称:&nbsp;&nbsp;&nbsp;</span>
-
-    </div>
-    <div class="filter_btn">
-        <button class="sol_btn" onclick="search()">查询</button>
-        <button class="sol_btn" onclick="add()">新增</button>
-    </div>
-</div>
-
-<!-- end 筛选列表 -->
-
-<!-- begin 题库列表 -->
-<div class="wa_box q_list">
-    <div class="wa_table_oper">
-        <div class="table_name">
-            <span class="current">班级权限列表</span>
+    <!-- begin 题库列表 -->
+    <div class="wa_box q_list">
+        <div class="filter_btn">
+            <button class="sol_btn" onclick="search()">查询</button>
+            <button class="sol_btn" onclick="add()">新增</button>
         </div>
-        <!-- <div class="oper_btn">
-            <button class="sol_btn" onclick="input()">录入</button>
-        </div> -->
     </div>
-    <table class="wa_table">
-        <thead>
-        <tr>
-            <th style="min-width: 4em;">地区</th>
-            <th style="">学区</th>
-            <th style="min-width: 4em;">班级名次</th>
-            <th style="min-width: 4em;">老师名称</th>
-            <th style="min-width: 4em;">校区</th>
-            <th style="min-width: 4em;">年级</th>
-            <th style="min-width: 4em;">层次</th>
-            <th style="min-width: 4em;">上课日期</th>
-            <th style="min-width: 4em;">时段</th>
-            <th style="min-width: 4em;">阅读权限</th>
-            <th style="min-width: 4em;">操作时间</th>
-            <th style="min-width: 4em;">最后操作人</th>
-            <th style="min-width: 10em;">操作</th>
 
-        </tr>
-        </thead>
-        <tbody>
-        <!--动态的进行内容的选择 lm-->
-        <c:forEach items="${classPermissionList }" var="question">
-            <tr id="${question.id }">
-                <td>${question.id }</td>
-                <td>${question.codeName }</td>
-                <td>${question.teacherName }</td>
-                <td><fmt:formatDate value="${question.createDate}"
-                                    type="both"/></td>
-                <td>${question.editorName }</td>
-                <td><fmt:formatDate value="${question.modifyDate}"
-                                    type="both"/></td>
-                <td>${question.gradeName }${question.subjectName }${question.cateName }</td>
-                <td>${question.score }</td>
-                <td>
-                    <a href="<%=path%>/question/preview.jhtml?questionId=${question.id }">预览</a>
-                    <a
-                            href="<%=path%>/question/editorQuestion.jhtml?questionId=${question.id }">修改/查看</a>
-                    <a href="javascript:;" class="delete_btn"
-                       onclick="delQ(${question.id})">删除</a>
-
-                </td>
+    <div class="wa_box q_list">
+        <div class="wa_table_oper">
+            <div class="table_name">
+                <span class="current">班级权限列表</span>
+            </div>
+            <!-- <div class="oper_btn">
+                <button class="sol_btn" onclick="input()">录入</button>
+            </div> -->
+        </div>
+        <table class="wa_table">
+            <thead>
+            <tr>
+                <th style="min-width: 4em;">地区</th>
+                <th style="min-width: 4em;">学区</th>
+                <th style="min-width: 4em;">班级名称</th>
+                <th style="min-width: 4em;">老师名称</th>
+                <th style="min-width: 4em;">校区</th>
+                <th style="min-width: 4em;">年级</th>
+                <th style="min-width: 4em;">层次</th>
+                <th style="min-width: 4em;">上课日期</th>
+                <th style="min-width: 4em;">时段</th>
+                <th style="min-width: 4em;">阅读权限</th>
+                <th style="min-width: 4em;">操作时间</th>
+                <th style="min-width: 4em;">最后操作人</th>
+                <th style="min-width: 10em;">操作</th>
             </tr>
-        </c:forEach>
+            </thead>
+            <tbody>
+            <!--动态的进行内容的选择 lm-->
+            <c:forEach items="${maps }" var="m">
+                <tr id="${m.mapping_Key }">
+                    <td>${m.CityName }</td>
+                    <td>${m.termName}</td>
+                    <td>${m.dname }</td>
+                    <td>${m.jname }</td>
+                    <td>${m.gname }</td>
+                    <td>${m.fname }</td>
+                    <td>${m.hname }</td>
+                    <td>${m.courseTime }</td>
+                    <td>${m.courseTimeFlag }</td>
+                    <td>${m.bookName }</td>
+                    <td><fmt:formatDate value="${m.operationTime}"/></td>
+                    <td>${m.operationPeople }</td>
+                    <td>
+                        <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
+                           data-backdrop="static"
+                           href="<%=path%>/permission/setEverPermissionClass.jhtml?classId=${m.mapping_Key }"
+                           onclick="">修改</a>
+                        <a href="javascript:;" class="delete_btn"
+                           onclick="delQ(${m.mapping_Key})">删除</a>
 
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </c:forEach>
 
-    <!-- begin 分页条 -->
-    <div class="pagination">
-        <ul>
-            <li class="first_page" onclick="goPage(1)">&nbsp;</li>
-            <c:if test="${condition.pageNo>1 }">
-                <li class="prev_page" onclick="goPage(${condition.pageNo-1 })">&nbsp;</li>
-            </c:if>
-            <c:if test="${condition.pageNo-4>0 }">
-                <li onclick="goPage(${condition.pageNo-4 })">${condition.pageNo-4}</li>
-            </c:if>
-            <c:if test="${condition.pageNo-3>0 }">
-                <li onclick="goPage(${condition.pageNo-3 })">${condition.pageNo-3}</li>
-            </c:if>
-            <c:if test="${condition.pageNo-2>0 }">
-                <li onclick="goPage(${condition.pageNo-2 })">${condition.pageNo-2}</li>
-            </c:if>
-            <c:if test="${condition.pageNo-1>0 }">
-                <li onclick="goPage(${condition.pageNo-1 })">${condition.pageNo-1}</li>
-            </c:if>
-            <li class="current_page">${condition.pageNo}</li>
-            <c:if test="${condition.pageNo< condition.totalPage}">
-                <li onclick="goPage(${condition.pageNo+1 })">${condition.pageNo+1}</li>
-            </c:if>
-            <c:if test="${condition.pageNo+1< condition.totalPage}">
-                <li onclick="goPage(${condition.pageNo+2 })">${condition.pageNo+2}</li>
-            </c:if>
-            <c:if test="${condition.pageNo+2< condition.totalPage}">
-                <li onclick="goPage(${condition.pageNo+3 })">${condition.pageNo+3}</li>
-            </c:if>
-            <c:if test="${condition.pageNo+4< condition.totalPage}">
-                <li onclick="goPage(${condition.pageNo+4 })">${condition.pageNo+4}</li>
-            </c:if>
-            <c:if test="${(condition.totalPage-condition.pageNo)>5}">
-                <li class="ellipsis">....</li>
-            </c:if>
-            <c:if test="${(condition.totalPage-condition.pageNo)>4}">
-                <li onclick="goPage(${condition.totalPage })">${condition.totalPage
-                        }</li>
-            </c:if>
-            <c:if test="${condition.pageNo<condition.totalPage }">
-                <li class="next_page" onclick="goPage(${condition.pageNo+1})">&nbsp;</li>
-            </c:if>
-            <li class="last_page" onclick="goPage(${condition.totalPage })">&nbsp;</li>
-            <li class="all_page">共${condition.totalPage }页</li>
-            <li class="turn_page">到<input type="number" id="pageNo"/>页</li>
-            <li class="go_btn" onclick="forword()">GO</li>
-        </ul>
+            </tbody>
+        </table>
+        <!--模态区域-->
+        <div class="div_main">
+            <!-- botton按钮有两个属性是data-toggle="model"   data-target="#myModel"；第一个属性代表我可以调取并展示一个模态框，第二个属性表示我要展示的哪一个模态框，用id来标识-->
+            <!-- data-backdrop="static"表示点击空白的地方不会关闭弹窗-->
+            <!-- class = "modal"，用来把 <div> 的内容识别为模态框  class = "fade"，当模态框被切换时，它会引起内容淡入淡出-->
+            <!-- tabindex=-1代表此元素禁止使用键盘上的tab键对其导航，就是按tab键的时候，会跳过这个div    不设置tabindex的话，就会使Esc退出无效 -->
+            <!-- role=“dialog”代表这是一个对话框 -->
+            <!-- 属性 aria-hidden="true" 用于保持模态窗口不可见，直到触发器被触发为止（比如点击在相关的按钮上） -->
+            <div class="modal inmodal" id="myModal" role="dialog" aria-hidden="true">
+                <div class="modal-dialog bacstyle">
+                    <div class="modal-content" style="width: 100%;height: 100%;">
+                        <!-- modal-header 是为模态窗口的头部定义样式的类 -->
+                        <div class="modal-header" style="background: pink; width: 100%; height: 10%;">
+                            <!-- close 是一个 CSS class，用于为模态窗口的关闭按钮设置样式 -->
+                            <!-- data-dismiss="modal"，是一个自定义的 HTML5 data 属性，在这里它被用于关闭模态窗口 -->
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                            <h4 class="modal-title">窗口模态</h4>
+                        </div>
+                        <!-- class="modal-body"，是 Bootstrap CSS 的一个 CSS class，用于为模态窗口的主体设置样式 -->
+                        <div class="modal-body" style="background: green; width: 100%; height: 90%;">
+                            模态主题
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- begin 分页条 -->
+            <div class="pagination">
+                <ul>
+                    <li class="first_page" onclick="goPage(1)">&nbsp;</li>
+                    <c:if test="${condition.pageNo>1 }">
+                        <li class="prev_page" onclick="goPage(${condition.pageNo-1 })">&nbsp;</li>
+                    </c:if>
+                    <c:if test="${condition.pageNo-4>0 }">
+                        <li onclick="goPage(${condition.pageNo-4 })">${condition.pageNo-4}</li>
+                    </c:if>
+                    <c:if test="${condition.pageNo-3>0 }">
+                        <li onclick="goPage(${condition.pageNo-3 })">${condition.pageNo-3}</li>
+                    </c:if>
+                    <c:if test="${condition.pageNo-2>0 }">
+                        <li onclick="goPage(${condition.pageNo-2 })">${condition.pageNo-2}</li>
+                    </c:if>
+                    <c:if test="${condition.pageNo-1>0 }">
+                        <li onclick="goPage(${condition.pageNo-1 })">${condition.pageNo-1}</li>
+                    </c:if>
+                    <li class="current_page">${condition.pageNo}</li>
+                    <c:if test="${condition.pageNo< condition.totalPage}">
+                        <li onclick="goPage(${condition.pageNo+1 })">${condition.pageNo+1}</li>
+                    </c:if>
+                    <c:if test="${condition.pageNo+1< condition.totalPage}">
+                        <li onclick="goPage(${condition.pageNo+2 })">${condition.pageNo+2}</li>
+                    </c:if>
+                    <c:if test="${condition.pageNo+2< condition.totalPage}">
+                        <li onclick="goPage(${condition.pageNo+3 })">${condition.pageNo+3}</li>
+                    </c:if>
+                    <c:if test="${condition.pageNo+4< condition.totalPage}">
+                        <li onclick="goPage(${condition.pageNo+4 })">${condition.pageNo+4}</li>
+                    </c:if>
+                    <c:if test="${(condition.totalPage-condition.pageNo)>5}">
+                        <li class="ellipsis">....</li>
+                    </c:if>
+                    <c:if test="${(condition.totalPage-condition.pageNo)>4}">
+                        <li onclick="goPage(${condition.totalPage })">${condition.totalPage
+                                }</li>
+                    </c:if>
+                    <c:if test="${condition.pageNo<condition.totalPage }">
+                        <li class="next_page" onclick="goPage(${condition.pageNo+1})">&nbsp;</li>
+                    </c:if>
+                    <li class="last_page" onclick="goPage(${condition.totalPage })">&nbsp;</li>
+                    <li class="all_page">共${condition.totalPage }页</li>
+                    <li class="turn_page">到<input type="number" id="pageNo"/>页</li>
+                    <li class="go_btn" onclick="forword()">GO</li>
+                </ul>
+            </div>
+            <!-- end 分页条 -->
+        </div>
     </div>
-    <!-- end 分页条 -->
+
 </div>
 <!-- end 题库列表 -->
 <script type="text/javascript"
@@ -215,6 +231,7 @@
         src="<%=path%>/sys/js/space_underline.js"></script>
 <script type="text/javascript" src="<%=path%>/sys/js/public.js"></script>
 <script type="text/javascript">
+
     function search() {
         var title = $("#title").val();
         var grade = $("input[name='grade']:checked").val();
@@ -223,7 +240,7 @@
         window.location.href = "<%=path%>/permission/classPermission.jhtml?grade=" + grade + "&subject=" + subject + "&cate=" + cate + "&title=" + title;
 
     }
-    
+
 
     function isNull(str) {
         if (str == "") return true;
@@ -291,5 +308,6 @@
     })
 
 </script>
+
 </body>
 </html>

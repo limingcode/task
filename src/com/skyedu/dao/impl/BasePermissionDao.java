@@ -1,9 +1,10 @@
 package com.skyedu.dao.impl;
 
+import com.skyedu.model.EduCity;
+import com.skyedu.model.EduPeriod;
 import com.util.HbmDAOUtil;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Map;
 /**
  * @Description xxx
  * @author: LiMing
- * @date: 2019/11/1  15:56
+ * @date: 2019/11/3  15:56
  * 基础的编辑设置数据查询
  */
 @Repository
@@ -50,5 +51,6 @@ public class BasePermissionDao extends HbmDAOUtil {
                 Transformers.ALIAS_TO_ENTITY_MAP
         ).list();
     }
+
 }
 
